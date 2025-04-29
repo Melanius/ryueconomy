@@ -1,0 +1,962 @@
+/**
+ * 노션 블록 렌더링 로직 - 새로 구현된 버전
+ * 
+ * 단순하고 유지보수하기 쉬운 구조로 구현
+ * - 블록 타입별 렌더링 함수 분리
+ * - 재귀 호출 구조 단순화
+ * - 명확한 오류 처리 및 로깅
+ * - 들여쓰기 관련 문제 해결
+ */
+
+import {
+  BlockObjectResponse,
+  PartialBlockObjectResponse,
+  RichTextItemResponse
+} from '@notionhq/client/build/src/api-endpoints';
+import { notion } from './client';
+
+// HTML 블록을 위한 확장 타입 정의
+interface HtmlBlockObjectResponse {
+  id: string;
+  type: 'html';
+  html: {
+    rich_text: RichTextItemResponse[];
+  };
+  created_time: string;
+  last_edited_time: string;
+  has_children: boolean;
+  archived: boolean;
+}
+
+// 확장된 블록 타입
+type ExtendedBlockObjectResponse = BlockObjectResponse | HtmlBlockObjectResponse;
+
+/**
+ * 특정 블록의 하위 블록들을 가져오는 함수
+ */
+export async function getBlocks(blockId: string): Promise<BlockObjectResponse[]> {
+  try {
+    console.log(`🔍 블록 ${blockId}의 하위 블록 가져오기 시작`);
+    
+    const blocks: BlockObjectResponse[] = [];
+    let startCursor: string | undefined = undefined;
+    let hasMore = true;
+    
+    // 페이지네이션을 처리하면서 모든 하위 블록 가져오기
+    while (hasMore) {
+      const response = await notion.blocks.children.list({
+        block_id: blockId,
+        start_cursor: startCursor,
+        page_size: 100,
+      });
+      
+      // 유효한 블록만 필터링
+      const validBlocks = response.results.filter(
+        (block): block is BlockObjectResponse => 'type' in block
+      );
+      
+      blocks.push(...validBlocks);
+      
+      hasMore = response.has_more;
+      startCursor = response.next_cursor ?? undefined;
+    }
+    
+    console.log(`✅ 블록 ${blockId}의 하위 블록 ${blocks.length}개 가져오기 완료`);
+    return blocks;
+  } catch (error) {
+    console.error(`❌ 블록 ${blockId} 하위 블록 가져오기 오류:`, error);
+    return [];
+  }
+}
+
+/**
+ * 페이지의 모든 블록을 재귀적으로 가져오는 함수
+ */
+export async function getPageBlocks(pageId: string, maxDepth = 3): Promise<BlockObjectResponse[]> {
+  console.log(`📄 페이지 ${pageId}의 블록 가져오기 시작 (최대 깊이: ${maxDepth})`);
+  
+  try {
+    // 최상위 블록 가져오기
+    const blocks = await getBlocks(pageId);
+    
+    // 각 블록에 대해 재귀적으로 하위 블록 가져오기
+    const populatedBlocks = await populateChildBlocks(blocks, 1, maxDepth);
+    
+    console.log(`📄 페이지 ${pageId}의 블록 가져오기 완료: 총 ${countBlocks(populatedBlocks)}개`);
+    return populatedBlocks;
+  } catch (error) {
+    console.error(`❌ 페이지 ${pageId}의 블록 가져오기 오류:`, error);
+    return [];
+  }
+}
+
+/**
+ * 블록의 하위 블록을 재귀적으로 가져오는 함수
+ */
+async function populateChildBlocks(
+  blocks: BlockObjectResponse[],
+  currentDepth: number,
+  maxDepth: number
+): Promise<BlockObjectResponse[]> {
+  if (currentDepth > maxDepth) {
+    return blocks;
+  }
+  
+  const result: BlockObjectResponse[] = [];
+  
+  for (const block of blocks) {
+    // 블록에 children 속성 추가
+    const blockWithChildren = block as BlockObjectResponse & { children?: BlockObjectResponse[] };
+    
+    // 하위 블록이 있는 경우 가져오기
+    if (block.has_children) {
+      try {
+        const childBlocks = await getBlocks(block.id);
+        const populatedChildBlocks = await populateChildBlocks(
+          childBlocks,
+          currentDepth + 1,
+          maxDepth
+        );
+        
+        blockWithChildren.children = populatedChildBlocks;
+      } catch (error) {
+        console.error(`❌ 블록 ${block.id} 하위 블록 가져오기 오류:`, error);
+        blockWithChildren.children = [];
+      }
+    } else {
+      blockWithChildren.children = [];
+    }
+    
+    result.push(blockWithChildren);
+  }
+  
+  return result;
+}
+
+/**
+ * 블록 트리의 총 블록 수를 계산하는 함수
+ */
+function countBlocks(blocks: (BlockObjectResponse & { children?: BlockObjectResponse[] })[]): number {
+  return blocks.reduce((count, block) => {
+    const childCount = block.children?.length 
+      ? countBlocks(block.children as (BlockObjectResponse & { children?: BlockObjectResponse[] })[])
+      : 0;
+    return count + 1 + childCount;
+  }, 0);
+}
+
+/**
+ * 첫 번째 이미지 URL을 찾는 함수
+ */
+export function findFirstImage(blocks: (BlockObjectResponse & { children?: BlockObjectResponse[] })[]): string {
+  for (const block of blocks) {
+    if (block.type === 'image') {
+      const image = (block as any).image;
+      if (image?.file?.url) {
+        return image.file.url;
+      } else if (image?.external?.url) {
+        return image.external.url;
+      }
+    }
+    
+    // 하위 블록 검색
+    if (block.children?.length) {
+      const imageUrl = findFirstImage(block.children as (BlockObjectResponse & { children?: BlockObjectResponse[] })[]);
+      if (imageUrl) {
+        return imageUrl;
+      }
+    }
+  }
+  
+  return '';
+}
+
+/**
+ * 페이지 컨텐츠 및 썸네일 가져오기
+ */
+export async function getPageContentAndThumbnail(pageId: string): Promise<{ content: string, thumbnail: string, image: string }> {
+  console.log(`🔍 페이지 ${pageId}의 컨텐츠 및 썸네일 가져오기 시작`);
+  const startTime = Date.now();
+  
+  try {
+    // 모든 블록 가져오기
+    const blocks = await getPageBlocks(pageId);
+    
+    if (!blocks || blocks.length === 0) {
+      console.warn(`⚠️ 페이지 ${pageId}에서 블록을 찾을 수 없습니다.`);
+      return { content: '<p>컨텐츠를 불러올 수 없습니다.</p>', thumbnail: '', image: '' };
+    }
+    
+    // 첫 번째 이미지 찾기
+    let image = findFirstImage(blocks as (BlockObjectResponse & { children?: BlockObjectResponse[] })[]);
+    let thumbnail = image;
+    
+    // 커버 이미지가 있으면 우선 사용
+    try {
+      const page = await notion.pages.retrieve({ page_id: pageId });
+      if (page && 'cover' in page && page.cover) {
+        if ('external' in page.cover && page.cover.external?.url) {
+          thumbnail = page.cover.external.url;
+        } else if ('file' in page.cover && page.cover.file?.url) {
+          thumbnail = page.cover.file.url;
+        }
+        console.log(`🖼️ 페이지 커버 이미지를 썸네일로 사용: ${thumbnail.substring(0, 50)}...`);
+      } else {
+        console.log(`🖼️ 페이지 커버 이미지가 없거나 유효하지 않음. 본문 첫 이미지를 썸네일로 사용.`);
+      }
+    } catch (error) {
+      console.error(`❌ 페이지 ${pageId} 커버 이미지 가져오기 오류:`, error);
+    }
+    
+    // 블록을 HTML로 변환
+    console.log(`🔄 블록을 HTML로 변환 시작: ${blocks.length}개 최상위 블록`);
+    let content = renderBlocksToHtmlWithListHandling(blocks as (BlockObjectResponse & { children?: BlockObjectResponse[] })[]);
+
+    // 최종 가공: 모든 독립적인 figure 태그 제거
+    // 1. 닫는 태그가 독립적으로 나타나는 경우 (닫는 태그만 있고 여는 태그 없음)
+    content = removeOrphanedClosingTags(content, 'figure');
+
+    // 2. 불필요한 figure 태그 텍스트 제거 (이스케이프된 텍스트 형태)
+    content = content.replace(/&lt;\/figure&gt;/g, '');
+    content = content.replace(/&lt;figure&gt;/g, '');
+    content = content.replace(/<\/figure>/g, ''); // 텍스트로 존재하는 닫는 태그 제거
+    content = content.replace(/([^<]|^)\/figure>/g, '$1'); // '/'로 시작하는 변형된 형태 제거
+
+    // 3. 추가 처리: 텍스트로 된 HTML 태그를 실제 HTML로 변환
+    // HTML 문법이 추정되는 패턴 감지 및 처리
+    if (content.includes('&lt;figure') || content.includes('&lt;img')) {
+      console.log('📌 HTML 태그가 텍스트로 감지됨, 실제 HTML로 변환 시도');
+      
+      // HTML 엔티티 디코딩
+      content = content
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&amp;/g, '&')
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'");
+        
+      console.log('✅ HTML 엔티티 디코딩 완료');
+    }
+
+    const endTime = Date.now();
+    const totalTime = (endTime - startTime) / 1000;
+    
+    console.log(`⏱️ 총 소요 시간: ${totalTime.toFixed(2)}초`);
+    console.log(`📊 생성된 HTML 길이: ${content.length} 글자`);
+    
+    return { content, thumbnail, image };
+  } catch (error) {
+    console.error(`❌ 페이지 ${pageId} 컨텐츠 변환 오류:`, error);
+    return {
+      content: `<p class="text-red-500">오류가 발생했습니다: ${error instanceof Error ? error.message : '알 수 없는 오류'}</p>`,
+      thumbnail: '',
+      image: ''
+    };
+  }
+}
+
+/**
+ * 블록을 HTML로 변환하는 메인 함수
+ */
+export function renderBlocksToHtml(blocks: (BlockObjectResponse & { children?: BlockObjectResponse[] })[]): string {
+  const html = blocks.map(block => renderBlock(block as ExtendedBlockObjectResponse & { children?: ExtendedBlockObjectResponse[] })).join('');
+  return html;
+}
+
+/**
+ * Rich Text 배열을 HTML 문자열로 렌더링
+ */
+function renderRichText(richTextItems: any[] = []): string {
+  if (!richTextItems || richTextItems.length === 0) {
+    return '';
+  }
+  
+  return richTextItems.map(text => {
+    if (!text) return '';
+    
+    // 텍스트 콘텐츠 가져오기 (plain_text 또는 text.content)
+    const content = text.plain_text || (text.text && text.text.content) || '';
+    if (!content) return '';
+    
+    // HTML 특수 문자 이스케이프
+    let formattedText = content
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+    
+    // 스타일 적용
+    if (text.annotations) {
+      if (text.annotations.bold) {
+        formattedText = `<strong>${formattedText}</strong>`;
+      }
+      if (text.annotations.italic) {
+        formattedText = `<em>${formattedText}</em>`;
+      }
+      if (text.annotations.strikethrough) {
+        formattedText = `<del>${formattedText}</del>`;
+      }
+      if (text.annotations.underline) {
+        formattedText = `<u>${formattedText}</u>`;
+      }
+      if (text.annotations.code) {
+        formattedText = `<code>${formattedText}</code>`;
+      }
+    }
+    
+    // 링크 처리
+    if (text.href) {
+      formattedText = `<a href="${text.href}" target="_blank" rel="noopener noreferrer">${formattedText}</a>`;
+    }
+    
+    return formattedText;
+  }).join('');
+}
+
+/**
+ * HTML 특수 문자 이스케이프
+ */
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/**
+ * HTML 내용을 안전하게 정제하는 함수
+ * - 잘못된 HTML 태그 구조 수정
+ * - 독립적인 닫는 태그 제거
+ * - 불균형한 태그 처리
+ */
+function sanitizeHtml(html: string): string {
+  // 로그 기록
+  console.log('[sanitizeHtml] 원본 HTML 처리 시작:', html.substring(0, 100) + (html.length > 100 ? '...' : ''));
+  
+  // 0. 텍스트로 작성된 HTML 태그 처리 (예: &lt;figure&gt;)
+  let sanitized = html.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+  
+  // 1. 독립적인 닫는 태그 제거 (</tag>)
+  sanitized = sanitized.replace(/<\/[a-zA-Z][a-zA-Z0-9]*\s*>/g, (match) => {
+    console.log(`[sanitizeHtml] 독립 닫는 태그 제거: ${match}`);
+    return '';
+  });
+  
+  // 2. 빈 태그 정리 (<tag></tag> -> <tag />)
+  sanitized = sanitized.replace(/<([a-zA-Z][a-zA-Z0-9]*)[^>]*><\/\1\s*>/g, '<$1 />');
+  
+  // 3. 특수한 경우: figure와 관련된 문제 특별 처리
+  if (sanitized.includes('</figure>') && !sanitized.includes('<figure')) {
+    console.log('[sanitizeHtml] 불균형 figure 태그 발견: 닫는 태그 제거');
+    sanitized = sanitized.replace(/<\/figure\s*>/g, '');
+  }
+  
+  // 4. XSS 방지: script 태그 제거
+  sanitized = sanitized.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+  
+  // 5. 태그 균형 검사 및 복구
+  sanitized = balanceHtmlTags(sanitized);
+  
+  // 6. 텍스트로 남아있는 HTML 태그 처리
+  sanitized = handlePlainTextTags(sanitized);
+  
+  // 처리 결과 로그
+  console.log('[sanitizeHtml] 정제된 HTML:', sanitized.substring(0, 100) + (sanitized.length > 100 ? '...' : ''));
+  
+  return sanitized;
+}
+
+/**
+ * 텍스트 내 HTML 태그처럼 보이는 내용 처리
+ * - 이미 파싱된 태그가 아닌 경우에만 변환
+ */
+function handlePlainTextTags(html: string): string {
+  // HTML 파서를 시뮬레이션하여 텍스트 영역 식별
+  const parts: {isTag: boolean, content: string}[] = [];
+  let insideTag = false;
+  let current = '';
+  
+  for (let i = 0; i < html.length; i++) {
+    const char = html[i];
+    
+    if (char === '<') {
+      // 태그 시작
+      if (current) {
+        parts.push({isTag: insideTag, content: current});
+        current = '';
+      }
+      insideTag = true;
+      current += char;
+    } else if (char === '>' && insideTag) {
+      // 태그 종료
+      current += char;
+      parts.push({isTag: true, content: current});
+      current = '';
+      insideTag = false;
+    } else {
+      current += char;
+    }
+  }
+  
+  if (current) {
+    parts.push({isTag: insideTag, content: current});
+  }
+  
+  // 텍스트 부분에서만 < > 문자 이스케이프
+  return parts.map(part => {
+    if (!part.isTag) {
+      // </figure> 텍스트가 포함된 경우 특별 처리
+      if (part.content.includes('</figure>')) {
+        console.log('[handlePlainTextTags] 텍스트 내 닫는 figure 태그 발견, 제거');
+        return part.content.replace(/\<\/figure\>/g, '');
+      }
+      
+      // 일반 텍스트 내 < > 문자 이스케이프
+      return part.content
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+    return part.content;
+  }).join('');
+}
+
+/**
+ * HTML 태그 균형을 맞추는 함수
+ * - 열리는 태그와 닫히는 태그의 균형 확인
+ * - 불균형한 태그 제거 또는 추가
+ */
+function balanceHtmlTags(html: string): string {
+  console.log('[balanceHtmlTags] 태그 균형 검사 시작');
+  
+  // 허용할 태그 목록 (자체 닫기 태그 제외)
+  const allowedTags = [
+    'div', 'span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+    'ul', 'ol', 'li', 'blockquote', 'pre', 'code',
+    'table', 'tr', 'td', 'th', 'thead', 'tbody',
+    'a', 'strong', 'em', 'b', 'i', 'u', 'strike', 'del',
+    'figure', 'figcaption', 'img', 'iframe', 'video', 'audio'
+  ];
+  
+  // 자체 닫는 태그 (닫는 태그가 필요없는 태그)
+  const selfClosingTags = ['img', 'br', 'hr', 'input', 'meta', 'link'];
+  
+  // 태그 스택 (열린 태그를 추적)
+  const tagStack: string[] = [];
+  
+  // 정규식으로 모든 태그 찾기
+  const tagPattern = /<\/?([a-zA-Z][a-zA-Z0-9]*)[^>]*>/g;
+  
+  // 태그 균형 분석
+  let match;
+  let processedHtml = html;
+  let imbalancedTags: {tag: string, isOpening: boolean}[] = [];
+  
+  while ((match = tagPattern.exec(html)) !== null) {
+    const fullTag = match[0];
+    const tagName = match[1].toLowerCase();
+    const isClosingTag = fullTag.startsWith('</');
+    const isSelfClosing = selfClosingTags.includes(tagName) || fullTag.endsWith('/>');
+    
+    // 무시할 태그라면 건너뛰기
+    if (!allowedTags.includes(tagName) && !selfClosingTags.includes(tagName)) {
+      continue;
+    }
+    
+    if (!isClosingTag && !isSelfClosing) {
+      // 여는 태그 스택에 추가
+      tagStack.push(tagName);
+    } else if (isClosingTag) {
+      // 닫는 태그 처리
+      if (tagStack.length === 0) {
+        // 닫는 태그인데 스택이 비어있으면 불균형 (제거 대상)
+        imbalancedTags.push({tag: tagName, isOpening: false});
+        console.log(`[balanceHtmlTags] 불균형 닫는 태그 발견: ${fullTag}`);
+      } else if (tagStack[tagStack.length - 1] !== tagName) {
+        // 마지막 여는 태그와 일치하지 않는 닫는 태그 (불균형)
+        imbalancedTags.push({tag: tagName, isOpening: false});
+        console.log(`[balanceHtmlTags] 일치하지 않는 닫는 태그: ${fullTag}, 예상: ${tagStack[tagStack.length - 1]}`);
+      } else {
+        // 정상적인 닫는 태그
+        tagStack.pop();
+      }
+    }
+  }
+  
+  // 닫히지 않은 태그 처리
+  for (let i = tagStack.length - 1; i >= 0; i--) {
+    const unclosedTag = tagStack[i];
+    imbalancedTags.push({tag: unclosedTag, isOpening: true});
+    console.log(`[balanceHtmlTags] 닫히지 않은 태그 발견: ${unclosedTag}`);
+  }
+  
+  // 불균형 태그 처리
+  if (imbalancedTags.length > 0) {
+    console.log(`[balanceHtmlTags] ${imbalancedTags.length}개의 불균형 태그 발견, 처리 중...`);
+    
+    // 독립적인 닫는 태그 제거 (열리지 않은 태그)
+    imbalancedTags.filter(item => !item.isOpening).forEach(item => {
+      const closingTagPattern = new RegExp(`</${item.tag}[^>]*>`, 'g');
+      processedHtml = processedHtml.replace(closingTagPattern, '');
+      console.log(`[balanceHtmlTags] 불균형 닫는 태그 제거: ${item.tag}`);
+    });
+    
+    // 특별 처리: 특정 태그에 대해서만 닫는 태그 추가 (필요한 경우)
+    const importantTags = ['div', 'figure', 'table', 'ul', 'ol'];
+    imbalancedTags.filter(item => item.isOpening && importantTags.includes(item.tag)).forEach(item => {
+      processedHtml += `</${item.tag}>`;
+      console.log(`[balanceHtmlTags] 닫는 태그 추가: ${item.tag}`);
+    });
+  }
+  
+  return processedHtml;
+}
+
+/**
+ * 단일 블록을 HTML로 렌더링하는 함수
+ */
+export function renderBlock(
+  block: ExtendedBlockObjectResponse & { children?: ExtendedBlockObjectResponse[] },
+  locale: string = 'ko'
+): string {
+  // html 블록일 경우 정제 후 HTML을 반환
+  if ((block as any).type === 'html') {
+    console.log('[renderBlock] HTML 블록 렌더링:', block.id);
+    // HTML 블록의 내용이 있는 경우에만 렌더링
+    if ((block as any).html?.rich_text?.length > 0) {
+      const htmlContent = (block as any).html.rich_text.map((text: any) => text.plain_text).join('');
+      
+      // HTML 내용 정제 - 안전화 수행
+      const sanitizedHtml = sanitizeHtml(htmlContent);
+      
+      console.log('[renderBlock] HTML 내용 정제 전/후 비교:');
+      console.log('- 정제 전:', htmlContent.substring(0, 100) + (htmlContent.length > 100 ? '...' : ''));
+      console.log('- 정제 후:', sanitizedHtml.substring(0, 100) + (sanitizedHtml.length > 100 ? '...' : ''));
+      
+      // 중요: HTML 블록에 태그가 텍스트로 포함된 경우 (예: <figure> 태그가 텍스트로 포함된 경우)
+      // HTML 블록 내용을 실제 HTML로 해석하여 반환
+      if (sanitizedHtml.includes('&lt;figure') || 
+          sanitizedHtml.includes('&lt;img') || 
+          sanitizedHtml.includes('<figure') ||
+          sanitizedHtml.includes('<img')) {
+            
+        console.log('[renderBlock] HTML 블록에 이미지/figure 태그 감지, HTML로 해석');
+        
+        // HTML 엔티티 디코딩 (예: &lt; -> <)
+        let decodedHtml = sanitizedHtml
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/&amp;/g, '&')
+          .replace(/&quot;/g, '"')
+          .replace(/&#39;/g, "'");
+          
+        // XSS 위험 요소 제거 (script 태그 등)
+        decodedHtml = decodedHtml.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+        
+        // 이미지 태그에 스타일 및 보안 속성 추가
+        decodedHtml = decodedHtml.replace(/<img\s+/gi, '<img loading="lazy" onerror="this.onerror=null; this.src=\'/images/placeholder.jpg\'; console.error(\'이미지 로드 실패:\', this.src);" ');
+        
+        console.log('[renderBlock] 최종 HTML 해석 결과:', decodedHtml.substring(0, 100) + (decodedHtml.length > 100 ? '...' : ''));
+        
+        // 디코딩된 HTML 반환 (실제 HTML로 해석됨)
+        return decodedHtml;
+      }
+      
+      // 정제된 HTML 반환
+      return sanitizedHtml;
+    }
+    return '<div class="notion-html-empty">빈 HTML 블록</div>';
+  }
+
+  const { type, id } = block;
+  const value = block[type as keyof typeof block];
+
+  if (!value) {
+    console.warn(`[renderBlock] 지원되지 않는 블록 타입: ${type}, ID: ${id}`);
+    return `<div class="notion-unknown-block">지원되지 않는 블록 유형: ${type}</div>`;
+  }
+
+  let html = '';
+
+  switch (type) {
+    case 'paragraph':
+      html = `<p class="my-2">${renderRichText((value as any).rich_text)}</p>`;
+      break;
+      
+    case 'heading_1':
+      html = `<h1 class="text-3xl font-bold my-4">${renderRichText((value as any).rich_text)}</h1>`;
+      break;
+      
+    case 'heading_2':
+      html = `<h2 class="text-2xl font-bold my-3">${renderRichText((value as any).rich_text)}</h2>`;
+      break;
+      
+    case 'heading_3':
+      html = `<h3 class="text-xl font-bold my-2">${renderRichText((value as any).rich_text)}</h3>`;
+      break;
+      
+    case 'bulleted_list_item':
+      html = `<li class="mb-1">${renderRichText((value as any).rich_text)}</li>`;
+      break;
+      
+    case 'numbered_list_item':
+      html = `<li class="mb-1">${renderRichText((value as any).rich_text)}</li>`;
+      break;
+      
+    case 'quote':
+      html = `<blockquote class="border-l-4 border-gray-300 pl-4 italic my-4">${renderRichText((value as any).rich_text)}</blockquote>`;
+      break;
+      
+    case 'code':
+      const codeContent = renderRichText((value as any).rich_text);
+      const language = (value as any).language || 'plaintext';
+      html = `<pre class="my-4 p-4 bg-gray-100 rounded overflow-x-auto"><code class="language-${language}">${codeContent}</code></pre>`;
+      break;
+      
+    case 'image':
+      const image = (value as any).image;
+      let src = '';
+      
+      if (image.file?.url) {
+        src = image.file.url;
+      } else if (image.external?.url) {
+        src = image.external.url;
+      }
+      
+      const caption = renderRichText(image.caption) || '';
+      
+      if (src) {
+        if (caption) {
+          // 캡션이 있는 경우에만 figure 태그 사용
+          html = `
+            <figure class="my-8 text-center">
+              <img src="${escapeHtml(src)}" alt="${caption || 'Image'}" class="max-w-full h-auto inline-block rounded" loading="lazy" onerror="this.onerror=null; this.src='/images/placeholder.jpg'; console.error('이미지 로드 실패:', '${escapeHtml(src)}');" />
+              <figcaption class="text-sm text-gray-500 mt-2">${caption}</figcaption>
+            </figure>
+          `;
+        } else {
+          // 캡션이 없는 경우 div 사용
+          html = `
+            <div class="my-8 text-center">
+              <img src="${escapeHtml(src)}" alt="Image" class="max-w-full h-auto inline-block rounded" loading="lazy" onerror="this.onerror=null; this.src='/images/placeholder.jpg'; console.error('이미지 로드 실패:', '${escapeHtml(src)}');" />
+            </div>
+          `;
+        }
+      } else {
+        html = `<div class="p-4 my-4 bg-red-50 text-red-500 rounded">이미지 로드 오류 (소스 없음)</div>`;
+      }
+      break;
+      
+    case 'video':
+      const video = (value as any).video;
+      const videoSrc = video.file?.url || video.external?.url;
+      const videoCaption = renderRichText(video.caption) || '';
+      
+      if (videoSrc) {
+        if (videoCaption) {
+          // 캡션이 있는 경우에만 figure 태그 사용
+          html = `
+            <figure class="my-8">
+              <video controls class="w-full rounded" src="${escapeHtml(videoSrc)}" loading="lazy"></video>
+              <figcaption class="text-sm text-gray-500 mt-2">${videoCaption}</figcaption>
+            </figure>
+          `;
+        } else {
+          // 캡션이 없는 경우 div 사용
+          html = `
+            <div class="my-8">
+              <video controls class="w-full rounded" src="${escapeHtml(videoSrc)}" loading="lazy"></video>
+            </div>
+          `;
+        }
+      } else {
+        html = `<div class="p-4 my-4 bg-red-50 text-red-500 rounded">비디오 로드 오류</div>`;
+      }
+      break;
+      
+    case 'divider':
+      html = `<hr class="my-8" />`;
+      break;
+      
+    case 'callout':
+      const callout = (value as any).callout;
+      const icon = callout.icon?.type === 'emoji' ? callout.icon.emoji : '💡';
+      
+      html = `
+        <div class="bg-gray-100 p-4 my-4 rounded flex items-start">
+          <span class="mr-2">${icon}</span>
+          <div>
+            ${renderRichText(callout.rich_text)}
+          </div>
+        </div>
+      `;
+      break;
+      
+    case 'bookmark':
+      const bookmark = (value as any).bookmark;
+      
+      html = `
+        <div class="my-4 border p-4 rounded block hover:bg-gray-50">
+          <a href="${escapeHtml(bookmark.url)}" target="_blank" rel="noopener noreferrer">
+            <p class="font-semibold truncate">${renderRichText(bookmark.caption) || escapeHtml(bookmark.url)}</p>
+            <p class="text-sm text-gray-500 truncate">${escapeHtml(bookmark.url)}</p>
+          </a>
+        </div>
+      `;
+      break;
+      
+    case 'table':
+      html = `
+        <div class="overflow-x-auto my-4">
+          <table class="w-full border-collapse border border-gray-300">
+            ${renderBlocksToHtml(value as (BlockObjectResponse & { children?: BlockObjectResponse[] })[])}
+          </table>
+        </div>
+      `;
+      break;
+      
+    case 'table_row':
+      const cells = (value as any).cells;
+      
+      html = `
+        <tr>
+          ${cells.map((cell: any) => `<td class="border border-gray-300 p-2">${renderRichText(cell)}</td>`).join('')}
+        </tr>
+      `;
+      break;
+      
+    case 'toggle':
+      html = `
+        <details class="my-2">
+          <summary class="cursor-pointer font-medium">${renderRichText((value as any).rich_text)}</summary>
+          <div class="mt-1">
+            ${renderBlocksToHtml(value as (BlockObjectResponse & { children?: BlockObjectResponse[] })[])}
+          </div>
+        </details>
+      `;
+      break;
+      
+    case 'child_page':
+      html = `<div class="my-2 p-2 border rounded bg-gray-50">📄 ${escapeHtml((value as any).title)}</div>`;
+      break;
+      
+    case 'child_database':
+      html = `<div class="my-4 p-2 border rounded bg-gray-50">💾 ${escapeHtml((value as any).title)}</div>`;
+      break;
+      
+    case 'embed':
+      const embed = (value as any).embed;
+      const embedCaption = renderRichText(embed.caption) || '';
+      
+      if (embedCaption) {
+        // 캡션이 있는 경우에만 figure 태그 사용
+        html = `
+          <figure class="my-8">
+            <iframe src="${escapeHtml(embed.url)}" class="w-full h-96 border-0" allowfullscreen loading="lazy"></iframe>
+            <figcaption class="text-sm text-gray-500 mt-2">${embedCaption}</figcaption>
+          </figure>
+        `;
+      } else {
+        // 캡션이 없는 경우 div 사용
+        html = `
+          <div class="my-8">
+            <iframe src="${escapeHtml(embed.url)}" class="w-full h-96 border-0" allowfullscreen loading="lazy"></iframe>
+          </div>
+        `;
+      }
+      break;
+      
+    case 'equation':
+      html = `<div class="my-2 text-center" data-equation="${escapeHtml((value as any).expression)}">[Equation: ${escapeHtml((value as any).expression)}]</div>`;
+      break;
+      
+    case 'file':
+      const file = (value as any).file;
+      const fileUrl = file.file?.url || file.external?.url;
+      const fileName = renderRichText(file.caption) || file.name || 'Download File';
+      
+      html = `
+        <div class="my-4 p-2 border rounded flex items-center">
+          <span class="mr-2"></span>
+          <a href="${escapeHtml(fileUrl)}" target="_blank" rel="noopener noreferrer" class="hover:underline">${escapeHtml(fileName)}</a>
+        </div>
+      `;
+      break;
+      
+    case 'synced_block':
+      // 동기화된 블록의 경우 자식 블록들을 직접 렌더링
+      html = renderBlocksToHtml(value as (BlockObjectResponse & { children?: BlockObjectResponse[] })[]);
+      break;
+      
+    case 'unsupported':
+      console.warn(`지원되지 않는 블록 타입: ${id}`);
+      html = `<p class="p-2 my-2 bg-yellow-50 text-yellow-700 rounded">[지원되지 않는 블록 타입]</p>`;
+      break;
+      
+    default:
+      console.warn(`처리되지 않은 블록 타입: ${type} (ID: ${id})`);
+      
+      // 기본적으로 rich_text가 있으면 표시 시도
+      const richText = (value as any)[type]?.rich_text;
+      if (richText) {
+        html = `<div>${renderRichText(richText)}</div>`;
+      } else {
+        html = `<div class="p-4 my-4 bg-red-50 text-red-500 rounded">알 수 없는 블록: ${type}</div>`;
+      }
+  }
+
+  return html;
+}
+
+/**
+ * 블록 배열을 HTML로 변환하며 리스트 그룹화 처리
+ */
+export function renderBlocksToHtmlWithListHandling(blocks: (BlockObjectResponse & { children?: BlockObjectResponse[] })[]): string {
+  let html = '';
+  let currentListTag: 'ul' | 'ol' | null = null;
+  let listItems = '';
+  
+  // 디버깅을 위한 블록 정보 로깅
+  console.log(`[renderBlocksToHtmlWithListHandling] 총 ${blocks.length}개 블록 처리 시작`);
+  
+  // 블록 데이터 순회하며, figure 관련 블록 식별
+  let hasFigureIssue = false;
+  const problematicBlocks: any[] = [];
+  
+  blocks.forEach((block, index) => {
+    // 블록 내용 로깅 (첫 10개와 마지막 10개만)
+    if (index < 10 || index >= blocks.length - 10) {
+      console.log(`[Block ${index}] Type: ${block.type}, ID: ${block.id}`);
+      
+      // 의심되는 블록 확인 (이미지 블록과 HTML 블록)
+      if (block.type === 'image' || 
+          (block as any).type === 'html' || 
+          (typeof block.type === 'string' && block.type.includes('figure'))) {
+        console.log(`[의심 블록 ${index}] 상세:`, JSON.stringify(block).substring(0, 300));
+        
+        // 텍스트에 figure 관련 내용 포함 여부 확인
+        if ((block as any).type === 'html' && 
+            (block as any).html?.rich_text?.some((text: any) => 
+              text.plain_text?.includes('figure') || 
+              text.plain_text?.includes('</figure>')
+            )) {
+          hasFigureIssue = true;
+          problematicBlocks.push({index, block});
+          console.log(`[문제 발견] 블록 ${index}에 figure 관련 HTML 텍스트 포함`);
+        }
+      }
+    }
+    
+    const blockType = block.type;
+    const isListItem = blockType === 'bulleted_list_item' || blockType === 'numbered_list_item';
+    const listType = blockType === 'bulleted_list_item' ? 'ul' : 'ol';
+    
+    if (isListItem) {
+      // 리스트 아이템의 경우
+      if (currentListTag !== listType) {
+        // 이전 리스트가 있으면 닫기
+        if (currentListTag) {
+          html += `</${currentListTag}>\n`;
+        }
+        
+        // 새 리스트 시작
+        const listClass = listType === 'ul' ? 'list-disc' : 'list-decimal';
+        html += `<${listType} class="${listClass} ml-4 my-2">\n`;
+        currentListTag = listType;
+      }
+      
+      // 리스트 아이템 추가
+      listItems += renderBlock(block as ExtendedBlockObjectResponse & { children?: ExtendedBlockObjectResponse[] });
+    } else {
+      // 리스트 아이템이 아닌 경우
+      if (currentListTag) {
+        // 진행 중인 리스트가 있으면 리스트 아이템 추가 후 리스트 닫기
+        html += listItems + `</${currentListTag}>\n`;
+        currentListTag = null;
+        listItems = '';
+      }
+      
+      // 일반 블록 추가
+      const renderedBlock = renderBlock(block as ExtendedBlockObjectResponse & { children?: ExtendedBlockObjectResponse[] });
+      
+      // </figure> 텍스트 직접 제거 (최후의 수단)
+      if (renderedBlock.includes('</figure>') && !renderedBlock.includes('<figure')) {
+        console.log(`[교정 적용] 블록 ${index}에서 독립적인 </figure> 태그 제거`);
+        html += renderedBlock.replace(/<\/figure>/g, '');
+      } else {
+        html += renderedBlock;
+      }
+    }
+  });
+  
+  // 마지막 리스트 닫기
+  if (currentListTag) {
+    html += listItems + `</${currentListTag}>\n`;
+  }
+  
+  // 문제 발견 시 요약 로깅
+  if (hasFigureIssue) {
+    console.log(`[figure 문제 감지] ${problematicBlocks.length}개 블록에서 문제 발견. 문제 ID: ${problematicBlocks.map(p => p.block.id).join(', ')}`);
+  }
+  
+  // 최종 결과에서 독립적인 </figure> 태그 한 번 더 제거 (비상 처리)
+  const cleanedHtml = html.replace(/<\/figure>\s*(?!<)/g, '');
+  
+  return cleanedHtml;
+}
+
+/**
+ * HTML 문자열에서 고아 태그(여는 태그 없이 닫는 태그만 있는) 제거
+ */
+function removeOrphanedClosingTags(html: string, tagName: string): string {
+  console.log(`🔍 '${tagName}' 고아 태그 제거 시작`);
+  
+  // 태그 카운트를 위한 정규식 패턴
+  const openTagPattern = new RegExp(`<${tagName}[^>]*>`, 'g');
+  const closeTagPattern = new RegExp(`</${tagName}\\s*>`, 'g');
+  
+  // 여는 태그와 닫는 태그 카운트
+  const openMatches = html.match(openTagPattern) || [];
+  const closeMatches = html.match(closeTagPattern) || [];
+  
+  const openCount = openMatches.length;
+  const closeCount = closeMatches.length;
+  
+  console.log(`📊 태그 균형: ${openCount}개 여는 태그, ${closeCount}개 닫는 태그`);
+  
+  if (closeCount > openCount) {
+    console.log(`⚠️ ${closeCount - openCount}개의 고아 닫는 태그 발견, 제거 중...`);
+    
+    // 모든 닫는 태그를 찾아서 균형 맞추기
+    let processedHtml = html;
+    let currentOpenCount = openCount;
+    
+    // 닫는 태그를 찾을 때마다 처리
+    let match;
+    let tempHtml = processedHtml;
+    const foundIndices: number[] = [];
+    
+    while ((match = closeTagPattern.exec(tempHtml)) !== null) {
+      if (currentOpenCount <= 0) {
+        // 고아 태그 발견
+        foundIndices.push(match.index);
+      } else {
+        // 정상적인 닫는 태그
+        currentOpenCount--;
+      }
+    }
+    
+    // 고아 태그 제거 (뒤에서부터 제거해서 인덱스 변화 최소화)
+    for (let i = foundIndices.length - 1; i >= 0; i--) {
+      const index = foundIndices[i];
+      processedHtml = processedHtml.substring(0, index) + 
+                     processedHtml.substring(index + `</${tagName}>`.length);
+    }
+    
+    console.log(`✅ ${foundIndices.length}개의 고아 태그 제거 완료`);
+    return processedHtml;
+  }
+  
+  // 균형이 맞는 경우 원래 HTML 반환
+  return html;
+}

@@ -1,0 +1,571 @@
+import {
+  BlockObjectResponse,
+  PartialBlockObjectResponse,
+  RichTextItemResponse
+} from '@notionhq/client/build/src/api-endpoints';
+import { notion } from './client';
+import { countBlockTypes, findFirstImage, escapeHTML, isEmoji } from './utils';
+
+// NotionToMarkdown 인스턴스 (필요한 경우 사용)
+// import { NotionToMarkdown } from 'notion-to-md';
+// const n2m = new NotionToMarkdown({ notionClient: notion });
+
+
+/**
+ * 특정 블록의 하위 블록들을 가져오는 함수
+ */
+export async function getBlocks(blockId: string): Promise<(BlockObjectResponse | PartialBlockObjectResponse)[]> {
+  try {
+    console.log(`🧱 블록 자식 조회 시작: ${blockId}`);
+    const response = await notion.blocks.children.list({
+      block_id: blockId,
+      page_size: 100, // 최대 100개, 페이지네이션 필요 시 구현
+    });
+    console.log(`🧱 블록 ${blockId}의 자식 ${response.results.length}개 조회 완료`);
+    return response.results;
+  } catch (error) {
+    console.error(`🔴 블록 ${blockId} 자식 조회 오류:`, error);
+    return [];
+  }
+}
+
+/**
+ * 페이지의 모든 블록을 재귀적으로 가져오는 함수
+ * (주의: 페이지가 매우 크면 API 호출 제한에 걸릴 수 있음)
+ */
+export async function getPageBlocks(pageId: string): Promise<BlockObjectResponse[]> {
+    console.log(`📄 페이지 ${pageId}의 모든 블록 가져오기 시작`);
+    const allBlocks: BlockObjectResponse[] = [];
+    let hasMore = true;
+    let startCursor: string | undefined = undefined;
+
+    // 최상위 블록 가져오기 (페이지는 블록의 일종)
+    try {
+        while(hasMore) {
+            const response = await notion.blocks.children.list({
+                block_id: pageId,
+                page_size: 100, // 페이지당 블록 수 (최대 100)
+                start_cursor: startCursor,
+            });
+
+            const fetchedBlocks = response.results.filter(
+                (block): block is BlockObjectResponse => 'type' in block
+            );
+            console.log(`📄 페이지 ${pageId}에서 블록 ${fetchedBlocks.length}개 가져옴 (커서: ${startCursor ?? '없음'})`);
+
+            allBlocks.push(...fetchedBlocks);
+
+            hasMore = response.has_more;
+            startCursor = response.next_cursor ?? undefined;
+
+            if (startCursor) {
+                 console.log(`📄 다음 페이지 블록 가져오기 시도 (커서: ${startCursor})`);
+            }
+        }
+
+        console.log(`📄 페이지 ${pageId}의 최상위 블록 총 ${allBlocks.length}개 확보`);
+
+        // 각 블록에 대해 하위 블록 재귀적으로 가져오기
+        console.log(`🌳 하위 블록 재귀 탐색 시작 (최대 깊이: ${MAX_DEPTH})`);
+        const populatedBlocks = await populateChildBlocks(allBlocks);
+        console.log(`🌳 하위 블록 탐색 완료. 총 처리된 블록 수: ${countTotalBlocks(populatedBlocks)}`);
+
+        return populatedBlocks;
+
+    } catch (error) {
+        console.error(`🔴 페이지 ${pageId} 블록 가져오기 오류:`, error);
+        return []; // 오류 시 빈 배열 반환
+    }
+}
+
+const MAX_DEPTH = 5; // 재귀 호출 최대 깊이 제한
+
+async function populateChildBlocks(blocks: BlockObjectResponse[], depth = 0): Promise<BlockObjectResponse[]> {
+    if (depth > MAX_DEPTH) {
+        console.warn(`⚠️ 최대 재귀 깊이 ${MAX_DEPTH} 도달. 더 이상 하위 블록을 가져오지 않습니다.`);
+        return blocks;
+    }
+
+    const populatedBlocks: BlockObjectResponse[] = [];
+
+    for (const block of blocks) {
+        if (block.has_children) {
+            console.log(`🌳 [깊이 ${depth}] 블록 ${block.id.substring(0,8)}... (${block.type})의 하위 블록 가져오기`);
+            try {
+                const childBlocks = await getPageBlocksRecursive(block.id, depth + 1);
+                // Add children to the block object itself for easier processing later
+                (block as any).children = childBlocks;
+                 console.log(`🌳 [깊이 ${depth}] 블록 ${block.id.substring(0,8)}... (${block.type})에 하위 블록 ${childBlocks.length}개 추가됨`);
+            } catch(error) {
+                console.error(`🔴 [깊이 ${depth}] 블록 ${block.id} 하위 블록 가져오기 실패:`, error);
+                 (block as any).children = []; // 실패 시 빈 배열 할당
+            }
+        }
+        populatedBlocks.push(block);
+    }
+    return populatedBlocks;
+}
+
+
+// getPageBlocks의 내부 재귀 헬퍼 함수
+async function getPageBlocksRecursive(blockId: string, depth: number): Promise<BlockObjectResponse[]> {
+    if (depth > MAX_DEPTH) {
+         console.warn(`⚠️ 최대 재귀 깊이 ${MAX_DEPTH} 도달 (Block ID: ${blockId}).`);
+         return [];
+    }
+
+    let allChildBlocks: BlockObjectResponse[] = [];
+    let hasMore = true;
+    let startCursor: string | undefined = undefined;
+
+    while (hasMore) {
+        const response = await notion.blocks.children.list({
+            block_id: blockId,
+            page_size: 100,
+            start_cursor: startCursor,
+        });
+
+        const fetchedBlocks = response.results.filter(
+            (block): block is BlockObjectResponse => 'type' in block
+        );
+         console.log(`🌳 [깊이 ${depth}] 블록 ${blockId.substring(0,8)}... 에서 하위 블록 ${fetchedBlocks.length}개 가져옴`);
+
+        // 가져온 블록들에 대해 다시 재귀 호출
+        const populatedChildren = await populateChildBlocks(fetchedBlocks, depth); // Pass depth here
+        allChildBlocks.push(...populatedChildren);
+
+
+        hasMore = response.has_more;
+        startCursor = response.next_cursor ?? undefined;
+    }
+
+    return allChildBlocks;
+}
+
+
+// 재귀적으로 블록 수를 세는 유틸리티 함수
+function countTotalBlocks(blocks: any[]): number {
+    if (!blocks || !Array.isArray(blocks)) return 0;
+    let count = blocks.length;
+    blocks.forEach(block => {
+        if (block.children && Array.isArray(block.children)) {
+            count += countTotalBlocks(block.children);
+        }
+    });
+    return count;
+}
+
+
+/**
+ * 페이지 컨텐츠 및 썸네일 URL 가져오기
+ */
+export async function getPageContentAndThumbnail(pageId: string): Promise<{ content: string, thumbnail: string, image: string }> {
+  console.log(`🔎 페이지 ${pageId}의 컨텐츠 및 썸네일 가져오기 시작`);
+  const startTime = Date.now();
+
+  try {
+    const blocks = await getPageBlocks(pageId); // 이제 재귀적으로 모든 블록을 가져옴
+
+    if (!blocks || blocks.length === 0) {
+      console.warn(`⚠️ 페이지 ${pageId}에서 블록을 찾을 수 없습니다.`);
+      return { content: '<p>컨텐츠를 불러올 수 없습니다.</p>', thumbnail: '', image: '' };
+    }
+
+    console.log(`📊 페이지 ${pageId}에서 총 ${countTotalBlocks(blocks)}개 블록(하위 포함) 가져옴`);
+
+    // 블록 타입 통계 (utils 사용)
+    const blockTypeStats: Record<string, number> = {};
+    countBlockTypes(blocks, blockTypeStats);
+    console.log(`📊 블록 타입 통계:`, blockTypeStats);
+
+
+    // 첫 번째 이미지 찾기 (썸네일용) (utils 사용)
+    let image = findFirstImage(blocks);
+    let thumbnail = image; // 기본값
+
+    // 커버 이미지가 있으면 우선 사용
+    try {
+      const page = await notion.pages.retrieve({ page_id: pageId });
+      if (page && 'cover' in page && page.cover) {
+        if ('external' in page.cover && page.cover.external?.url) {
+          thumbnail = page.cover.external.url;
+        } else if ('file' in page.cover && page.cover.file?.url) {
+          thumbnail = page.cover.file.url;
+        }
+         console.log(`🖼️ 페이지 커버 이미지를 썸네일로 사용: ${thumbnail.substring(0, 50)}...`);
+      } else {
+         console.log(`🖼️ 페이지 커버 이미지가 없거나 유효하지 않음. 본문 첫 이미지를 썸네일로 사용.`);
+      }
+    } catch (error) {
+      console.error(`🔴 페이지 ${pageId} 커버 이미지 가져오기 오류:`, error);
+    }
+
+     console.log(`🖼️ 최종 썸네일 URL: ${thumbnail ? thumbnail.substring(0, 50) + '...' : '없음'}`);
+     console.log(`🖼️ 본문 첫 이미지 URL: ${image ? image.substring(0, 50) + '...' : '없음'}`);
+
+
+    // 블록을 HTML로 변환
+    const conversionStartTime = Date.now();
+    console.log(`🔄 processBlocks 함수 호출 시작: ${blocks.length}개 최상위 블록`);
+    const content = await processBlocks(blocks); // HTML 문자열 직접 반환
+    const conversionEndTime = Date.now();
+    const conversionTime = (conversionEndTime - conversionStartTime) / 1000;
+
+    const endTime = Date.now();
+    const totalTime = (endTime - startTime) / 1000;
+
+    console.log(`⏱️ 컨텐츠 변환 시간: ${conversionTime.toFixed(2)}초`);
+    console.log(`⏱️ 총 소요 시간: ${totalTime.toFixed(2)}초`);
+    console.log(`📊 생성된 HTML 길이: ${content.length} 글자`);
+
+    if (content.trim() === '') {
+        console.warn(`⚠️ 페이지 ${pageId} 변환 결과 HTML이 비어있습니다.`);
+        return { content: '<p>컨텐츠 변환 결과가 비어있습니다.</p>', thumbnail, image };
+    }
+
+    return { content, thumbnail, image };
+
+  } catch (error) {
+    console.error(`🔴 페이지 ${pageId} 컨텐츠 가져오기 및 변환 오류:`, error);
+    return {
+      content: `<p class="notion-error">오류가 발생했습니다: ${error instanceof Error ? error.message : '알 수 없는 오류'}</p>`,
+      thumbnail: '',
+      image: ''
+    };
+  }
+}
+
+
+/**
+ * Rich Text 배열을 HTML 문자열로 렌더링
+ */
+export function renderRichText(richText: any[] | undefined): string {
+  if (!richText || richText.length === 0) {
+    return '';
+  }
+
+  return richText
+    .map((text) => {
+      if (!text || typeof text !== 'object') {
+        return '';
+      }
+
+      // text.plain_text가 존재하는지 확인
+      const plainText = text.plain_text || text.text?.content || '';
+      
+      if (!plainText) {
+        return '';
+      }
+
+      let formattedText = plainText
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+      // 스타일 적용
+      if (text.annotations) {
+        if (text.annotations.bold) {
+          formattedText = `<strong>${formattedText}</strong>`;
+        }
+        if (text.annotations.italic) {
+          formattedText = `<em>${formattedText}</em>`;
+        }
+        if (text.annotations.strikethrough) {
+          formattedText = `<del>${formattedText}</del>`;
+        }
+        if (text.annotations.underline) {
+          formattedText = `<u>${formattedText}</u>`;
+        }
+        if (text.annotations.code) {
+          formattedText = `<code>${formattedText}</code>`;
+        }
+      }
+
+      // 링크 처리
+      if (text.href) {
+        formattedText = `<a href="${text.href}" target="_blank" rel="noopener noreferrer">${formattedText}</a>`;
+      }
+
+      return formattedText;
+    })
+    .join('');
+}
+
+
+/**
+ * 블록의 자식들을 렌더링하는 함수 (주로 리스트 아이템 내부 처리용)
+ */
+async function renderChildren(block: BlockObjectResponse): Promise<string> {
+    // getPageBlocks에서 이미 children을 채웠으므로 직접 사용
+    const children = (block as any).children as BlockObjectResponse[] | undefined;
+
+    if (!children || children.length === 0) {
+      // console.debug(`렌더링할 자식 없음: Block ID ${block.id}`);
+      return '';
+    }
+
+    console.log(`👨‍👩‍👧‍👦 블록 ${block.id} (${block.type})의 자식 ${children.length}개 렌더링 시작...`);
+    // processBlocks를 재귀적으로 호출하여 자식 블록들의 HTML을 생성
+    const childrenHtml = await processBlocks(children);
+    console.log(`👨‍👩‍👧‍👦 블록 ${block.id} (${block.type})의 자식 렌더링 완료 (HTML 길이: ${childrenHtml.length})`);
+    return childrenHtml;
+}
+
+
+/**
+ * HTML 문자열 정리 함수
+ */
+function cleanHtml(html: string): string {
+  if (!html) return '';
+  let cleaned = html;
+
+  // 불필요한 중첩/닫는 태그 제거 (더 안전한 패턴 사용)
+  // 예: <figure>...</figure></div> -> <figure>...</figure>
+  cleaned = cleaned.replace(/(<figure[^>]*>[\s\S]*?<\/figure>)\s*<\/div>/gi, '$1');
+  
+  // HTML 엔티티 복원 - &lt;figure&gt; 같은 형태를 <figure>로 변환
+  cleaned = cleaned.replace(/&lt;(\/?figure)&gt;/gi, '<$1>');
+  cleaned = cleaned.replace(/&lt;(\/?img)&gt;/gi, '<$1>');
+  cleaned = cleaned.replace(/&lt;(\/?figcaption)&gt;/gi, '<$1>');
+  
+  // 중복된 닫는 태그 제거
+  cleaned = cleaned.replace(/<\/figure>\s*<\/figure>/gi, '</figure>');
+  
+  // 연속 공백 및 줄바꿈 정리
+  cleaned = cleaned.replace(/\s{2,}/g, ' '); // 연속 공백 -> 단일 공백
+  cleaned = cleaned.replace(/\n\s*\n/g, '\n'); // 연속 줄바꿈 -> 단일 줄바꿈
+
+  return cleaned.trim();
+}
+
+/**
+ * 블록 배열을 HTML 문자열로 변환하는 메인 함수
+ */
+async function processBlocks(blocks: BlockObjectResponse[]): Promise<string> {
+  let htmlChunks: string[] = [];
+  if (!blocks || blocks.length === 0) return '';
+
+  console.log(`🧱 processBlocks: ${blocks.length}개 블록 처리 시작`);
+
+  let currentListType: 'ul' | 'ol' | null = null;
+
+  for (let i = 0; i < blocks.length; i++) {
+    const block = blocks[i];
+    if (!block || !block.type) {
+      console.warn(`⚠️ 유효하지 않은 블록 발견 (index ${i}), 건너뜁니다.`);
+      continue;
+    }
+
+    const blockType = block.type;
+    const isListItem = blockType === 'bulleted_list_item' || blockType === 'numbered_list_item';
+    const listType = blockType === 'bulleted_list_item' ? 'ul' : 'ol';
+
+    // 리스트 시작/종료 처리
+    if (isListItem && currentListType !== listType) {
+        // 이전 리스트 닫기
+        if (currentListType) htmlChunks.push(`</${currentListType}>`);
+        // 새 리스트 시작 - 들여쓰기 없이 플랫하게 생성
+        const listClass = listType === 'ul' ? 'list-disc' : 'list-decimal';
+        htmlChunks.push(`<${listType} class="notion-list ${listClass} ml-6 my-2 flat-list">`);
+        currentListType = listType;
+    } else if (!isListItem && currentListType) {
+        // 리스트 종료
+        htmlChunks.push(`</${currentListType}>`);
+        currentListType = null;
+    }
+
+    // 개별 블록 렌더링
+    try {
+        const { renderedHtml } = await renderBlock(block);
+        htmlChunks.push(renderedHtml);
+    } catch (renderError) {
+       console.error(`🔴 블록 ${block.id} (${block.type}) 렌더링 오류:`, renderError);
+       htmlChunks.push(`<div class="notion-error p-4 my-4 bg-red-50 text-red-500 rounded">블록 ${block.type} 렌더링 오류</div>`);
+    }
+  }
+
+  // 마지막 리스트 닫기
+  if (currentListType) {
+    htmlChunks.push(`</${currentListType}>`);
+  }
+
+  const rawHtml = htmlChunks.join('');
+  console.log(`🧱 processBlocks 완료: 총 ${blocks.length}개 블록 처리됨, Raw HTML 길이: ${rawHtml.length}`);
+
+  // HTML 정리
+  const cleanedHtml = cleanHtml(rawHtml);
+  // console.log(`✨ HTML 정리 완료: 정리 후 HTML 길이: ${cleanedHtml.length}`);
+
+  return cleanedHtml;
+}
+
+
+/**
+ * 단일 노션 블록을 HTML로 렌더링하는 함수
+ * (하위 블록 렌더링 포함)
+ */
+async function renderBlock(block: BlockObjectResponse): Promise<{ renderedHtml: string, imageUrl: string | null }> {
+    let renderedHtml = '';
+    let imageUrl: string | null = null;
+    const blockType = block.type;
+
+    // 자식 블록 가져오기 (이미 populate 되어 있음)
+    const children = (block as any).children as BlockObjectResponse[] | undefined;
+    let childrenHtml = '';
+    if (children && children.length > 0) {
+         // console.debug(`렌더링 블록 ${block.id} (${block.type})의 자식 ${children.length}개`);
+         childrenHtml = await processBlocks(children); // 자식들도 동일한 프로세스로 처리
+    }
+
+    switch (blockType) {
+        case 'paragraph':
+            renderedHtml = `<p class="notion-paragraph my-2">${renderRichText((block as any).paragraph.rich_text)}</p>`;
+            break;
+        case 'heading_1':
+            renderedHtml = `<h1 class="notion-h1 text-3xl font-bold my-4">${renderRichText((block as any).heading_1.rich_text)}</h1>`;
+            break;
+        case 'heading_2':
+            renderedHtml = `<h2 class="notion-h2 text-2xl font-bold my-3">${renderRichText((block as any).heading_2.rich_text)}</h2>`;
+            break;
+        case 'heading_3':
+            renderedHtml = `<h3 class="notion-h3 text-xl font-bold my-2">${renderRichText((block as any).heading_3.rich_text)}</h3>`;
+            break;
+        case 'bulleted_list_item':
+        case 'numbered_list_item':
+            const listItemContent = renderRichText((block as any)[blockType].rich_text);
+            // 자식 HTML을 별도의 div로 감싸지 않고 직접 포함시켜 들여쓰기 방지
+            renderedHtml = `<li class="notion-list-item">${listItemContent}${childrenHtml ? childrenHtml : ''}</li>`;
+            break;
+        case 'quote':
+            renderedHtml = `<blockquote class="notion-quote border-l-4 border-gray-300 pl-4 italic my-4">${renderRichText((block as any).quote.rich_text)}${childrenHtml ? childrenHtml : ''}</blockquote>`;
+            break;
+        case 'code':
+            const codeContent = renderRichText((block as any).code.rich_text);
+            const language = (block as any).code.language || 'plaintext';
+            // Prism.js 등을 위한 클래스 추가
+            renderedHtml = `<pre class="notion-code my-4 p-4 bg-gray-100 rounded overflow-x-auto"><code class="language-${language}">${codeContent}</code></pre>`;
+            break;
+        case 'image':
+            const img = (block as any).image;
+            let src = '';
+            
+            // 이미지 소스 처리 개선
+            if (img?.file?.url) {
+                src = img.file.url;
+            } else if (img?.external?.url) {
+                src = img.external.url;
+            }
+            
+            imageUrl = src;
+            const caption = renderRichText(img?.caption) || '';
+            
+            if (src) {
+                // 이미지 HTML 생성 - 여러 줄의 템플릿 리터럴 대신 한 줄로 표현하여 HTML 파싱 문제 방지
+                renderedHtml = `<figure class="notion-image my-8 text-center"><img src="${escapeHTML(src)}" alt="${caption || 'Notion image'}" class="max-w-full h-auto inline-block" loading="lazy" onerror="this.onerror=null; console.error('이미지 로드 실패:', this.src);">${caption ? `<figcaption class="text-sm text-gray-500 mt-2">${caption}</figcaption>` : ''}</figure>`;
+            } else {
+                console.error(`이미지 소스를 찾을 수 없음 (Block ID: ${block.id}):`, img);
+                renderedHtml = `<div class="notion-error p-4 my-4 bg-red-50 text-red-500 rounded">이미지 로드 오류 (소스 없음)</div>`;
+            }
+            break;
+        case 'video':
+             const video = (block as any).video;
+             const videoSrc = video?.file?.url ?? video?.external?.url;
+             if (videoSrc) {
+                 // 비디오 HTML도 한 줄로 표현
+                 renderedHtml = `<div class="notion-video my-8"><video controls class="w-full" src="${escapeHTML(videoSrc)}" loading="lazy"></video>${renderRichText(video?.caption) ? `<p class="text-sm text-gray-500 mt-2">${renderRichText(video.caption)}</p>` : ''}</div>`;
+             } else {
+                 renderedHtml = `<div class="notion-error p-4 my-4 bg-red-50 text-red-500 rounded">비디오 로드 오류</div>`;
+             }
+             break;
+        case 'divider':
+            renderedHtml = `<hr class="notion-divider my-8">`;
+            break;
+        case 'callout':
+             const callout = (block as any).callout;
+             const icon = callout.icon?.type === 'emoji' ? callout.icon.emoji : '💡';
+             // 콜아웃도 한 줄로 정리
+             renderedHtml = `<div class="notion-callout bg-gray-100 p-4 my-4 rounded flex items-start"><span class="mr-2">${icon}</span><div>${renderRichText(callout.rich_text)}${childrenHtml ? `<div class="mt-2">${childrenHtml}</div>` : ''}</div></div>`;
+             break;
+        case 'bookmark':
+             const bookmark = (block as any).bookmark;
+             renderedHtml = `
+                 <div class="notion-bookmark my-4 border p-4 rounded block hover:bg-gray-50" >
+                     <a href="${escapeHTML(bookmark.url)}" target="_blank" rel="noopener noreferrer">
+                         <p class="font-semibold truncate">${renderRichText(bookmark.caption) || escapeHTML(bookmark.url)}</p>
+                         <p class="text-sm text-gray-500 truncate">${escapeHTML(bookmark.url)}</p>
+                     </a>
+                 </div>`;
+             break;
+        case 'table':
+            // 테이블 렌더링: childrenHtml이 table rows를 포함해야 함
+            renderedHtml = `<div class="notion-table-wrapper overflow-x-auto my-4"><table class="notion-table w-full border-collapse border border-gray-300">${childrenHtml}</table></div>`;
+            break;
+        case 'table_row':
+             const cells = (block as any).table_row.cells;
+             renderedHtml = `<tr class="notion-table-row">${cells.map((cell: RichTextItemResponse[]) => `<td class="border border-gray-300 p-2">${renderRichText(cell)}</td>`).join('')}</tr>\n`;
+            break;
+         case 'toggle':
+             renderedHtml = `
+                 <details class="notion-toggle my-2">
+                     <summary class="cursor-pointer font-medium">${renderRichText((block as any).toggle.rich_text)}</summary>
+                     <div class="pl-4 mt-1">
+                         ${childrenHtml || '<p class="text-gray-500">내용 없음</p>'}
+                     </div>
+                 </details>`;
+             break;
+        case 'child_page':
+             renderedHtml = `<div class="notion-child-page my-2 p-2 border rounded bg-gray-50">📄 ${escapeHTML((block as any).child_page.title)}</div>`;
+             break;
+        case 'child_database':
+             renderedHtml = `<div class="notion-child-database my-4 p-2 border rounded bg-gray-50">💾 ${escapeHTML((block as any).child_database.title)}</div>`;
+             break;
+        case 'embed':
+             const embed = (block as any).embed;
+             renderedHtml = `
+                 <figure class="notion-embed my-8">
+                    <iframe src="${escapeHTML(embed.url)}" class="w-full h-96 border-0" allowfullscreen loading="lazy"></iframe>
+                    ${renderRichText(embed.caption) ? `<figcaption class="text-sm text-gray-500 mt-2">${renderRichText(embed.caption)}</figcaption>`: ''}
+                 </figure>`;
+             break;
+        case 'equation':
+             // KaTeX/MathJax 렌더링 필요
+             renderedHtml = `<div class="notion-equation my-2 text-center" data-equation="${escapeHTML((block as any).equation.expression)}">[Equation: ${escapeHTML((block as any).equation.expression)}]</div>`;
+             break;
+        case 'file':
+             const file = (block as any).file;
+             const fileUrl = file.file?.url ?? file.external?.url;
+             const fileName = renderRichText(file.caption) || file.name || 'Download File';
+             renderedHtml = `
+                 <div class="notion-file my-4 p-2 border rounded flex items-center">
+                     <span class="mr-2">📎</span>
+                     <a href="${escapeHTML(fileUrl)}" target="_blank" rel="noopener noreferrer" class="hover:underline">${escapeHTML(fileName)}</a>
+                 </div>`;
+             break;
+         case 'synced_block':
+              // 원본 블록을 가져오거나, childrenHtml을 직접 사용 (현재는 childrenHtml 사용)
+              console.warn("Synced block encountered - rendering contained blocks directly.");
+              renderedHtml = childrenHtml;
+              break;
+        // 미지원 블록 타입 처리
+        case 'unsupported':
+             console.warn(`Unsupported block type encountered: ${block.id}`);
+             renderedHtml = `<p class="notion-error notion-unsupported">[지원되지 않는 블록 타입]</p>`;
+             break;
+        default:
+            console.warn(`Unhandled block type: ${blockType} (ID: ${block.id})`);
+            // 기본적으로 plain_text가 있으면 표시 시도
+            const richText = (block as any)[blockType]?.rich_text;
+            if (richText) {
+                 renderedHtml = `<div class="notion-unknown-${blockType}">${renderRichText(richText)}</div>`;
+            } else {
+                 renderedHtml = `<div class="notion-error p-4 my-4 bg-red-50 text-red-500 rounded">알 수 없는 블록: ${blockType}</div>`;
+            }
+    }
+
+    return { renderedHtml, imageUrl };
+}
+
+/**
+ * 이미지 블록 렌더링 (현재 renderBlock 내부 로직으로 통합됨)
+ */
+// function renderImage(block: any): string { ... } 
