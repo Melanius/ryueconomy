@@ -38,12 +38,12 @@ const isValidImageUrl = (url?: string): boolean => {
 
 // 카테고리별 기본 이미지 URL
 const DEFAULT_IMAGES: Record<string, string> = {
-  'crypto-morning': '/images/categories/crypto-default.jpg',
-  'invest-insight': '/images/categories/invest-default.jpg',
-  'real-portfolio': '/images/categories/portfolio-default.jpg',
-  'code-lab': '/images/categories/code-default.jpg',
-  'daily-log': '/images/categories/daily-default.jpg',
-  'all': '/images/categories/default.jpg',
+  'crypto-morning': '/images/categories/crypto-default.svg',
+  'invest-insight': '/images/categories/invest-default.svg',
+  'real-portfolio': '/images/categories/portfolio-default.svg',
+  'code-lab': '/images/categories/code-default.svg',
+  'daily-log': '/images/categories/daily-default.svg',
+  'all': '/images/categories/default.svg',
 };
 
 type PostCardProps = {

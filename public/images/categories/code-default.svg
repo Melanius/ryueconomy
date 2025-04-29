@@ -1,0 +1,6 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#e8f5e9"/>
+  <rect x="280" y="230" width="240" height="140" rx="10" fill="#0F9D58" opacity="0.2"/>
+  <text x="50%" y="50%" font-family="Arial" font-size="24" fill="#0F9D58" text-anchor="middle">코드 랩</text>
+  <text x="50%" y="56%" font-family="Arial" font-size="18" fill="#34a853" text-anchor="middle">개발 관련 이미지</text>
+</svg> 

@@ -16,6 +16,20 @@
   - 클라이언트 사이드 에러: logs/client.log
   - 노션 블록 처리: logs/notion.log
 
+## 오늘 완료된 작업 (2025-05-31)
+- ✅ 관련 게시물(Related Posts) 섹션의 썸네일 이미지 문제 해결 (2025-05-31 10:15 KST)
+  - RelatedPosts 컴포넌트에 카테고리별 기본 이미지 상수 추가
+  - 이미지 로드 실패 또는 유효하지 않은 이미지 URL일 경우 카테고리별 기본 이미지 표시 기능 구현
+  - isValidImageUrl 유틸리티 함수 추가로 이미지 URL 유효성 검사 강화
+  - 이미지 오류 상태 관리를 위한 useState 훅 도입
+  - 이미지 로드 에러 핸들링 개선으로 사용자 경험 향상
+  - 카테고리별 기본 이미지 파일 경로 설정 (crypto-default.jpg, invest-default.jpg 등)
+- ✅ 카테고리별 기본 이미지 파일 생성 (2025-05-31 11:30 KST)
+  - public/images/categories 디렉토리에 각 카테고리별 기본 SVG 이미지 파일 추가
+  - 카테고리별 시각적 아이덴티티를 반영한 기본 이미지 디자인
+  - PostCard 및 RelatedPosts 컴포넌트의 DEFAULT_IMAGES 상수 경로 업데이트
+  - 관리자 가이드 문서(docs/admin-guide.md) 추가 및 이미지 관리 방법 안내
+
 ## 오늘 완료된 작업 (2025-05-30)
 - ✅ notion.ts 파일의 로깅 시스템 개선 (2025-05-30 15:20 KST)
   - console.log, console.error, console.warn을 winston 로거 기반 notionLog로 대체
@@ -120,6 +134,7 @@
 - 조회수 기능이 정상적으로 작동하여 게시물 접근 시 노션 데이터베이스의 Views 필드가 증가하는 것 확인됨
 - 개발 환경에서도 조회수 시스템 테스트 완료 (중복 카운팅 방지 로직 포함)
 - 대규모 접속자 환경을 고려한 조회수 시스템 최적화 필요 (캐싱 및 API 호출 최소화)
+- RelatedPosts 컴포넌트에 카테고리별 기본 이미지 기능 추가 완료 (2025-05-31)
 
 ## 작업 히스토리
 - 자세한 작업 히스토리는 docs/project_finish.md 파일을 참조하세요.
