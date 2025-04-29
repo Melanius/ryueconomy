@@ -6,7 +6,8 @@ import { format } from 'date-fns';
 import { ko } from 'date-fns/locale';
 import { FaCalendarAlt, FaEye, FaChartLine } from 'react-icons/fa';
 import { getCategoryColor, getCategoryLabel, getCategoryGradient, getCategoryIcon } from '@/config/categories';
-import { Post, CategoryId } from '@/types/post';
+import { Post } from '@/types/post';
+import { CategoryId } from '@/types/notion';
 import { useState } from 'react';
 
 // Hex color to rgba converter
@@ -35,6 +36,16 @@ const isValidImageUrl = (url?: string): boolean => {
   }
 };
 
+// 카테고리별 기본 이미지 URL
+const DEFAULT_IMAGES: Record<string, string> = {
+  'crypto-morning': '/images/categories/crypto-default.jpg',
+  'invest-insight': '/images/categories/invest-default.jpg',
+  'real-portfolio': '/images/categories/portfolio-default.jpg',
+  'code-lab': '/images/categories/code-default.jpg',
+  'daily-log': '/images/categories/daily-default.jpg',
+  'all': '/images/categories/default.jpg',
+};
+
 type PostCardProps = {
   post: Post;
   hideCategory?: boolean;
@@ -52,7 +63,7 @@ export default function PostCard({ post, hideCategory = false, isMobileCompact =
     category = 'all',
     excerpt,
     image,
-    isPopular
+    featured = false, // isPopular 대신 featured 사용
   } = post;
 
   const categoryColor = getCategoryColor(category);
@@ -62,6 +73,9 @@ export default function PostCard({ post, hideCategory = false, isMobileCompact =
   
   // 이미지 URL이 유효한지 확인
   const hasValidImage = isValidImageUrl(image) && !imageError;
+  
+  // 기본 이미지 URL 가져오기 (이미지가 없거나 오류가 있는 경우)
+  const imageUrl = hasValidImage ? (image as string) : (DEFAULT_IMAGES[category] || DEFAULT_IMAGES['all']);
 
   return (
     <Link
@@ -75,19 +89,17 @@ export default function PostCard({ post, hideCategory = false, isMobileCompact =
       {isMobileCompact && (
         <div className="flex flex-row sm:hidden p-4 gap-3">
           {/* 썸네일 이미지 - 모바일에서만 보임 */}
-          {hasValidImage ? (
-            <div className="relative h-24 w-24 rounded-lg overflow-hidden shadow-sm flex-shrink-0">
-              <Image
-                src={image!}
-                alt={title}
-                fill
-                sizes="96px"
-                className="object-cover"
-                onError={() => setImageError(true)}
-                unoptimized={image?.includes('amazonaws.com')} 
-              />
-            </div>
-          ) : null}
+          <div className="relative h-24 w-24 rounded-lg overflow-hidden shadow-sm flex-shrink-0">
+            <Image
+              src={imageUrl}
+              alt={title}
+              fill
+              sizes="96px"
+              className="object-cover"
+              onError={() => setImageError(true)}
+              unoptimized={imageUrl?.includes('amazonaws.com')} 
+            />
+          </div>
           
           {/* 컨텐츠 */}
           <div className="flex-1">
@@ -105,7 +117,7 @@ export default function PostCard({ post, hideCategory = false, isMobileCompact =
                   {categoryLabel}
                 </div>
                 
-                {isPopular && (
+                {featured && (
                   <div className="bg-amber-100 text-amber-600 px-2 py-0.5 rounded-full text-xs font-medium flex items-center">
                     <FaChartLine className="mr-1 h-2.5 w-2.5" />
                     인기
@@ -152,7 +164,7 @@ export default function PostCard({ post, hideCategory = false, isMobileCompact =
                 {categoryLabel}
               </div>
               
-              {isPopular && (
+              {featured && (
                 <div className="bg-amber-100 text-amber-600 px-2 py-0.5 rounded-full text-xs font-medium flex items-center">
                   <FaChartLine className="mr-1 h-2.5 w-2.5" />
                   인기
@@ -174,23 +186,21 @@ export default function PostCard({ post, hideCategory = false, isMobileCompact =
           </div>
         </div>
         
-        {/* 썸네일 이미지 */}
-        {hasValidImage && (
-          <div className="relative aspect-[3/2] mb-4 rounded-lg overflow-hidden shadow-sm group-hover:shadow">
-            <Image
-              src={image!}
-              alt={title}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition duration-500 group-hover:scale-105"
-              onError={() => setImageError(true)}
-              unoptimized={image?.includes('amazonaws.com')} 
-            />
-            
-            {/* Overlay gradient on hover */}
-            <div className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300 bg-gradient-to-b ${categoryGradient}`} />
-          </div>
-        )}
+        {/* 썸네일 이미지 - 항상 표시 */}
+        <div className="relative aspect-[3/2] mb-4 rounded-lg overflow-hidden shadow-sm group-hover:shadow">
+          <Image
+            src={imageUrl}
+            alt={title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition duration-500 group-hover:scale-105"
+            onError={() => setImageError(true)}
+            unoptimized={imageUrl?.includes('amazonaws.com')} 
+          />
+          
+          {/* Overlay gradient on hover */}
+          <div className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300 bg-gradient-to-b ${categoryGradient}`} />
+        </div>
 
         {/* 제목 */}
         <h3 className="font-bold text-lg mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
@@ -198,7 +208,7 @@ export default function PostCard({ post, hideCategory = false, isMobileCompact =
         </h3>
         
         {/* Popular badge - if not already shown at the top */}
-        {isPopular && hideCategory && (
+        {featured && hideCategory && (
           <div className="mt-auto pt-2 flex items-center text-amber-600 text-xs font-medium">
             <FaChartLine className="mr-1" />
             인기 게시물

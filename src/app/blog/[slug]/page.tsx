@@ -3,7 +3,15 @@ import { Card } from "@/components/ui/card";
 import { notFound } from "next/navigation";
 import { getPostBySlug, getAllPosts, BlogPost } from "@/utils/notion";
 import { getPageContentAndThumbnail } from '@/lib/notion/blocks';
+import dynamic from 'next/dynamic';
 import type { Metadata, ResolvingMetadata } from "next";
+import Image from 'next/image';
+import RelatedPosts from '@/components/post/RelatedPosts';
+
+// ViewCounterWrapper 클라이언트 컴포넌트 동적 임포트
+const ViewCounterWrapper = dynamic(
+  () => import('@/components/post/ViewCounterWrapper')
+);
 
 
 // 각 카테고리별 색상 정보 (src/config/categories.tsx와 일치)
@@ -122,6 +130,11 @@ export default async function BlogPostPage(props: { params: { slug: string } }) 
     
     return (
       <div className="pb-16">
+        {/* ViewCounterWrapper 클라이언트 컴포넌트 추가 - 방문 시 조회수 증가 (수정됨) */}
+        {process.env.NODE_ENV === 'production' ? (
+          <ViewCounterWrapper slug={slug} />
+        ) : null}
+        
         {/* 포스트 헤더 */}
         <div 
           className="py-12 shadow-sm" 
@@ -149,7 +162,10 @@ export default async function BlogPostPage(props: { params: { slug: string } }) 
                       {getCategoryName(post.category)}
                     </span>
                   </Link>
-
+                  {/* 조회수 표시 (선택적) */}
+                  <span className="text-sm text-muted-foreground">
+                    조회수: {post.views || 0}
+                  </span>
                 </div>
                 <h1 
                   className="text-3xl md:text-4xl font-display font-bold tracking-tight mb-5"
@@ -186,54 +202,13 @@ export default async function BlogPostPage(props: { params: { slug: string } }) 
           </div>
         </article>
         
-        {/* 관련 게시물 */}
+        {/* 관련 게시물 - 클라이언트 컴포넌트 사용 */}
         {relatedPosts.length > 0 && (
-          <section className="container max-w-4xl mx-auto py-8 border-t">
-            <h2 className="text-2xl font-display font-bold tracking-tight mb-6 gradient-text">관련 게시물</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {relatedPosts.map((relatedPost) => (
-                <Link href={`/blog/${relatedPost.slug}`} key={relatedPost.id}>
-                  <Card className="h-full overflow-hidden transition-all border card-hover-effect">
-                    <div 
-                      className="h-32" 
-                      style={{
-                        background: `linear-gradient(135deg, ${getCategoryStyle(relatedPost.category).dark}, ${getCategoryStyle(relatedPost.category).light})`
-                      }}
-                    ></div>
-                    <div className="bg-white">
-                      <div 
-                        className="p-4 border-b"
-                        style={{
-                          background: `linear-gradient(to right, ${getCategoryStyle(relatedPost.category).light}, white)`
-                        }}
-                      >
-                        <div className="flex items-center text-sm text-muted-foreground gap-4 mb-2">
-                          <span className="font-medium font-display">
-                            {new Date(relatedPost.date).toLocaleDateString('ko-KR', {
-                              year: 'numeric',
-                              month: '2-digit',
-                              day: '2-digit',
-                            })}
-                          </span>
-                        </div>
-                        <h3 
-                          className="font-display font-bold text-lg line-clamp-2"
-                          style={{ color: getCategoryStyle(relatedPost.category).main }}
-                        >
-                          {relatedPost.title}
-                        </h3>
-                      </div>
-                      <div className="p-4">
-                        {relatedPost.excerpt !== "" && (
-                          <p className="text-sm line-clamp-2 text-gray-700">{relatedPost.excerpt}</p>
-                        )}
-                      </div>
-                    </div>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          </section>
+          <RelatedPosts
+            relatedPosts={relatedPosts}
+            getCategoryStyle={getCategoryStyle}
+            getCategoryName={getCategoryName}
+          />
         )}
       </div>
     );

@@ -6,5 +6,4 @@ export const notion = new Client({
 });
 
 // Notion 데이터베이스 ID 설정
-export const databaseId = process.env.NOTION_DATABASE_ID;
-export const metricsDbId = process.env.NOTION_METRICS_DATABASE_ID; 
+export const databaseId = process.env.NOTION_DATABASE_ID; 

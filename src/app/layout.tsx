@@ -19,10 +19,11 @@ export const metadata: Metadata = {
   description: "암호화폐, 투자 정보, 포트폴리오 공유 및 개발 기록을 담은 블로그",
 };
 
-// 서버 컴포넌트에서 Notion 설정 검증 실행
-validateNotionConfig().catch((err: Error) => {
-  console.error('🔴 Notion 설정 검증 중 오류 발생:', err);
-});
+// 서버 컴포넌트에서 Notion 설정 검증은 생략하고 나중에 진행
+// validateNotionConfig 호출 시 오류가 발생할 수 있어 잠시 주석 처리
+// validateNotionConfig().catch((err: Error) => {
+//   console.error('🔴 Notion 설정 검증 중 오류 발생:', err);
+// });
 
 export default function RootLayout({
   children,

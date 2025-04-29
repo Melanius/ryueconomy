@@ -2,7 +2,7 @@
 // This file re-exports the core functionalities from the refactored modules.
 
 // Export client instance and IDs (if needed externally)
-export { notion, databaseId, metricsDbId } from './client';
+export { notion, databaseId } from './client';
 
 // Export utility functions
 export { countBlockTypes, escapeHTML, isEmoji } from './utils';

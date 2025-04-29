@@ -11,13 +11,12 @@ import {
   BlockObjectResponse, 
   PartialBlockObjectResponse
 } from '@notionhq/client/build/src/api-endpoints';
-import { Post as BlogPost } from "@/types/post";
-import { CategoryId } from "@/types/notion";
+import { Post } from '@/types/post';
+import { CategoryId, NotionPage } from '@/types/notion';
+import { notion, databaseId } from './notionClient';
+import { notionLog } from './logger';
 
-// Notion 클라이언트 분리 (src/lib/notion/client.ts)
-import { notion, databaseId, metricsDbId } from './notion/client';
-
-// 블로그 포스트 속성 타입 정의
+// 노션 페이지 속성 타입 정의
 interface NotionPageProperties {
   Title: any;
   Excerpt: any;
@@ -28,11 +27,19 @@ interface NotionPageProperties {
   Featured?: any;
 }
 
+// BlogPost는 Post의 확장으로 정의
+interface BlogPost extends Post {
+  excerpt: string;
+  slug: string;
+  image: string;
+  featured: boolean;
+}
+
 /**
  * 노션 카테고리를 블로그 카테고리 형식으로 변환
  */
 function mapNotionCategory(notionCategory: string): CategoryId {
-  console.log(`Mapping Notion category: ${notionCategory}`);
+  notionLog.info(`Mapping Notion category: ${notionCategory}`);
   
   switch (notionCategory.toLowerCase()) {
     case 'portfolio':
@@ -64,7 +71,7 @@ function mapNotionCategory(notionCategory: string): CategoryId {
       return 'crypto-morning';
       
     default:
-      console.log(`No direct mapping found for category: ${notionCategory}, using default`);
+      notionLog.info(`No direct mapping found for category: ${notionCategory}, using default`);
       return 'invest-insight';
   }
 }
@@ -74,10 +81,10 @@ function mapNotionCategory(notionCategory: string): CategoryId {
  */
 export function pageToPost(page: PageObjectResponse): BlogPost {
   try {
-    console.log(`📘 페이지 변환 시작: ID ${page.id.substring(0, 8)}...`);
+    notionLog.info(`📘 페이지 변환 시작: ID ${page.id.substring(0, 8)}...`);
     
     // 페이지 속성을 콘솔에 출력 (디버깅)
-    console.log(`📘 페이지 속성 목록:`, Object.keys(page.properties).map(key => ({
+    notionLog.info(`📘 페이지 속성 목록:`, Object.keys(page.properties).map(key => ({
       key,
       type: (page.properties as any)[key].type
     })));
@@ -91,11 +98,11 @@ export function pageToPost(page: PageObjectResponse): BlogPost {
       // 제목이 빈 문자열인 경우 기본값 사용
       if (title === '') {
         title = `Untitled-${page.id.substring(0, 6)}`;
-        console.log(`📘 빈 제목 발견: 기본값으로 대체 "${title}"`);
+        notionLog.info(`📘 빈 제목 발견: 기본값으로 대체 "${title}"`);
       }
     } else {
       title = `Untitled-${page.id.substring(0, 6)}`;
-      console.log(`📘 제목 속성 없음: 기본값 사용 "${title}"`);
+      notionLog.info(`📘 제목 속성 없음: 기본값 사용 "${title}"`);
     }
     
     const slugProperty = page.properties.slug || page.properties.Slug;
@@ -118,7 +125,7 @@ export function pageToPost(page: PageObjectResponse): BlogPost {
         slug = `post-${page.id.substring(0, 8)}`;
       }
       
-      console.log(`📘 슬러그 자동 생성: "${title}" → "${slug}"`);
+      notionLog.info(`📘 슬러그 자동 생성: "${title}" → "${slug}"`);
     }
     
     const excerptProperty = page.properties.excerpt || page.properties.Excerpt;
@@ -144,23 +151,23 @@ export function pageToPost(page: PageObjectResponse): BlogPost {
     } else if (page.created_time) {
       // 날짜 속성이 없으면 생성일 사용
       date = new Date(page.created_time).toISOString().split('T')[0];
-      console.log(`📘 날짜 속성 없음, 생성일 사용: ${date}`);
+      notionLog.info(`📘 날짜 속성 없음, 생성일 사용: ${date}`);
     }
     
     // Views 속성 처리 개선 (디버깅)
     const viewsProperty = page.properties.views || page.properties.Views;
-    console.log(`📘 조회수 속성 처리:`, viewsProperty ? JSON.stringify(viewsProperty) : 'undefined');
+    notionLog.info(`📘 조회수 속성 처리:`, viewsProperty ? JSON.stringify(viewsProperty) : 'undefined');
     
     let views = 0;
     if (viewsProperty) {
       if (viewsProperty.type === 'number') {
         views = viewsProperty.number !== null ? viewsProperty.number : 0;
-        console.log(`📘 조회수 추출 성공: ${views}`);
+        notionLog.info(`📘 조회수 추출 성공: ${views}`);
       } else {
-        console.log(`📘 조회수 속성이 number 타입이 아님: ${viewsProperty.type}`);
+        notionLog.info(`📘 조회수 속성이 number 타입이 아님: ${viewsProperty.type}`);
       }
     } else {
-      console.log(`📘 조회수 속성을 찾을 수 없음`);
+      notionLog.info(`📘 조회수 속성을 찾을 수 없음`);
     }
     
     const featuredProperty = page.properties.featured || page.properties.Featured;
@@ -193,7 +200,7 @@ export function pageToPost(page: PageObjectResponse): BlogPost {
       }
     }
     
-    console.log(`📘 포스트 변환 완료: "${title}" (${category}), 조회수: ${views}`);
+    notionLog.info(`📘 포스트 변환 완료: "${title}" (${category}), 조회수: ${views}`);
     
     return {
       id: page.id,
@@ -206,10 +213,12 @@ export function pageToPost(page: PageObjectResponse): BlogPost {
       featured,
       image, // 썸네일 이미지 URL 추가
       content: "", // 컨텐츠는 별도로 가져와야 함
+      author: { name: "Ryue" }, // 기본 작성자 정보 설정
+      tags: [], // 기본 빈 태그 배열 설정
     };
   } catch (error) {
-    console.error("Error converting page to post:", error);
-    console.error("Problem page ID:", page.id);
+    notionLog.error("Error converting page to post:", error);
+    notionLog.error("Problem page ID:", page.id);
     
     // 오류가 발생해도 기본 포스트 객체 반환
     return {
@@ -217,11 +226,14 @@ export function pageToPost(page: PageObjectResponse): BlogPost {
       title: "오류 발생한 게시물",
       slug: page.id,
       excerpt: "이 게시물을 변환하는 중 오류가 발생했습니다.",
-      category: "daily",
+      category: "daily-log" as CategoryId,
       date: new Date().toISOString().split('T')[0],
       views: 0,
       featured: false,
       content: "",
+      author: { name: "Ryue" }, // 기본 작성자 정보 설정
+      tags: [], // 기본 빈 태그 배열 설정
+      image: "", // 이미지 속성 추가
     };
   }
 }
@@ -243,7 +255,7 @@ interface NotionPostProperties {
  * @returns Promise<boolean> 설정 유효성 여부
  */
 export async function validateNotionConfig(): Promise<boolean> {
-  console.log('📘 Notion 설정 검증 시작...');
+  notionLog.info('📘 Notion 설정 검증 시작...');
   try {
     const notionApiKey = process.env.NOTION_TOKEN;
     const notionDatabaseId = process.env.NOTION_DATABASE_ID;
@@ -270,14 +282,14 @@ export async function validateNotionConfig(): Promise<boolean> {
       throw new Error('Notion Database ID가 유효하지 않습니다.');
     }
 
-    console.log('✅ Notion 설정이 유효합니다:', {
+    notionLog.info('✅ Notion 설정이 유효합니다:', {
       apiKey: configResult.NOTION_TOKEN.masked,
       databaseId: configResult.NOTION_DATABASE_ID.masked
     });
 
     return true;
   } catch (error) {
-    console.error('❌ Notion 설정 검증 중 오류 발생:', error);
+    notionLog.error('❌ Notion 설정 검증 중 오류 발생:', error);
     return false;
   }
 }
@@ -287,13 +299,13 @@ export async function validateNotionConfig(): Promise<boolean> {
  */
 async function testNotionConnection() {
   try {
-    console.log('📘 Notion API 연결 테스트 중...');
+    notionLog.info('📘 Notion API 연결 테스트 중...');
     
     const notionToken = process.env.NOTION_TOKEN;
     const databaseId = process.env.NOTION_DATABASE_ID;
     
     if (!notionToken || !databaseId) {
-      console.error('❌ API 키 또는 데이터베이스 ID가 없어 API 연결 테스트를 건너뜁니다.');
+      notionLog.error('❌ API 키 또는 데이터베이스 ID가 없어 API 연결 테스트를 건너뜁니다.');
       return false;
     }
     
@@ -314,38 +326,12 @@ async function testNotionConnection() {
       // 타입 오류 무시
     }
     
-    console.log(`✅ Notion API 연결 성공. 데이터베이스 "${databaseTitle}" 접근 가능`);
-    
-    // 메트릭 데이터베이스가 설정된 경우 해당 데이터베이스도 테스트
-    if (metricsDbId) {
-      try {
-        const metricsDb = await notion.databases.retrieve({
-          database_id: metricsDbId
-        });
-        
-        // 메트릭 데이터베이스 제목 접근 방식 수정
-        let metricsDbTitle = 'Untitled';
-        try {
-          // @ts-ignore - Notion API 타입과의 호환성 문제
-          if (metricsDb.title && metricsDb.title.length > 0) {
-            // @ts-ignore
-            metricsDbTitle = metricsDb.title[0].plain_text || 'Untitled';
-          }
-        } catch (e) {
-          // 타입 오류 무시
-        }
-        
-        console.log(`✅ Notion 메트릭 데이터베이스 연결 성공. 데이터베이스 "${metricsDbTitle}" 접근 가능`);
-      } catch (metricsError) {
-        console.error('❌ Notion 메트릭 데이터베이스 연결 실패:', metricsError instanceof Error ? metricsError.message : metricsError);
-        console.warn('⚠️ 메트릭 기능이 제한될 수 있습니다.');
-      }
-    }
+    notionLog.info(`✅ Notion API 연결 성공. 데이터베이스 "${databaseTitle}" 접근 가능`);
     
     return true;
   } catch (error) {
-    console.error('❌ Notion API 연결 테스트 실패:', error instanceof Error ? error.message : error);
-    console.error('❌ API 키와 데이터베이스 ID를 확인하세요.');
+    notionLog.error('❌ Notion API 연결 테스트 실패:', error instanceof Error ? error.message : error);
+    notionLog.error('❌ API 키와 데이터베이스 ID를 확인하세요.');
     return false;
   }
 }
@@ -414,7 +400,7 @@ function blocksToHtml(blocks: (BlockObjectResponse | PartialBlockObjectResponse)
 // 블록들을 HTML로 렌더링하는 함수
 async function renderBlocks(blocks: BlockObjectResponse[]): Promise<{ html: string }> {
   try {
-    console.log(`📘 렌더링 시작: ${blocks.length}개 블록 처리 중...`);
+    notionLog.info(`📘 렌더링 시작: ${blocks.length}개 블록 처리 중...`);
     
     // 블록 타입별 카운트 (디버깅용)
     const blockTypeCount: Record<string, number> = {};
@@ -431,26 +417,26 @@ async function renderBlocks(blocks: BlockObjectResponse[]): Promise<{ html: stri
     };
     
     countBlockTypes(blocks);
-    console.log('📘 블록 타입 통계:', blockTypeCount);
+    notionLog.info('📘 블록 타입 통계:', blockTypeCount);
     
     // processBlocks 실행 전 로깅
-    console.log('📘 processBlocks 함수 호출 시작');
+    notionLog.info('📘 processBlocks 함수 호출 시작');
     const processStartTime = Date.now();
     
     const html = await processBlocks(blocks);
     
     const processEndTime = Date.now();
-    console.log(`📘 processBlocks 완료: 소요 시간 ${(processEndTime - processStartTime) / 1000}초`);
-    console.log(`📘 렌더링 완료: HTML 생성됨 (길이: ${html.length})`);
+    notionLog.info(`📘 processBlocks 완료: 소요 시간 ${(processEndTime - processStartTime) / 1000}초`);
+    notionLog.info(`📘 렌더링 완료: HTML 생성됨 (길이: ${html.length})`);
     
     // HTML이 비어있으면 경고
     if (html.trim() === '') {
-      console.warn('⚠️ 생성된 HTML이 비어있습니다. 디버깅 필요');
+      notionLog.warn('⚠️ 생성된 HTML이 비어있습니다. 디버깅 필요');
     }
     
     return { html };
   } catch (error) {
-    console.error('🔴 renderBlocks 오류:', error);
+    notionLog.error('🔴 renderBlocks 오류:', error);
     return { html: '<div class="notion-error">컨텐츠를 불러올 수 없습니다.</div>' };
   }
 }
@@ -459,7 +445,7 @@ async function renderBlocks(blocks: BlockObjectResponse[]): Promise<{ html: stri
  * 페이지 컨텐츠 및 썸네일 URL 가져오기
  */
 export async function getPageContentAndThumbnail(pageId: string): Promise<{ content: string, thumbnail: string, image: string }> {
-  console.log(`🔎 페이지 ${pageId}의 컨텐츠 및 썸네일 가져오기 시작`);
+  notionLog.info(`🔎 페이지 ${pageId}의 컨텐츠 및 썸네일 가져오기 시작`);
   const startTime = Date.now();
   
   try {
@@ -467,7 +453,7 @@ export async function getPageContentAndThumbnail(pageId: string): Promise<{ cont
     const blocks = await getPageBlocks(pageId);
     
     if (!blocks || blocks.length === 0) {
-      console.warn(`⚠️ 페이지 ${pageId}에서 블록을 찾을 수 없습니다.`);
+      notionLog.warn(`⚠️ 페이지 ${pageId}에서 블록을 찾을 수 없습니다.`);
       return {
         content: '<div class="notion-error">컨텐츠를 불러올 수 없습니다.</div>',
         thumbnail: '',
@@ -475,11 +461,11 @@ export async function getPageContentAndThumbnail(pageId: string): Promise<{ cont
       };
     }
     
-    console.log(`📊 페이지 ${pageId}에서 총 ${blocks.length}개 블록 가져옴`);
+    notionLog.info(`📊 페이지 ${pageId}에서 총 ${blocks.length}개 블록 가져옴`);
     
     // 블록 구조 디버깅 (최대 3개 블록만)
     const sampleBlocks = blocks.slice(0, 3);
-    console.log(`📊 샘플 블록 구조:`, JSON.stringify(sampleBlocks.map(block => ({
+    notionLog.info(`📊 샘플 블록 구조:`, JSON.stringify(sampleBlocks.map(block => ({
       id: block.id,
       type: block.type,
       has_children: block.has_children,
@@ -535,12 +521,12 @@ export async function getPageContentAndThumbnail(pageId: string): Promise<{ cont
         }
       }
     } catch (error) {
-      console.error('페이지 커버 이미지 가져오기 오류:', error);
+      notionLog.error('페이지 커버 이미지 가져오기 오류:', error);
     }
     
     // 블록을 HTML로 변환
     const conversionStartTime = Date.now();
-    console.log(`📊 renderBlocks 함수 호출 직전: ${blocks.length}개 블록`);
+    notionLog.info(`📊 renderBlocks 함수 호출 직전: ${blocks.length}개 블록`);
     
     try {
       // renderBlocks 함수가 HTML 문자열 반환하도록 수정
@@ -552,16 +538,16 @@ export async function getPageContentAndThumbnail(pageId: string): Promise<{ cont
       const endTime = Date.now();
       const totalTime = (endTime - startTime) / 1000;
       
-      console.log(`📊 블록 타입 통계:`, blockTypeStats);
-      console.log(`⏱️ 컨텐츠 변환 시간: ${conversionTime.toFixed(2)}초`);
-      console.log(`⏱️ 총 소요 시간: ${totalTime.toFixed(2)}초`);
-      console.log(`🖼️ 썸네일 URL: ${thumbnail ? thumbnail.substring(0, 50) + '...' : '없음'}`);
+      notionLog.info(`📊 블록 타입 통계:`, blockTypeStats);
+      notionLog.info(`⏱️ 컨텐츠 변환 시간: ${conversionTime.toFixed(2)}초`);
+      notionLog.info(`⏱️ 총 소요 시간: ${totalTime.toFixed(2)}초`);
+      notionLog.info(`🖼️ 썸네일 URL: ${thumbnail ? thumbnail.substring(0, 50) + '...' : '없음'}`);
       
       // 변환된 HTML 길이 확인
-      console.log(`📊 생성된 HTML 길이: ${content.length} 글자, 빈 HTML인지: ${content.trim() === ''}`);
+      notionLog.info(`📊 생성된 HTML 길이: ${content.length} 글자, 빈 HTML인지: ${content.trim() === ''}`);
       
       if (content.trim() === '') {
-        console.warn(`⚠️ 변환된 HTML이 비어있습니다. 디버깅 필요`);
+        notionLog.warn(`⚠️ 변환된 HTML이 비어있습니다. 디버깅 필요`);
         return {
           content: '<div class="notion-error">변환된 HTML이 비어있습니다. 개발자에게 문의하세요.</div>',
           thumbnail,
@@ -575,11 +561,11 @@ export async function getPageContentAndThumbnail(pageId: string): Promise<{ cont
         image
       };
     } catch (conversionError) {
-      console.error(`🔴 renderBlocks 함수 호출 중 오류:`, conversionError);
+      notionLog.error(`🔴 renderBlocks 함수 호출 중 오류:`, conversionError);
       throw conversionError;
     }
   } catch (error) {
-    console.error(`🔴 페이지 컨텐츠 가져오기 오류:`, error);
+    notionLog.error(`🔴 페이지 컨텐츠 가져오기 오류:`, error);
     return {
       content: `<div class="notion-error">오류가 발생했습니다: ${error instanceof Error ? error.message : '알 수 없는 오류'}</div>`,
       thumbnail: '',
@@ -607,7 +593,7 @@ function isEmoji(str: string): boolean {
 export function renderRichText(richText: RichTextItemResponse | RichTextItemResponse[] | undefined | null): string {
   // undefined, null 체크
   if (!richText) {
-    console.debug('renderRichText: richText가 undefined 또는 null입니다.');
+    notionLog.debug('renderRichText: richText가 undefined 또는 null입니다.');
     return "";
   }
   
@@ -623,11 +609,11 @@ export function renderRichText(richText: RichTextItemResponse | RichTextItemResp
   
   // 빈 배열 체크
   if (richTextArray.length === 0) {
-    console.debug('renderRichText: 변환할 리치 텍스트가 없습니다.');
+    notionLog.debug('renderRichText: 변환할 리치 텍스트가 없습니다.');
     return "";
   }
   
-  console.debug(`Rendering ${richTextArray.length} rich text segments`);
+  notionLog.debug(`Rendering ${richTextArray.length} rich text segments`);
   
   try {
     return richTextArray.map((item) => {
@@ -643,7 +629,7 @@ export function renderRichText(richText: RichTextItemResponse | RichTextItemResp
         
         // 원본 내용 로깅 (디버깅용)
         if (content && (content.includes('\t') || content.match(/^ +/))) {
-          console.debug(`들여쓰기 감지: "${content.replace(/\n/g, '\\n').substring(0, 30)}..."`);
+          notionLog.debug(`들여쓰기 감지: "${content.replace(/\n/g, '\\n').substring(0, 30)}..."`);
         }
         
         // HTML escape 먼저 수행 (emoji 제외)
@@ -742,7 +728,7 @@ export function renderRichText(richText: RichTextItemResponse | RichTextItemResp
       return content;
     }).join("");
   } catch (error) {
-    console.error('🔴 renderRichText 오류:', error);
+    notionLog.error('🔴 renderRichText 오류:', error);
     return "";
   }
 }
@@ -758,11 +744,11 @@ async function renderChildren(block: BlockObjectResponse): Promise<string> {
     });
 
     const blocks = response.results as BlockObjectResponse[];
-    console.log(`📘 블록 ${block.id}의 자식 ${blocks.length}개를 불러왔습니다.`);
+    notionLog.info(`📘 블록 ${block.id}의 자식 ${blocks.length}개를 불러왔습니다.`);
     
     // 자식 블록 타입 로깅 (디버깅용)
     if (blocks.length > 0) {
-      console.debug(`자식 블록 타입: ${blocks.map(b => b.type).join(', ')}`);
+      notionLog.debug(`자식 블록 타입: ${blocks.map(b => b.type).join(', ')}`);
     }
     
     let renderedChildren = '';
@@ -831,7 +817,7 @@ async function renderChildren(block: BlockObjectResponse): Promise<string> {
           renderedChildren += renderedContent;
         }
       } else {
-        console.warn('타입 정보가 없는 블록:', childBlock);
+        notionLog.warn('타입 정보가 없는 블록:', childBlock);
       }
     }
     
@@ -842,7 +828,7 @@ async function renderChildren(block: BlockObjectResponse): Promise<string> {
     
     return renderedChildren;
   } catch (error) {
-    console.error(`🔴 블록의 자식 불러오기 실패: ${block.id}`, error);
+    notionLog.error(`🔴 블록의 자식 불러오기 실패: ${block.id}`, error);
     return '<p class="text-red-500">콘텐츠를 불러오는데 실패했습니다.</p>';
   }
 }
@@ -866,7 +852,7 @@ export async function getPostById(id: string): Promise<BlogPost | null> {
     
     return post;
   } catch (error) {
-    console.error(`Error fetching post with ID ${id}:`, error);
+    notionLog.error(`Error fetching post with ID ${id}:`, error);
     return null;
   }
 }
@@ -908,7 +894,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     
     return post;
   } catch (error) {
-    console.error(`Error fetching post with slug ${slug}:`, error);
+    notionLog.error(`Error fetching post with slug ${slug}:`, error);
     return null;
   }
 }
@@ -924,7 +910,7 @@ export const getRelatedPosts = cache(async (currentPostId: string, categoryName:
 // 노션 페이지의 전체 블록 가져오기
 export async function getPageBlocks(pageId: string) {
   try {
-    console.log(`📘 페이지 ${pageId}의 전체 블록 가져오기 시작`);
+    notionLog.info(`📘 페이지 ${pageId}의 전체 블록 가져오기 시작`);
     const startTime = Date.now();
     
     // 모든 블록을 재귀적으로 가져오는 함수
@@ -956,7 +942,7 @@ export async function getPageBlocks(pageId: string) {
             
             // 100개 단위로만 로그 출력하여 성능 향상
             if (totalFetched % 100 === 0 || pageCount === 1) {
-              console.log(`📘 페이지 ${blockId.substring(0, 8)}...에서 ${totalFetched}개 블록 추가 (깊이: ${depth}, 페이지: ${pageCount})`);
+              notionLog.info(`📘 페이지 ${blockId.substring(0, 8)}...에서 ${totalFetched}개 블록 추가 (깊이: ${depth}, 페이지: ${pageCount})`);
             }
           }
           
@@ -969,7 +955,7 @@ export async function getPageBlocks(pageId: string) {
         const blocksWithChildren = blocks.filter(block => block.has_children);
         
         if (blocksWithChildren.length > 0) {
-          console.log(`📘 하위 블록이 있는 블록 ${blocksWithChildren.length}개 발견 (깊이: ${depth})`);
+          notionLog.info(`📘 하위 블록이 있는 블록 ${blocksWithChildren.length}개 발견 (깊이: ${depth})`);
         }
         
         // 하위 블록 가져오기를 병렬 처리하여 성능 향상
@@ -981,10 +967,10 @@ export async function getPageBlocks(pageId: string) {
             const childBlocks = await getAllPageBlocks(block.id, depth + 1);
             if (childBlocks.length > 0) {
               (block as any).children = childBlocks;
-              console.log(`📘 블록 ${block.id.substring(0, 8)}...에 ${childBlocks.length}개 하위 블록 추가 (깊이: ${depth + 1})`);
+              notionLog.info(`📘 블록 ${block.id.substring(0, 8)}...에 ${childBlocks.length}개 하위 블록 추가 (깊이: ${depth + 1})`);
             }
           } else {
-            console.warn(`📙 최대 깊이 초과로 하위 블록 생략: ${block.id.substring(0, 8)}...`);
+            notionLog.warn(`📙 최대 깊이 초과로 하위 블록 생략: ${block.id.substring(0, 8)}...`);
           }
           return block;
         });
@@ -994,7 +980,7 @@ export async function getPageBlocks(pageId: string) {
         
         return blocks;
       } catch (error) {
-        console.error(`🔴 블록 가져오기 오류 (ID: ${blockId.substring(0, 8)}...):`, error);
+        notionLog.error(`🔴 블록 가져오기 오류 (ID: ${blockId.substring(0, 8)}...):`, error);
         return blocks; // 오류가 발생해도 이미 가져온 블록은 반환
       }
     }
@@ -1004,7 +990,7 @@ export async function getPageBlocks(pageId: string) {
     const endTime = Date.now();
     const timeElapsed = (endTime - startTime) / 1000;
     
-    console.log(`📘 페이지 ${pageId.substring(0, 8)}...의 모든 블록 가져오기 완료: 총 ${blocks.length}개 (소요 시간: ${timeElapsed.toFixed(2)}초)`);
+    notionLog.info(`📘 페이지 ${pageId.substring(0, 8)}...의 모든 블록 가져오기 완료: 총 ${blocks.length}개 (소요 시간: ${timeElapsed.toFixed(2)}초)`);
     
     // 하위 블록 수 계산 (디버깅용)
     let totalChildBlocks = 0;
@@ -1018,11 +1004,11 @@ export async function getPageBlocks(pageId: string) {
     };
     
     countChildBlocks(blocks);
-    console.log(`📘 총 하위 블록 수: ${totalChildBlocks}개`);
+    notionLog.info(`📘 총 하위 블록 수: ${totalChildBlocks}개`);
     
     return blocks;
   } catch (error) {
-    console.error(`Error fetching page blocks: ${error}`);
+    notionLog.error(`Error fetching page blocks: ${error}`);
     return [];
   }
 }
@@ -1073,7 +1059,7 @@ export async function getDatabaseInfo() {
       properties: database.properties,
     };
   } catch (error) {
-    console.error("Error fetching database info:", error);
+    notionLog.error("Error fetching database info:", error);
     return null;
   }
 }
@@ -1085,8 +1071,8 @@ export async function getAllPosts(): Promise<BlogPost[]> {
       throw new Error("NOTION_DATABASE_ID 환경 변수가 설정되지 않았습니다.");
     }
 
-    console.log("📘 Notion 데이터베이스에서 게시물 가져오기 시작...");
-    console.log(`📘 데이터베이스 ID: ${databaseId.substring(0, 4)}...`);
+    notionLog.info("📘 Notion 데이터베이스에서 게시물 가져오기 시작...");
+    notionLog.info(`📘 데이터베이스 ID: ${databaseId.substring(0, 4)}...`);
 
     // 모든 게시물 가져오기 (Published 필터 임시 제거)
     const response = await notion.databases.query({
@@ -1100,13 +1086,13 @@ export async function getAllPosts(): Promise<BlogPost[]> {
       ],
     });
 
-    console.log(`📘 Notion API 응답: ${response.results.length}개 페이지 발견`);
+    notionLog.info(`📘 Notion API 응답: ${response.results.length}개 페이지 발견`);
 
     // 각 페이지의 속성 로깅 (첫 번째 페이지만)
     if (response.results.length > 0) {
       const firstPage = response.results[0] as PageObjectResponse;
-      console.log("📘 첫 번째 페이지 속성:");
-      console.log(JSON.stringify({
+      notionLog.info("📘 첫 번째 페이지 속성:");
+      notionLog.info(JSON.stringify({
         id: firstPage.id,
         properties: Object.keys(firstPage.properties).map(key => ({
           name: key,
@@ -1120,22 +1106,21 @@ export async function getAllPosts(): Promise<BlogPost[]> {
       response.results.map((page) => {
         const pageObj = page as PageObjectResponse;
         const post = pageToPost(pageObj);
-        // 타입 호환성을 위해 description 필드 추가
-        post.description = post.excerpt || "";
+        // 필요한 경우 description을 excerpt로 설정
         return post;
       })
     );
 
     // 빈 제목이나 슬러그를 가진 게시물 필터링
     const validPosts = posts.filter(post => {
-      const isValid = post.title.trim() !== '' && post.slug.trim() !== '';
+      const isValid = post.title.trim() !== '' && post.slug && post.slug.trim() !== '';
       if (!isValid) {
-        console.log(`📘 유효하지 않은 게시물 필터링: ID ${post.id?.substring(0, 8) || '알 수 없음'}... (제목 또는 슬러그 누락)`);
+        notionLog.info(`📘 유효하지 않은 게시물 필터링: ID ${post.id?.substring(0, 8) || '알 수 없음'}... (제목 또는 슬러그 누락)`);
       }
       return isValid;
     });
 
-    console.log(`📘 전체 포스트 수: ${posts.length}, 유효한 포스트 수: ${validPosts.length}`);
+    notionLog.info(`📘 전체 포스트 수: ${posts.length}, 유효한 포스트 수: ${validPosts.length}`);
     
     // 카테고리별 분류 로깅
     const categories: Record<string, number> = {};
@@ -1143,17 +1128,17 @@ export async function getAllPosts(): Promise<BlogPost[]> {
       categories[post.category] = (categories[post.category] || 0) + 1;
     });
     
-    console.log("📘 카테고리별 게시물 수:");
+    notionLog.info("📘 카테고리별 게시물 수:");
     Object.entries(categories).forEach(([category, count]) => {
-      console.log(`   - ${category}: ${count}개`);
+      notionLog.info(`   - ${category}: ${count}개`);
     });
 
     return validPosts;
   } catch (error) {
-    console.error("Error fetching posts from Notion:", error);
+    notionLog.error("Error fetching posts from Notion:", error);
     // 오류 상세 정보 로깅
     if (error instanceof Error) {
-      console.error("Error details:", error.stack);
+      notionLog.error("Error details:", error.stack);
     }
     return []; // 오류 발생 시 빈 배열 반환
   }
@@ -1206,7 +1191,7 @@ async function processBlocks(blocks: BlockObjectResponse[]): Promise<string> {
   const imageUrls: string[] = [];
   
   try {
-    console.log(`📘 processBlocks: ${blocks.length}개 블록 처리 시작`);
+    notionLog.info(`📘 processBlocks: ${blocks.length}개 블록 처리 시작`);
     
     // 리스트 아이템 그룹화를 위한 변수
     let currentListType: string | null = null;
@@ -1216,12 +1201,12 @@ async function processBlocks(blocks: BlockObjectResponse[]): Promise<string> {
       const block = blocks[i];
       
       if (!block) {
-        console.warn('⚠️ Null 또는 undefined 블록 발견, 건너뜁니다.');
+        notionLog.warn('⚠️ Null 또는 undefined 블록 발견, 건너뜁니다.');
         continue;
       }
       
       try {
-        console.log(`📘 블록 처리 중 (#${i+1}/${blocks.length}): 타입=${block.type}, ID=${block.id.substring(0, 8)}...`);
+        notionLog.info(`📘 블록 처리 중 (#${i+1}/${blocks.length}): 타입=${block.type}, ID=${block.id.substring(0, 8)}...`);
         
         const blockType = block.type;
         const isListItem = ['bulleted_list_item', 'numbered_list_item'].includes(blockType);
@@ -1284,7 +1269,7 @@ async function processBlocks(blocks: BlockObjectResponse[]): Promise<string> {
         
         // 블록에 하위 블록이 있는 경우 재귀적으로 처리
         if ((block as any).children && (block as any).children.length > 0) {
-          console.log(`📘 하위 블록 처리 시작: ${(block as any).children.length}개 (부모: ${block.type})`);
+          notionLog.info(`📘 하위 블록 처리 시작: ${(block as any).children.length}개 (부모: ${block.type})`);
           
           // 테이블과 토글은 이미 renderBlock 내부에서 자식 처리를 하므로 제외
           if (!['table', 'toggle', 'callout'].includes(block.type)) {
@@ -1301,7 +1286,7 @@ async function processBlocks(blocks: BlockObjectResponse[]): Promise<string> {
                          childrenHtml + 
                          html.substring(liCloseTagIndex);
                 } else {
-                  console.warn(`⚠️ 리스트 아이템에서 </li> 태그를 찾을 수 없습니다. 자식 콘텐츠를 추가할 위치가 없습니다.`);
+                  notionLog.warn(`⚠️ 리스트 아이템에서 </li> 태그를 찾을 수 없습니다. 자식 콘텐츠를 추가할 위치가 없습니다.`);
                   html += childrenHtml;
                 }
               } else {
@@ -1310,11 +1295,11 @@ async function processBlocks(blocks: BlockObjectResponse[]): Promise<string> {
               }
             }
           } else {
-            console.log(`📘 ${block.type} 블록의 하위 블록은 이미 renderBlock에서 처리됨`);
+            notionLog.info(`📘 ${block.type} 블록의 하위 블록은 이미 renderBlock에서 처리됨`);
           }
         }
       } catch (blockError) {
-        console.error(`🔴 블록 처리 오류: ${block.id}`, blockError);
+        notionLog.error(`🔴 블록 처리 오류: ${block.id}`, blockError);
         html += `<p class="text-red-500">블록 로딩 오류: ${block.id}</p>`;
       }
     }
@@ -1324,15 +1309,15 @@ async function processBlocks(blocks: BlockObjectResponse[]): Promise<string> {
       html += `</${currentListType}>\n`;
     }
     
-    console.log(`📘 processBlocks 완료: 총 ${blocks.length}개 블록 처리됨, HTML 길이: ${html.length}`);
+    notionLog.info(`📘 processBlocks 완료: 총 ${blocks.length}개 블록 처리됨, HTML 길이: ${html.length}`);
     
     // HTML 정리 작업 수행
     const cleanedHtml = cleanHtml(html);
-    console.log(`📘 HTML 정리 완료: 정리 전 ${html.length} 글자 → 정리 후 ${cleanedHtml.length} 글자`);
+    notionLog.info(`📘 HTML 정리 완료: 정리 전 ${html.length} 글자 → 정리 후 ${cleanedHtml.length} 글자`);
     
     return cleanedHtml;
   } catch (error) {
-    console.error('🔴 processBlocks 처리 중 오류 발생:', error);
+    notionLog.error('🔴 processBlocks 처리 중 오류 발생:', error);
     return `<div class="notion-error">블록 처리 중 오류가 발생했습니다: ${error instanceof Error ? error.message : '알 수 없는 오류'}</div>`;
   }
 }
@@ -1340,7 +1325,7 @@ async function processBlocks(blocks: BlockObjectResponse[]): Promise<string> {
 // 단일 블록 렌더링 및 이미지 URL 추출
 async function renderBlock(block: BlockObjectResponse): Promise<{ renderedHtml: string, imageUrl: string | null }> {
   if (!block) {
-    console.warn('Null or undefined block passed to renderBlock');
+    notionLog.warn('Null or undefined block passed to renderBlock');
     return { renderedHtml: '', imageUrl: null };
   }
   
@@ -1349,11 +1334,11 @@ async function renderBlock(block: BlockObjectResponse): Promise<{ renderedHtml: 
     let imageUrl: string | null = null;
     
     // 디버깅: 처리 중인 블록 타입 로그
-    console.debug(`블록 타입 처리: ${block.type}, ID: ${block.id.substring(0, 8)}...`);
+    notionLog.debug(`블록 타입 처리: ${block.type}, ID: ${block.id.substring(0, 8)}...`);
     
     // 중첩된 블록 확인
     if ('has_children' in block && block.has_children) {
-      console.debug(`📘 중첩된 하위 블록 있음: ${block.id.substring(0, 8)}... (타입: ${block.type})`);
+      notionLog.debug(`📘 중첩된 하위 블록 있음: ${block.id.substring(0, 8)}... (타입: ${block.type})`);
     }
     
     // 블록의 공통 색상 정보 추출
@@ -1437,7 +1422,7 @@ async function renderBlock(block: BlockObjectResponse): Promise<{ renderedHtml: 
         
         // 원본 텍스트 로그
         if (block.code.rich_text.length > 0) {
-          console.debug(`코드 블록 처리: 길이 ${block.code.rich_text.length}, 언어: ${block.code.language || 'plaintext'}`);
+          notionLog.debug(`코드 블록 처리: 길이 ${block.code.rich_text.length}, 언어: ${block.code.language || 'plaintext'}`);
         }
         
         for (const richText of block.code.rich_text) {
@@ -1506,7 +1491,7 @@ async function renderBlock(block: BlockObjectResponse): Promise<{ renderedHtml: 
       case 'table':
         // 테이블 처리 추가
         if ('table' in block && block.table) {
-          console.debug(`테이블 처리: 너비 ${block.table.table_width || '정보 없음'}`);
+          notionLog.debug(`테이블 처리: 너비 ${block.table.table_width || '정보 없음'}`);
           
           // 테이블 처리를 위한 자식 블록 가져오기 (rows)
           const tableRows = await renderChildren(block);
@@ -1534,13 +1519,13 @@ async function renderBlock(block: BlockObjectResponse): Promise<{ renderedHtml: 
         break;
         
       default:
-        console.warn(`⚠️ 지원되지 않는 블록 타입: ${block.type}`, block);
+        notionLog.warn(`⚠️ 지원되지 않는 블록 타입: ${block.type}`, block);
         renderedHtml = `<div class="text-gray-400">지원되지 않는 블록 타입: ${block.type}</div>`;
     }
     
     return { renderedHtml, imageUrl };
   } catch (error) {
-    console.error(`🔴 블록 렌더링 오류: ${block.id}`, error);
+    notionLog.error(`🔴 블록 렌더링 오류: ${block.id}`, error);
     return { 
       renderedHtml: `<div class="text-red-500">오류: 블록을 렌더링할 수 없습니다. ${block.id}</div>`,
       imageUrl: null
@@ -1569,29 +1554,40 @@ function renderImage(block: any): string {
   `;
 }
 
+// 조회수 증가 함수
 export async function increment(slug: string): Promise<number> {
   try {
-    console.log(`[Notion] Incrementing view count for slug: ${slug}`)
+    notionLog.info(`[Notion] Incrementing view count for slug: ${slug}`)
     
     // Find the page with the given slug
     const response = await notion.databases.query({
       database_id: databaseId as string,
       filter: {
-        property: 'Slug',
+        property: "Slug",
         rich_text: {
-          equals: slug
-        }
-      }
+          equals: slug,
+        },
+      },
     })
 
     if (!response.results.length) {
-      console.error(`[Notion] No page found with slug: ${slug}`)
+      notionLog.error(`[Notion] No page found with slug: ${slug}`)
       return 0
     }
 
-    const page = response.results[0] as NotionPage
-    const currentViews = page.properties.Views.number || 0
-    const newViews = currentViews + 1
+    // 첫 번째 결과 사용
+    const page = response.results[0] as PageObjectResponse;
+    
+    // Get the current view count
+    const viewsProperty = page.properties.Views || page.properties.views;
+    
+    if (!viewsProperty || viewsProperty.type !== 'number') {
+      notionLog.error(`[Notion] No valid view count found for ${slug}`)
+      return 0
+    }
+    
+    const oldViews = viewsProperty.number || 0
+    const newViews = oldViews + 1
 
     // Update the view count
     await notion.pages.update({
@@ -1603,10 +1599,10 @@ export async function increment(slug: string): Promise<number> {
       }
     })
 
-    console.log(`[Notion] Successfully updated view count for ${slug} to ${newViews}`)
+    notionLog.info(`[Notion] Successfully updated view count for ${slug} to ${newViews}`)
     return newViews
   } catch (error) {
-    console.error('[Notion] Error incrementing view count:', error)
+    notionLog.error('[Notion] Error incrementing view count:', error)
     return 0
   }
 } 
