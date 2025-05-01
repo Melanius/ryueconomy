@@ -1,14 +1,15 @@
 // 최적화된 포스트 API (src/app/api/posts/route.ts)
 import { NextRequest, NextResponse } from 'next/server';
-import { getPaginatedPosts, getCategoryStats } from '@/lib/cache/notion-cache';
+import { getAllPosts } from '@/lib/notion';
 import { CategoryId } from '@/types/notion';
+import { logger } from '@/lib/logger';
 
 /**
  * 페이지네이션, 정렬, 필터링 기능을 갖춘 포스트 API
  */
 export async function GET(request: NextRequest) {
   try {
-    console.log('📥 GET /api/posts 요청 받음');
+    logger.info('📥 GET /api/posts 요청 받음');
     
     // URL 파라미터 가져오기
     const searchParams = request.nextUrl.searchParams;
@@ -22,28 +23,55 @@ export async function GET(request: NextRequest) {
     const sortOrder = (searchParams.get('sortOrder') || 'desc') as 'asc' | 'desc';
     
     // 필터링 파라미터
-    const category = (searchParams.get('category') || 'all') as CategoryId;
+    const category = (searchParams.get('category') || 'all');
     
     // 성능 로깅 시작
     const startTime = Date.now();
     
-    // 포스트 가져오기
-    const { posts, hasMore, total } = await getPaginatedPosts(
-      category,
-      page,
-      pageSize,
-      sortBy,
-      sortOrder
-    );
+    // 모든 포스트 가져오기
+    const allPosts = await getAllPosts();
     
-    // 카테고리 통계 가져오기
-    const categoryStats = await getCategoryStats();
+    // 카테고리 필터링
+    const filteredPosts = category === 'all' 
+      ? allPosts 
+      : allPosts.filter(post => post.category === category);
+    
+    // 정렬 적용
+    const sortedPosts = [...filteredPosts].sort((a, b) => {
+      if (sortBy === 'date') {
+        const dateA = new Date(a.date).getTime();
+        const dateB = new Date(b.date).getTime();
+        return sortOrder === 'desc' ? dateB - dateA : dateA - dateB;
+      } else if (sortBy === 'views') {
+        const viewsA = a.views || 0;
+        const viewsB = b.views || 0;
+        return sortOrder === 'desc' ? viewsB - viewsA : viewsA - viewsB;
+      }
+      return 0;
+    });
+    
+    // 페이지네이션 적용
+    const startIndex = (page - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    const paginatedPosts = sortedPosts.slice(startIndex, endIndex);
+    const hasMore = endIndex < sortedPosts.length;
+    const total = sortedPosts.length;
+    
+    // 카테고리 통계 계산
+    const categoryCount: Record<string, number> = {
+      'all': allPosts.length,
+      'crypto-morning': allPosts.filter(post => post.category === 'crypto-morning').length,
+      'invest-insight': allPosts.filter(post => post.category === 'invest-insight').length,
+      'real-portfolio': allPosts.filter(post => post.category === 'real-portfolio').length,
+      'code-lab': allPosts.filter(post => post.category === 'code-lab').length,
+      'daily-log': allPosts.filter(post => post.category === 'daily-log').length,
+    };
     
     // 성능 로깅 종료
     const endTime = Date.now();
     const responseTime = endTime - startTime;
     
-    console.log(`📤 GET /api/posts 응답 완료: ${posts.length}개 포스트, ${responseTime}ms 소요`);
+    logger.info(`📤 GET /api/posts 응답 완료: ${paginatedPosts.length}개 포스트, ${responseTime}ms 소요`);
     
     // 응답 반환
     return NextResponse.json({
@@ -51,8 +79,8 @@ export async function GET(request: NextRequest) {
       pageSize,
       total,
       hasMore,
-      posts,
-      categoryStats,
+      posts: paginatedPosts,
+      categoryStats: categoryCount,
       meta: {
         responseTime,
         timestamp: new Date().toISOString(),
@@ -64,7 +92,7 @@ export async function GET(request: NextRequest) {
       }
     });
   } catch (error) {
-    console.error('🔴 /api/posts 오류:', error);
+    logger.error('🔴 /api/posts 오류:', error);
     
     return NextResponse.json(
       { 

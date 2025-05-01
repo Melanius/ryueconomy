@@ -1,0 +1,2202 @@
+{
+  "id": "1e3e6bc221278062b189d43b2128fdbc",
+  "title": "25년 4월 29일 아침 시황",
+  "slug": "cm250429",
+  "blocks": [
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-819b-a217-c4aa1c04a0b4",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T23:47:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "📅 날짜: 2025년 04월 29일 07:00AM",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "📅 날짜: 2025년 04월 29일 07:00AM",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-819c-a02a-d3e45f8f2cc3",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-818e-bbcb-e79b5f504f16",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "🗞️",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "🗞️",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " Overnight Summary",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "red"
+            },
+            "plain_text": " Overnight Summary",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8164-8028-c75a764df492",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:37:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": true,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "매크로 경제 이슈",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "매크로 경제 이슈",
+            "href": null
+          }
+        ],
+        "color": "default"
+      },
+      "children": [
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-806b-8da5-ee88b1a87331",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-8164-8028-c75a764df492"
+          },
+          "created_time": "2025-04-28T21:37:00.000Z",
+          "last_edited_time": "2025-04-28T21:38:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "나스닥 -0.1%, 금 $3,350📈,  달러지수 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "나스닥 -0.1%, 금 $3,350📈,  달러지수 ",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": "📉",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "📉",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": ", 미국 장기채 금리",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": ", 미국 장기채 금리",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": "📉",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "📉",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-816e-b61d-e71672a8e70a",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-8164-8028-c75a764df492"
+          },
+          "created_time": "2025-04-28T21:11:00.000Z",
+          "last_edited_time": "2025-04-28T21:11:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "특별한 매크로 이슈 없음.",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "특별한 매크로 이슈 없음.",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        }
+      ]
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8121-bdbb-f47e381378c7",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:52:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": true,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "주요 크립토 뉴스:  ",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "주요 크립토 뉴스:  ",
+            "href": null
+          }
+        ],
+        "color": "default"
+      },
+      "children": [
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-8145-a32c-f5f67183c766",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-8121-bdbb-f47e381378c7"
+          },
+          "created_time": "2025-04-28T21:11:00.000Z",
+          "last_edited_time": "2025-04-28T21:45:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "마스터카드, 스테이블코인을 글로벌 결제 네트워크에 통합",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "마스터카드, 스테이블코인을 글로벌 결제 네트워크에 통합",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-81ad-bf29-d3bb2ab2920d",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-8121-bdbb-f47e381378c7"
+          },
+          "created_time": "2025-04-28T21:11:00.000Z",
+          "last_edited_time": "2025-04-28T21:45:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Solstice Labs, 25년 여름 Solana에서 수익 창출 스테이블코인 USX 출시 예정",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Solstice Labs, 25년 여름 Solana에서 수익 창출 스테이블코인 USX 출시 예정",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-808d-b7cb-fafe15a44c59",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-8121-bdbb-f47e381378c7"
+          },
+          "created_time": "2025-04-28T21:50:00.000Z",
+          "last_edited_time": "2025-04-28T21:52:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "코인베이스, 비트코인 수익률  펀드 통해 연간 4~8% BTC 수익률 달성 목표",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "코인베이스, 비트코인 수익률  펀드 통해 연간 4~8% BTC 수익률 달성 목표",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-80c9-8ee7-c417505e006b",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-8121-bdbb-f47e381378c7"
+          },
+          "created_time": "2025-04-28T21:52:00.000Z",
+          "last_edited_time": "2025-04-28T21:52:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "테더의 금 기반 XAUT 스테이블코인은 1분기 이후 7.7톤의 매장량을 보유",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "테더의 금 기반 XAUT 스테이블코인은 1분기 이후 7.7톤의 매장량을 보유",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-8143-9a49-fbc4249afa27",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-8121-bdbb-f47e381378c7"
+          },
+          "created_time": "2025-04-28T21:11:00.000Z",
+          "last_edited_time": "2025-04-28T21:11:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "paragraph",
+          "paragraph": {
+            "rich_text": [],
+            "color": "default"
+          }
+        }
+      ]
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8111-bef6-e98d9b19890f",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-81e2-93d0-dc169db62ab0",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "📈",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "📈",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " 비트코인 기술적 분석",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "red"
+            },
+            "plain_text": " 비트코인 기술적 분석",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-81a6-8f31-f44c66848b7e",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T22:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": true,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "비트코인 1D 차트",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "비트코인 1D 차트",
+            "href": null
+          }
+        ],
+        "color": "default"
+      },
+      "children": [
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-8117-a3d0-da9460b31418",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-81a6-8f31-f44c66848b7e"
+          },
+          "created_time": "2025-04-28T21:11:00.000Z",
+          "last_edited_time": "2025-04-28T22:09:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "현재(25-04-29) 가격 : 94.6k",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "현재(25-04-29) 가격 : 94.6k",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-81c4-a49f-f6d2d54ef04f",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-81a6-8f31-f44c66848b7e"
+          },
+          "created_time": "2025-04-28T21:11:00.000Z",
+          "last_edited_time": "2025-04-28T22:10:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "20일선 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "yellow"
+                },
+                "plain_text": "20일선 ",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": "곧 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "곧 ",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": "200일선",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "red"
+                },
+                "plain_text": "200일선",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": "과 만날 예정.",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "과 만날 예정.",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-8093-be13-c68c97c6c241",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-81a6-8f31-f44c66848b7e"
+          },
+          "created_time": "2025-04-28T22:10:00.000Z",
+          "last_edited_time": "2025-04-28T22:11:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "가격 횡보하며 RSI 낮추는 중.",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "가격 횡보하며 RSI 낮추는 중.",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-80de-b7d3-fd8b0abc8ef2",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-81a6-8f31-f44c66848b7e"
+          },
+          "created_time": "2025-04-28T22:11:00.000Z",
+          "last_edited_time": "2025-04-28T22:11:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": true,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "마지막 고지(96k → 98k → 100k)를 넘기 위한 힘 모으기 중.",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "마지막 고지(96k → 98k → 100k)를 넘기 위한 힘 모으기 중.",
+                "href": null
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "object": "block",
+              "id": "1e3e6bc2-2127-80c3-b82f-dadc788c8ac1",
+              "parent": {
+                "type": "block_id",
+                "block_id": "1e3e6bc2-2127-80de-b7d3-fd8b0abc8ef2"
+              },
+              "created_time": "2025-04-28T22:09:00.000Z",
+              "last_edited_time": "2025-04-28T22:11:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+              },
+              "has_children": false,
+              "archived": false,
+              "in_trash": false,
+              "type": "image",
+              "image": {
+                "caption": [],
+                "type": "file",
+                "file": {
+                  "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/b95535a1-7388-43c6-ab8c-b34ee9b7a7ba/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666OEACU6I%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T134313Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD9%2FBeh%2B3Bq4Xz1lR63QIepBvbxiF7djBuLUVnMEBmYnAIhALF%2FybrgBL2YlC4aQkWLALnApi8Hn%2F8GG9aiDB2dJuCOKogECI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgxpwJanaeKczCMqKocq3APUOaigyf6%2BTulZ86ld1Woq7TCeGSr8V9vYf%2BZQhPUyxp4ji7dJd85SwCtJxIdB4dv1c0DgT7bpobNIuqDdFRoyVWQ%2BbCDjin9uO7ODDLLl8gAz3dNPD8WeLtrTE4MS%2B7ZnKWD%2Fl7gWxgPZBTpRMVMewZIKkhJJBaDfwHuNwWIEI01jrxcBeWaiZ6%2BtZOY39tSt%2FzLdMEkxoGb74RprmprVR5krAhwSM3lowbkysmFgt6q0rkP3Vwn1oRrs%2B%2FqKEh1OdwxJWo4196QRFjySdt9FX7mjbtt6jYDe49nZgP2F5XAiAonH5O53Jf%2FFwkHwB0fIpFZQOuMHiR%2FgMXCJ72HhFFD9zvYj77KBCAdyPWltyk%2FHaewWI0ztMvys40zvWMJKeYHc9B%2BJI%2FYkluRoIjIVmXP0JYLuNCswlGbrUjoigKUVfte87R8biNteDwgVKWSCO04JMy95kFcuvouZcmf33c7UjENdOsYRy%2FisfkwDA%2FO8iP4u9NUk%2BJjPRmbwrVEaZB%2F7GqOkQnPMB2tX96loy%2B9BA5qwpwL1yyqcP%2Fzh3v%2FIBJFlYS8RmjjI18l76cRILLXAeZq0MB2eDG3eZcAfLKLnxwSoEumCmX3YILExFkJnskRBZCFd7WFV4TCRo8PABjqkAQJoC3kJpoC31sNlCRF%2FvOrA0lg3qfWUgLIaxUW5DHkHuBRHGsfPjJRYAOXGHnqkYmI3GauvfzkajR8ynzuTwesP657WU8TP5jrjLM5Yv4M9Pn3xYnHo%2BveVUdr4M8omyzekNCB6osZTFrOzuKQsKjhO6zbTawV%2Bkxg%2F6x3iU%2FTPJPeCAlPSlJhyNV4nDnRuTuZu14NOVv3sbzSOqFIYWlAqTHGk&X-Amz-Signature=9a0bfc72c1397b460a7289c806e9cf8b9382bde718734a7843b96471c28601a0&X-Amz-SignedHeaders=host&x-id=GetObject",
+                  "expiry_time": "2025-04-29T14:43:13.001Z"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-80a3-bdb5-c540c17c9c05",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-81a6-8f31-f44c66848b7e"
+          },
+          "created_time": "2025-04-28T22:09:00.000Z",
+          "last_edited_time": "2025-04-28T22:09:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "paragraph",
+          "paragraph": {
+            "rich_text": [],
+            "color": "default"
+          }
+        }
+      ]
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8112-9642-ea8b0f24460d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-814e-a9ef-daa2f15a98cb",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "🔍 ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "🔍 ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "마진-청산 데이터",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "red"
+            },
+            "plain_text": "마진-청산 데이터",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-81e4-aa5b-c9c967d2d65d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T22:12:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": true,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "📊 ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "📊 ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "바이낸스 롱-숏 비율",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "바이낸스 롱-숏 비율",
+            "href": null
+          }
+        ],
+        "color": "default"
+      },
+      "children": [
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-8145-95f2-e3c9969a3d52",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-81e4-aa5b-c9c967d2d65d"
+          },
+          "created_time": "2025-04-28T21:11:00.000Z",
+          "last_edited_time": "2025-04-28T22:13:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": true,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "롱 비중 확대 중. 숏 포지션의 포기, 또는 짧은 하락으로 수익실현 완료",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "롱 비중 확대 중. 숏 포지션의 포기, 또는 짧은 하락으로 수익실현 완료",
+                "href": null
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "object": "block",
+              "id": "1e3e6bc2-2127-80f6-a7d6-e26264b6a271",
+              "parent": {
+                "type": "block_id",
+                "block_id": "1e3e6bc2-2127-8145-95f2-e3c9969a3d52"
+              },
+              "created_time": "2025-04-28T22:12:00.000Z",
+              "last_edited_time": "2025-04-29T00:07:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+              },
+              "has_children": false,
+              "archived": false,
+              "in_trash": false,
+              "type": "image",
+              "image": {
+                "caption": [],
+                "type": "file",
+                "file": {
+                  "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/6c69737a-3b86-4b50-a3a3-a5fea7590d38/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XV3TDP44%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T134313Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIBCuM9WXv0fRGTajX1peAtkC1bQ6u6kWNNvdPXZKFtY%2FAiApt7FmrGVt5tvW3aC5hy86VZ8MrjBLssMwuBM5Lm2e%2BSqIBAiO%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMWCCjPN8ZpfqUhcARKtwDNvb11cuLaelEsLNeAswD8Ua5gX%2FDOn2COu0IDJxpKmLt805vKrS938CFazpPX2pHQcm7i9thYQMi9Z18xsz9HvHy8GsOBKkd0n5%2BSrCHLn9VtbAiZYPwETo%2FqceOjZReUKJ3vs2d%2BIbz0ddUmrYLWqD1jhDx7ae5d9EBZtwz4x0zlxsEnZXLGMxen2Gh3iCi6UNbhRODSRpMqAm7nMfdZajqBSBhxTd4Ij6TW1wPK6PBklVnUYJrlQZQUmjHfrYc%2BO2Z4KA14sIy1FQgyLZfV0QthkYiRQ%2F2Q7BxXgUvu4%2F2UC9jQ0G87DtFztI%2FYQGz%2Bb4YNu4XHy7yWz2MTvSBh4n6TYYh3gNGaQ%2FWwa5eDHp3AEf7z%2Fvk12xHRFILbyxLrVgPFQsNV5QvSJQ7Zfx3A9DaO9RPhOuFPF%2FBad3b2hva2xVFHPX6u3DW6x2KFBAKqfSjnRiFVQJjpz17AB%2Bym3SVkPbnjHne17l1u6bu5NQsFR7h%2F34eihMpqraHyKq1d14YCMviqC4Czpa%2FKS7gN1R85EozPFqGfXL5ULjpIu1qPKH%2F12RutLoZw%2B57vnOgH6yZ1UEaf5TTXY9Y5FHQsJpit9%2BtbvJOv19OXb8bAh2qUxCud2mBP6CLvWQwsaTDwAY6pgG5AgmEIF3YOvAzzX5PzYAS8VQP%2BD4Z4OvKeoEcldFRvjFIJ%2FTc5Ffucd%2F%2FqliPuHHddmV5Zb4kHeqM3Hff59osTcPxPdXkVGTO0mgDSSZlmrv8DmTimQosrBZ1fZP9ihcNztB%2BpSLp1tHcNV7t5dt%2BIj7dgDrd3RH4sd%2FgOupSOKnEKPXozdif6ywMwUStW58xO3bb2ZNs0OCHTZ74JXWQthQ1AVc1&X-Amz-Signature=14c7101f8bf05de9cce28a973787db5fe03c3fcb0f7d4288733421bf116f0e20&X-Amz-SignedHeaders=host&x-id=GetObject",
+                  "expiry_time": "2025-04-29T14:43:13.490Z"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-81d7-bce2-ce3d8d2d3204",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-81e4-aa5b-c9c967d2d65d"
+          },
+          "created_time": "2025-04-28T21:11:00.000Z",
+          "last_edited_time": "2025-04-28T21:11:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "paragraph",
+          "paragraph": {
+            "rich_text": [],
+            "color": "default"
+          }
+        }
+      ]
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-81f7-8444-cb7a3fd327b6",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T22:04:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": true,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "🔥  히트청산맵",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "🔥  히트청산맵",
+            "href": null
+          }
+        ],
+        "color": "default"
+      },
+      "children": [
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-81eb-b0ad-eef265964bd8",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-81f7-8444-cb7a3fd327b6"
+          },
+          "created_time": "2025-04-28T21:11:00.000Z",
+          "last_edited_time": "2025-04-28T22:04:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": true,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "어제 꽤 높은 변동성을 보임",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "어제 꽤 높은 변동성을 보임",
+                "href": null
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "object": "block",
+              "id": "1e3e6bc2-2127-8080-baec-e75103245c56",
+              "parent": {
+                "type": "block_id",
+                "block_id": "1e3e6bc2-2127-81eb-b0ad-eef265964bd8"
+              },
+              "created_time": "2025-04-28T22:04:00.000Z",
+              "last_edited_time": "2025-04-28T22:04:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+              },
+              "has_children": false,
+              "archived": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "먼저 롱 물량 청산 ",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "먼저 롱 물량 청산 ",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "object": "block",
+              "id": "1e3e6bc2-2127-804f-b4c0-c52e4c1f0d2e",
+              "parent": {
+                "type": "block_id",
+                "block_id": "1e3e6bc2-2127-81eb-b0ad-eef265964bd8"
+              },
+              "created_time": "2025-04-28T22:04:00.000Z",
+              "last_edited_time": "2025-04-28T22:04:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+              },
+              "has_children": false,
+              "archived": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "그리고 숏 물량 먹으러 가다가 95.8k까지 도달하지 못하고 다시 제자리",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "그리고 숏 물량 먹으러 가다가 95.8k까지 도달하지 못하고 다시 제자리",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              }
+            }
+          ]
+        },
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-810e-b247-e1e84d6b08cf",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-81f7-8444-cb7a3fd327b6"
+          },
+          "created_time": "2025-04-28T21:11:00.000Z",
+          "last_edited_time": "2025-04-28T22:05:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": true,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "오늘 힘 모아서 미장 열릴 때 다시 한번 86K터치 시도하고 올 것으로 예측",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "오늘 힘 모아서 미장 열릴 때 다시 한번 86K터치 시도하고 올 것으로 예측",
+                "href": null
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "object": "block",
+              "id": "1e3e6bc2-2127-80f9-9bde-e35ed6199f17",
+              "parent": {
+                "type": "block_id",
+                "block_id": "1e3e6bc2-2127-810e-b247-e1e84d6b08cf"
+              },
+              "created_time": "2025-04-28T22:03:00.000Z",
+              "last_edited_time": "2025-04-28T22:03:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+              },
+              "has_children": false,
+              "archived": false,
+              "in_trash": false,
+              "type": "image",
+              "image": {
+                "caption": [],
+                "type": "file",
+                "file": {
+                  "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/bdba5f7f-d32d-43a1-b0bb-f8682e1e6741/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662YYZZ6TK%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T134317Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDLL0p6fpXdfLs5N3UD4rbPgbGYrzv0XK4d5%2BFyjp%2F0pgIgDUB53CyunXZ0cebfG%2FN4wDi8cHPd65BAqX7ruP1tJccqiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDAASulMXOBoSGamAgCrcA8dnh%2F0tZfNPnawiAL%2FPEuITL77ZsZMXaD7pNlzlxUXlblZMGK4JnCxuRJV%2B%2FCeDES%2BTWH5nIruyoYHwJ5iE1FkD83KRyje37mIPLN%2BU3LamKgN5NUTwuqjd7aQw3Yz8wByhS77nXy6UyYNZKRrNO2IVf%2FDJ3PAA0AhAKNZTdBvbSB5QY%2BF4oEyvAnOiBzwAeO1Dfd6IYRmj4YY32Q4zgrd6cjeJabjaWG3eOTjhl79yM1cUvXyDDuojsLkZbQk%2FLz%2BwN0u9Bl1FBQQYiEclzARDnAbSINaP9Ef1mgxpN3I2Nr%2BWCDjzsdJOMXRe7EXbUkzSpuyWCgLraX2677ZtmGKteTat7ff8b5jpzCce7HkGB8prl0wpGq3OeZh3E3rYlnVR7TXUa7W6AYqMWy9yfgkIe6xSfblpCZ7KpdCLQbT3x1PS3MCZu7qx5zjtvE66VeVKlBximfV7CUaIit0kqnphUAmHv%2BS0geigq84Z64I7ozkV45yUCTTZWqs1UF7wrw%2FmbJXgcGzAW1bSEtpHdJroGI6iKk9k4S4kzqsEJttwm5kJQH65ZwapPahlV4rcWOdunL0XE4A3ArF07Z8Tpr%2FgyncClPER9eYl67a8Ob0an4nr%2BZj7hGJ12Na%2FMIakw8AGOqUBavFrC9intTF%2B9xvGmAdmPCimDiq9jALZVIO0kVVlCtTs6tsElDNN9EzPp5Kz019FxQp21tT%2BvjVx670%2BwDll49KI7EOnpLarxcb0v%2FhB6E1kWSqtVnBaWnUzXkAvE1wUhTVYAwQXTFqYGGPoYm6Orw9DLEW%2BB%2B66CBYXzDNTXzvrvbD4Vj%2BSmfI%2BuUhGXwyaenjSZn6sbxAXI3zmOJLtBAjqX8XB&X-Amz-Signature=8b387e2bb90b27c89d0900a351771db5ccc5745d796b3711211622cbe049590c&X-Amz-SignedHeaders=host&x-id=GetObject",
+                  "expiry_time": "2025-04-29T14:43:17.717Z"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8119-9c8e-d9c7a43a5402",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-81ec-917e-f385ac9ba23b",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-817d-81a5-f6a6320ca273",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "🔍 ",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "🔍 ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "온체인 데이터 한 컷",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "red"
+            },
+            "plain_text": "온체인 데이터 한 컷",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8157-ae0f-e07316d61d5b",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T22:21:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": true,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "비트코인 도미넌스 차트",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "비트코인 도미넌스 차트",
+            "href": null
+          }
+        ],
+        "color": "default"
+      },
+      "children": [
+        {
+          "object": "block",
+          "id": "1e3e6bc2-2127-8107-91d0-ec15713b826c",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-8157-ae0f-e07316d61d5b"
+          },
+          "created_time": "2025-04-28T21:11:00.000Z",
+          "last_edited_time": "2025-04-28T22:21:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": true,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "작년 불장 시작 전 급등하는 비트코인 도미넌스가 이번에도 반복된다면?",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "작년 불장 시작 전 급등하는 비트코인 도미넌스가 이번에도 반복된다면?",
+                "href": null
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "object": "block",
+              "id": "1e3e6bc2-2127-803f-96c0-cd130ba52277",
+              "parent": {
+                "type": "block_id",
+                "block_id": "1e3e6bc2-2127-8107-91d0-ec15713b826c"
+              },
+              "created_time": "2025-04-28T22:21:00.000Z",
+              "last_edited_time": "2025-04-28T22:21:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+              },
+              "has_children": true,
+              "archived": false,
+              "in_trash": false,
+              "type": "paragraph",
+              "paragraph": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "→ 알트코인 매수 타이밍",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "→ 알트코인 매수 타이밍",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "children": [
+                {
+                  "object": "block",
+                  "id": "1e3e6bc2-2127-80fc-a40d-cd2e3c78593f",
+                  "parent": {
+                    "type": "block_id",
+                    "block_id": "1e3e6bc2-2127-803f-96c0-cd130ba52277"
+                  },
+                  "created_time": "2025-04-28T22:20:00.000Z",
+                  "last_edited_time": "2025-04-28T22:21:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+                  },
+                  "has_children": false,
+                  "archived": false,
+                  "in_trash": false,
+                  "type": "image",
+                  "image": {
+                    "caption": [],
+                    "type": "file",
+                    "file": {
+                      "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/721c6042-5b25-46ac-a81c-825e9a942443/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665ISH6ODA%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T134318Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQC6%2FTeJ4qXFmYRX0IEFtSzRrKAcqFpF45qoDzxUYU05sgIgdT47FYAATD2sAMvKuy3bVayXaGfwRp8GWWX98mdKBR4qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDHsJOLSZXAIEajKWnircA1TwbtLD%2FtMY45W2WGU0NUkpL5MAekxngCmQhfEywkq%2B023SL0TR0yejrXXYqpb3TABnaHPCc6lS4kjOcbkBz4vtjZye2FKrB%2BdS9nMu1q3QhUPW7JG%2F1JE7B7rsPElwrVFRdHzNPBzpZl1KYEqkkxiK%2BNmpSJPE%2Bg6qQRAgOwIGoNTuvIRkVYW0IsL7BDHBb16379NXSp8lKHVygFdX9lg6Ux4xwYV7yJZW0FfEflBkvX7QHaxqY3h%2Bppy3nFcUh9685J8RuJTT02paXnrHhJqtcThZQb6BKOUiNgQpoENfriOGemXxZP1vtDWFTAFN88MhgOpZdx8eweJ%2B1nuEVe5dUu%2BReNVSN9O7njVzH%2F2Mi5yu1489RfkgfvFGR582Ju%2FNcQw%2B%2BWLkPvPjGN3KbXZwM1f%2BS28nC3pyav4%2BalgrKnQM9d5SHclkOkDOGJvQnf8vj9FfoOeWYQ%2BFukVUbWK2KdrPCALy%2FkyrQR5UsIP2jlE8%2B1wYdg4DJYoOBWGgk5cg7XyPW7TbRBMQX2AFusKIYhIkVaZxmd4S%2BaGZ%2F1%2BTyagCFgNaI7xB3z%2F9QYW8ayUC6iWWR6jIStLVHtpypa7YqrefiM6XEbjY%2Bikg7CljC1i5cM8a8bO12hPcMOajw8AGOqUBQWQxGViM0Qh5LJ7A0wH6tT1aXl9UViB6KM718NSNprziiIPlhw63JGLbMHkuLfe4%2BGAD4y0YAX2kpSKIz5OmuIEVRdGGPVth%2BnGyNiRCAmTB6XAbdmwB4chriHBJU3R9rjxCZM131zUyZL0AhZvmp5rmOhsbeq2%2F%2BFLgDU5ETd1n8yueEOQHJXVn526OCzyo%2FfdMf0IECnqJvenxq0rKzL6fBk9d&X-Amz-Signature=c6a463eefe3d8ac13f05088b067b8469cc09c0645342587e0b1199695e0b14b8&X-Amz-SignedHeaders=host&x-id=GetObject",
+                      "expiry_time": "2025-04-29T14:43:18.401Z"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-81a5-b3dd-df06e2bbb56d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8174-aeea-d3a7132687a0",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "🧠 ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "🧠 ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "오늘의 인사이트",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "red"
+            },
+            "plain_text": "오늘의 인사이트",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-81cd-9962-f44ce6323e90",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T23:43:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "미국은 하루가 다르게 암호화폐 산업 발전 중",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "미국은 하루가 다르게 암호화폐 산업 발전 중",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8129-a33a-ecf834d48222",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T23:43:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "핵심은 스테이블 코인",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "핵심은 스테이블 코인",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8059-81b5-e8900552cbaa",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T23:43:00.000Z",
+      "last_edited_time": "2025-04-28T23:44:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "다음달 법제화 되면 그때 비트코인 함께?!?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "다음달 법제화 되면 그때 비트코인 함께?!?",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-81b6-a2d5-f2074736e8b1",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-817c-88ef-c6f42131119c",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "✅ ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "✅ ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "한 줄 마무리",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "red"
+            },
+            "plain_text": "한 줄 마무리",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8199-aadc-fa31c2e8981f",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-29T02:02:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": true,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "“비트코인, 100K 향해 숨 고르는 중… 곧 숨 끊기게 달릴지도 🚀”",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "“비트코인, 100K 향해 숨 고르는 중… 곧 숨 끊기게 달릴지도 🚀”",
+            "href": null
+          }
+        ],
+        "color": "default"
+      },
+      "children": [
+        {
+          "object": "block",
+          "id": "1e4e6bc2-2127-806b-a798-e9faf4959859",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1e3e6bc2-2127-8199-aadc-fa31c2e8981f"
+          },
+          "created_time": "2025-04-29T02:01:00.000Z",
+          "last_edited_time": "2025-04-29T02:02:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "image",
+          "image": {
+            "caption": [],
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/005c2e49-c42f-42ce-81a1-12a934ed4fa3/ChatGPT_Image_2025%EB%85%84_4%EC%9B%94_29%EC%9D%BC_%EC%98%A4%EC%A0%84_09_06_20.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TMOVVXJS%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T134318Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFFrJhMLtautlRyEttupbeUNxF0Z8ZPlgIXOO7jSFqcQAiA4EuaMrKCtNLsXTujdVqjk1urOvXUq4PH9a4QSQewdqyqIBAiO%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMtCYPTA1qi1TnFW29KtwDOIViI8pbzQBL6LpgAp0g%2FmE%2BsW1HDQEiqvo10nQhlZYqOL8EFFfUyL08kWojyQhpcs8tajmaRa8RjQnJBfCPFYEXmIRwH1elgrpxt3LvcW5N%2FbiQC29Bu%2Fbfv6kOuoeMbmA37ZX9Z8Db6uYFM%2BBM%2FbQoTa90whT4om0mr0z8YjAbU4IWDSvyEQUWSx40AWU3CMZpd8f2OXvjRLvbgVMY%2FsbHRfk1aTBS6tDdA6zD9%2BOmD%2BchZOZyXyE%2Fpy4e8A6azJpXkki28tmroJ%2FBwkOqV28m5GM5rUDTB7NkR7uLV7bBZaNJxN7CKz9YzszRiGv7XSRYGCPEIDRGBaP1dZewBqZ3oSLW1IAEr9J1XKpQmQudjSgUZx%2FMaNa3UhCrPRcTxGVTbHFIgBpkktHCwjDp%2Bb2t5ba%2BebtaUcGu9UhGJVT8y%2FpKB%2BBM5Lo4GqIhuj36fwuOmZdNGPVOomxixQ36oKYGW0QBX4G8HraneLK5eTIdlWBL72HOI%2FlTMvxKIE5eNftn7DWPqi5LMgDn%2B4YtnLiqDIxyr%2Fi9kGMk49yHtdwTHvVdxqjZ7W3fcjku%2BIa6B6JWXYGyeezj3bRNY2TurIzuCW70JPqH09H0jAD0cjMC8oelKhq1VcEVlwowgqTDwAY6pgEtIyduP%2By1a34aONzkPmakf9b%2Bapf5w9PIUeSZIBcGdV%2BGU%2FORsYnNHfYL6mmIzW%2BIQq13Cvquhw5Hf8MJ3s4AHrhQE5SPePSNKiNXdQST3UiZtUB2g%2BvS7GdUF9M9ZZrXhYV10StcHkCh%2Fhs1WnOTzTo057OrT%2B8z4evI7djJU%2FjOSTcWBSYZvT4gd%2BZmO0Duf1pkbMPiB%2FvNZBy15HxsE2%2BKISND&X-Amz-Signature=5f89145739e2f636321f01a2fc9a5ac2a9eb07456cf83a7b15dc15f82f5967a1&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:43:18.626Z"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8138-9cfc-c116fb3b7b7a",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-81d7-aad8-c9abf5dd378c",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc"
+      },
+      "created_time": "2025-04-28T21:11:00.000Z",
+      "last_edited_time": "2025-04-28T21:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    }
+  ],
+  "lastModified": "2025-04-29T13:43:18.824Z"
+}

@@ -1,0 +1,760 @@
+{
+  "id": "1e3e6bc2212780a9adddeef7094c9288",
+  "title": "[25-04-28] 일상-SKT 유심 전쟁 참전",
+  "slug": "dl250428",
+  "blocks": [
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-80a6-8b7e-f3eba33cb517",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:16:00.000Z",
+      "last_edited_time": "2025-04-28T13:21:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "SKT 때문에 하루가 바뻤던 날",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "SKT 때문에 하루가 바뻤던 날",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-80c8-a31b-d1f8e2f0a3d7",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:16:00.000Z",
+      "last_edited_time": "2025-04-28T13:21:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "아침부터 정신없다.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "아침부터 정신없다.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-808f-bea9-c22a7eb729a0",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:21:00.000Z",
+      "last_edited_time": "2025-04-28T13:55:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "SKT 최악의 해킹 사건으로 ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "SKT 최악의 해킹 사건으로 ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "금융자산까지 탈취가 가능",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "금융자산까지 탈취가 가능",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "하다는 대부분의 IT 전문 유튜버들의 이야기를 듣고 따님 등교 시키면서 오픈런으로 SK대리점에 갈 예정이었다.\n따님 등교시키고 집에 오니 따님이 필통을 안 갖고 갔단다.\n오픈런 줄 설때 필수품인 휴대용 의자를 하나와 개인 노트북, 따님의 필통을 챙겨 집을 나섰다.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "하다는 대부분의 IT 전문 유튜버들의 이야기를 듣고 따님 등교 시키면서 오픈런으로 SK대리점에 갈 예정이었다.\n따님 등교시키고 집에 오니 따님이 필통을 안 갖고 갔단다.\n오픈런 줄 설때 필수품인 휴대용 의자를 하나와 개인 노트북, 따님의 필통을 챙겨 집을 나섰다.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-80c7-997f-c12c1f38e7f2",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:35:00.000Z",
+      "last_edited_time": "2025-04-28T13:38:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "무사히 필통을 전달하고 SK 대리점으로 자전거를 타고 달려갔다.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "무사히 필통을 전달하고 SK 대리점으로 자전거를 타고 달려갔다.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-80fc-bb50-ef0a4df76cee",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:39:00.000Z",
+      "last_edited_time": "2025-04-28T13:39:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "image",
+      "image": {
+        "caption": [],
+        "type": "file",
+        "file": {
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/7d7ef438-4fe2-4e62-afc3-9660e5546951/KakaoTalk_20250428_092448270.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664LTNLETS%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T134320Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAQrCokBQO%2Fek%2F6rwaCPLRgdlsczrNaVK4CENGosP05OAiEA18%2FUdaBefHcNz9c4iTmtFUOMD8w%2FJ9aYAxXkZygc5m0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDKypuiDiTHVa9pCG1SrcAzr6hWnfBaz6vMSSXUuCxvO7X7ByRkvnP6xLLumpDwLk6hl9DH%2BRw37KEnZG0gUriEP2I5RohpKz5goTUygMcPfMn3HJQOoHH91n1YGBPalH8mvkzlKDXwjnAaStn%2BPhAr0JCPuI2%2BxL51bsrLTd697e5uuJ1UhmpKNoxtD5mHFHsmCHBq19UweF33S8HhgX4%2B%2BDTjAaLw3UhkZ290RRHgmz3nTsIfoq%2Fxclkoco33gjuoRucX%2F%2Fzv7xXROf5lhsFgY%2BnARFvFw75TOa0bV4kWCa6v0gUghuytIrptb01S%2B2UiHyvVtH7MUyvpC74sh9XlBWnebzohwuspFNAW1lKV8tuCeKoMkV%2FCzQuabggk9zMoB86uKSkmFjaIs9%2Bw2hRqN4brzgg5yUQsL7NgmtR8KpqPmGfE0%2BN26w7XbArQfh5bMu4fU3RIheLYxxdGR7aB1wL%2B9fVnuqG%2FthTX1JzJxsO8YkPFaxhHKzJGtvXa9aTGkz2kT0CA9mlT097yUrbZlGmBV4suDcEqAczHXK%2FEVLGfzRRAsLYqKxl6TAPWZdY94eJ4DOWZ3b1BViESKxQvl9%2B1HUATY%2B3v3lq0EP1ch%2BpL9kgLFG%2BJUG2f%2F9OsvrCG9uU%2BUJx3F2U6s5MKKkw8AGOqUBF6%2BRqutHFK3MhXtlld5la%2BBTxaELDcqjMSIT6lvS8dlVS4%2BbZW%2BLSno3MGPsAMeSAJTmDq4waLrnqcI7vqFFH9r0gAyqlFxMsgYzj1LfkDrwdO7gMvcbbVu4Bss%2Buy%2BHJc3fVfd4y2F5%2FMTS6v0iwGEjER4rjz9zPT8XE0gekt00UpK5nj3q7HeDxKDNu4QbtbB8spyJ%2Bh34kHFVPIGzHNNmcewj&X-Amz-Signature=cd41f46bc8e279ba83d0d1180d14b237c9ec6bae372ccc089349531ad0323646&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2025-04-29T14:43:20.275Z"
+        }
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-807e-84bf-e66f72537e18",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:38:00.000Z",
+      "last_edited_time": "2025-04-28T13:45:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "9시 20분쯤 도착했는데, 이미 부지런한 사람들은 앞서 줄을 서고있다.\n한 30분쯤 지났을까, 미리 예약했다면 앞자리를 차지하려는 시민들이 나타났고, 일찍부터 줄서있던 사람들과 고성이 잠깐 오갔다.\n다행히 직원이 출근해 중재하고, 먼저 보유하고 있던 유심 100를 앞쪽부터 쭉 나눠줬다.\n내가 받을 차례가 되었는데 정말 딱 내 앞에서 유심 100개가 끝났다.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "9시 20분쯤 도착했는데, 이미 부지런한 사람들은 앞서 줄을 서고있다.\n한 30분쯤 지났을까, 미리 예약했다면 앞자리를 차지하려는 시민들이 나타났고, 일찍부터 줄서있던 사람들과 고성이 잠깐 오갔다.\n다행히 직원이 출근해 중재하고, 먼저 보유하고 있던 유심 100를 앞쪽부터 쭉 나눠줬다.\n내가 받을 차례가 되었는데 정말 딱 내 앞에서 유심 100개가 끝났다.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-80d5-ac61-e45e60cf6d64",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:42:00.000Z",
+      "last_edited_time": "2025-04-28T13:45:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "다행히 오후에 100개의 유심이 더 올 예정이라며 뒤에 기다리던 사람들에게 번호표를 나눠주었다. 어중간하게 기다리는 것 보다 차라리 이게 더 이득인듯!? 하며 유유히 집으로 왔다.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "다행히 오후에 100개의 유심이 더 올 예정이라며 뒤에 기다리던 사람들에게 번호표를 나눠주었다. 어중간하게 기다리는 것 보다 차라리 이게 더 이득인듯!? 하며 유유히 집으로 왔다.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8091-9489-e03752a24208",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:45:00.000Z",
+      "last_edited_time": "2025-04-28T13:45:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "image",
+      "image": {
+        "caption": [],
+        "type": "file",
+        "file": {
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/38c31a71-f373-43e4-bb72-8e14259889e8/KakaoTalk_20250428_101505639.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664LTNLETS%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T134320Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAQrCokBQO%2Fek%2F6rwaCPLRgdlsczrNaVK4CENGosP05OAiEA18%2FUdaBefHcNz9c4iTmtFUOMD8w%2FJ9aYAxXkZygc5m0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDKypuiDiTHVa9pCG1SrcAzr6hWnfBaz6vMSSXUuCxvO7X7ByRkvnP6xLLumpDwLk6hl9DH%2BRw37KEnZG0gUriEP2I5RohpKz5goTUygMcPfMn3HJQOoHH91n1YGBPalH8mvkzlKDXwjnAaStn%2BPhAr0JCPuI2%2BxL51bsrLTd697e5uuJ1UhmpKNoxtD5mHFHsmCHBq19UweF33S8HhgX4%2B%2BDTjAaLw3UhkZ290RRHgmz3nTsIfoq%2Fxclkoco33gjuoRucX%2F%2Fzv7xXROf5lhsFgY%2BnARFvFw75TOa0bV4kWCa6v0gUghuytIrptb01S%2B2UiHyvVtH7MUyvpC74sh9XlBWnebzohwuspFNAW1lKV8tuCeKoMkV%2FCzQuabggk9zMoB86uKSkmFjaIs9%2Bw2hRqN4brzgg5yUQsL7NgmtR8KpqPmGfE0%2BN26w7XbArQfh5bMu4fU3RIheLYxxdGR7aB1wL%2B9fVnuqG%2FthTX1JzJxsO8YkPFaxhHKzJGtvXa9aTGkz2kT0CA9mlT097yUrbZlGmBV4suDcEqAczHXK%2FEVLGfzRRAsLYqKxl6TAPWZdY94eJ4DOWZ3b1BViESKxQvl9%2B1HUATY%2B3v3lq0EP1ch%2BpL9kgLFG%2BJUG2f%2F9OsvrCG9uU%2BUJx3F2U6s5MKKkw8AGOqUBF6%2BRqutHFK3MhXtlld5la%2BBTxaELDcqjMSIT6lvS8dlVS4%2BbZW%2BLSno3MGPsAMeSAJTmDq4waLrnqcI7vqFFH9r0gAyqlFxMsgYzj1LfkDrwdO7gMvcbbVu4Bss%2Buy%2BHJc3fVfd4y2F5%2FMTS6v0iwGEjER4rjz9zPT8XE0gekt00UpK5nj3q7HeDxKDNu4QbtbB8spyJ%2Bh34kHFVPIGzHNNmcewj&X-Amz-Signature=1c301927778e630b59d1e35f5882832e254fcf9346de6f8b168b20cfff331089&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2025-04-29T14:43:20.270Z"
+        }
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8049-bfa2-cbddf5bd7158",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:34:00.000Z",
+      "last_edited_time": "2025-04-28T13:46:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "12시 반쯤 도착하니 얼마 기다리지 않고 유심을 교체할 수 있었다.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "12시 반쯤 도착하니 얼마 기다리지 않고 유심을 교체할 수 있었다.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8083-8c0a-f3750fe0240d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:46:00.000Z",
+      "last_edited_time": "2025-04-28T13:47:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "직원 한명이 정말 쉼없이 100명의 유심을 교체를 해주고 지쳐있는 모습을 보니 너무 안쓰러웠다. 100명만 더 힘내주세요..! 하며 나왔다. 식사도 못하셨을 것 같은데.. ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "직원 한명이 정말 쉼없이 100명의 유심을 교체를 해주고 지쳐있는 모습을 보니 너무 안쓰러웠다. 100명만 더 힘내주세요..! 하며 나왔다. 식사도 못하셨을 것 같은데.. ",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-80a9-80aa-d0cf361c9614",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:47:00.000Z",
+      "last_edited_time": "2025-04-28T13:47:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-801e-b161-cb8782642e64",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:47:00.000Z",
+      "last_edited_time": "2025-04-28T13:54:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "정말 잘못은 기업이하고 고생은 사용자들이 하는데, 보상 욕구가 샘솓는 와중에 단체 소송 영상을 보고 소송신청했다.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "정말 잘못은 기업이하고 고생은 사용자들이 하는데, 보상 욕구가 샘솓는 와중에 단체 소송 영상을 보고 소송신청했다.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-80ef-94c8-f0fcdd689b20",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:54:00.000Z",
+      "last_edited_time": "2025-04-28T13:54:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "mention",
+            "mention": {
+              "type": "link_mention",
+              "link_mention": {
+                "href": "https://novalaw-usim.waveon.me/?utm_source=youtube&utm_medium=long&utm_campaign=skt_usim",
+                "title": "노바법률사무소 SKT 개인정보 유출 단체 소송 페이지",
+                "icon_url": "https://static.waveon.io/img/apps/75811/1745742134930.png",
+                "description": "노바법률사무소가 SKT 유심 정보 유출 피해자 여러분과 함께 단체소송을 시작합니다.",
+                "link_provider": "/",
+                "thumbnail_url": "https://static.waveon.io/img/apps/75811/1745747599511.jpeg"
+              }
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "https://novalaw-usim.waveon.me/?utm_source=youtube&utm_medium=long&utm_campaign=skt_usim",
+            "href": "https://novalaw-usim.waveon.me/?utm_source=youtube&utm_medium=long&utm_campaign=skt_usim"
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-80b6-8886-e4aa89f2f4ec",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:54:00.000Z",
+      "last_edited_time": "2025-04-28T13:54:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-80a6-877d-c77a8ab64a4d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:54:00.000Z",
+      "last_edited_time": "2025-04-28T13:55:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "만원짜리 보험을 들었다고 생각하며 착수금을 냈다.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "만원짜리 보험을 들었다고 생각하며 착수금을 냈다.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8062-8ed0-cdf0e67780b7",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:55:00.000Z",
+      "last_edited_time": "2025-04-28T13:55:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "부디 큰 사고없이 이번 해킹사고가 잘 넘어갔으면 좋겠다.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "부디 큰 사고없이 이번 해킹사고가 잘 넘어갔으면 좋겠다.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-80bf-8ebb-d5e306dd3a5f",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:55:00.000Z",
+      "last_edited_time": "2025-04-28T13:55:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "내 암호화폐 자산… 별일 없겠지?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "내 암호화폐 자산… 별일 없겠지?",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1e3e6bc2-2127-8016-af6d-c2a0d43b0ac1",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1e3e6bc2-2127-80a9-addd-eef7094c9288"
+      },
+      "created_time": "2025-04-28T13:55:00.000Z",
+      "last_edited_time": "2025-04-28T13:55:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    }
+  ],
+  "lastModified": "2025-04-29T13:43:20.719Z"
+}

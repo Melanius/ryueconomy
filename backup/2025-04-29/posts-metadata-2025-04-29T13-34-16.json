@@ -1,0 +1,3197 @@
+[
+  {
+    "object": "page",
+    "id": "1e4e6bc2-2127-8055-aa54-e78b0b8276e1",
+    "created_time": "2025-04-29T10:58:00.000Z",
+    "last_edited_time": "2025-04-29T11:16:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-29",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 6
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": []
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "R?hw",
+          "name": "daily-log",
+          "color": "yellow"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "dl250429",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "dl250429",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "[25-04-29] 투자-",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "[25-04-29] 투자-",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-04-29-1e4e6bc221278055aa54e78b0b8276e1",
+    "public_url": "https://smartinvest.notion.site/25-04-29-1e4e6bc221278055aa54e78b0b8276e1"
+  },
+  {
+    "object": "page",
+    "id": "1e3e6bc2-2127-8062-b189-d43b2128fdbc",
+    "created_time": "2025-04-28T21:11:00.000Z",
+    "last_edited_time": "2025-04-29T02:02:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-29",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 47
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "ChatGPT Image 2025년 4월 29일 오전 09_06_20.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/076d2ff1-fb38-4e0b-80be-67958703a786/ChatGPT_Image_2025%EB%85%84_4%EC%9B%94_29%EC%9D%BC_%EC%98%A4%EC%A0%84_09_06_20.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=8b3af8f79d1acc4c94c02fcb524ebc9a40c67ed50781f1df1c3e8940e7ac222a&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.032Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250429",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250429",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 29일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 29일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-29-1e3e6bc221278062b189d43b2128fdbc",
+    "public_url": "https://smartinvest.notion.site/25-4-29-1e3e6bc221278062b189d43b2128fdbc"
+  },
+  {
+    "object": "page",
+    "id": "1e3e6bc2-2127-80a9-addd-eef7094c9288",
+    "created_time": "2025-04-28T12:45:00.000Z",
+    "last_edited_time": "2025-04-29T10:58:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-28",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 13
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "MY DIART_250428 (2).png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/e35caea3-4649-4d17-a703-7461e1323c14/MY_DIART_250428_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=4a5ecab59936ce02f21a38161f8e405bd29e5eec9cc526e5948ef22185c7524c&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "R?hw",
+          "name": "daily-log",
+          "color": "yellow"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "dl250428",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "dl250428",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "[25-04-28] 일상-SKT 유심 전쟁 참전",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "[25-04-28] 일상-SKT 유심 전쟁 참전",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-04-28-SKT-1e3e6bc2212780a9adddeef7094c9288",
+    "public_url": "https://smartinvest.notion.site/25-04-28-SKT-1e3e6bc2212780a9adddeef7094c9288"
+  },
+  {
+    "object": "page",
+    "id": "1e3e6bc2-2127-808b-9981-c29bd7080989",
+    "created_time": "2025-04-28T08:15:00.000Z",
+    "last_edited_time": "2025-04-28T13:31:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-28",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 7
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "녹색 블로그  인스타그램게시물.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/173fa339-971c-4320-90fa-805fb7471ee7/%EB%85%B9%EC%83%89_%EB%B8%94%EB%A1%9C%EA%B7%B8__%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8%EA%B2%8C%EC%8B%9C%EB%AC%BC.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=a1beb4e28c1aff786618715ce6b665f360ab6df7eeb9479c836bb67fe1021cfe&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "A@Y}",
+          "name": "code-lab",
+          "color": "green"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cl250428-b",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cl250428-b",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "블로그 개발 - 광고 기능 추가 방법",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "블로그 개발 - 광고 기능 추가 방법",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/1e3e6bc22127808b9981c29bd7080989",
+    "public_url": "https://smartinvest.notion.site/1e3e6bc22127808b9981c29bd7080989"
+  },
+  {
+    "object": "page",
+    "id": "1e2e6bc2-2127-80eb-87db-e6c9424f524d",
+    "created_time": "2025-04-27T21:45:00.000Z",
+    "last_edited_time": "2025-04-29T01:58:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-28",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 36
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "ChatGPT Image 2025년 4월 28일 오후 02_34_18.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/a5186085-77c8-422f-bf07-8a62716bca01/ChatGPT_Image_2025%EB%85%84_4%EC%9B%94_28%EC%9D%BC_%EC%98%A4%ED%9B%84_02_34_18.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=1a3478be3c8b6502a74ec10ada24dbc5db739aadb0eb4d5d6cad0643283313d8&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250428",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250428",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 28일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 28일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-28-1e2e6bc2212780eb87dbe6c9424f524d",
+    "public_url": "https://smartinvest.notion.site/25-4-28-1e2e6bc2212780eb87dbe6c9424f524d"
+  },
+  {
+    "object": "page",
+    "id": "1e2e6bc2-2127-802f-88b3-e91144b0cec4",
+    "created_time": "2025-04-27T10:39:00.000Z",
+    "last_edited_time": "2025-04-29T10:58:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-27",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 10
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "MY DIART_250427_.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/f069c966-c450-444b-afc6-59894d171906/MY_DIART_250427_.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=ae6096bdc30d57effe4bf977ef1b7bd632c10eaa55b7b45d59811e18f42d7cd7&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "R?hw",
+          "name": "daily-log",
+          "color": "yellow"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "dl250427",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "dl250427",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "[25-04-27] 일상-한 달 남은 육휴",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "[25-04-27] 일상-한 달 남은 육휴",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-04-27-1e2e6bc22127802f88b3e91144b0cec4",
+    "public_url": "https://smartinvest.notion.site/25-04-27-1e2e6bc22127802f88b3e91144b0cec4"
+  },
+  {
+    "object": "page",
+    "id": "1e2e6bc2-2127-80b0-8104-f78ffa5b3db7",
+    "created_time": "2025-04-27T02:25:00.000Z",
+    "last_edited_time": "2025-04-28T08:28:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-27",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 41
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "T우주.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/f4f8dc9c-fa0c-4077-ac25-98ae868de252/T%EC%9A%B0%EC%A3%BC.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=1e1612fc034ba5eafb3aadc60ab6e0717d219d63cad302fa2b6aa2bc693d1b34&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "805c18e4-bfde-4aea-8034-e55cdee4b3b2",
+          "name": "invest-insight",
+          "color": "orange"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "ii250427",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "ii250427",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "SKT 고객이라면 무조건 봐야 함 🚀 T 우주패스 완전정복",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "SKT 고객이라면 무조건 봐야 함 🚀 T 우주패스 완전정복",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/SKT-T-1e2e6bc2212780b08104f78ffa5b3db7",
+    "public_url": "https://smartinvest.notion.site/SKT-T-1e2e6bc2212780b08104f78ffa5b3db7"
+  },
+  {
+    "object": "page",
+    "id": "1e0e6bc2-2127-8050-ba28-e403dc5d4121",
+    "created_time": "2025-04-25T12:45:00.000Z",
+    "last_edited_time": "2025-04-29T01:58:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-26",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 34
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "ChatGPT Image 2025년 4월 27일 오전 08_43_50.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/80ea1f42-27eb-4aba-8aa6-d5fc3ef463cd/ChatGPT_Image_2025%EB%85%84_4%EC%9B%94_27%EC%9D%BC_%EC%98%A4%EC%A0%84_08_43_50.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=a6b9e36228217da5f3ff186edc7288e83c7efcff18544591591e3467653febb0&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250426",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250426",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 26일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 26일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-26-1e0e6bc221278050ba28e403dc5d4121",
+    "public_url": "https://smartinvest.notion.site/25-4-26-1e0e6bc221278050ba28e403dc5d4121"
+  },
+  {
+    "object": "page",
+    "id": "1dfe6bc2-2127-80a1-b012-e13a68c780f0",
+    "created_time": "2025-04-24T21:33:00.000Z",
+    "last_edited_time": "2025-04-28T05:35:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-25",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 38
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "ChatGPT Image 2025년 4월 25일 오전 09_07_44.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/68d0366b-5f4c-496a-a7aa-a45fe31a6b04/ChatGPT_Image_2025%EB%85%84_4%EC%9B%94_25%EC%9D%BC_%EC%98%A4%EC%A0%84_09_07_44.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=dfb5733e4b3d66db1b8059eedeb6605cae959c27d72d2705602258e331df7c3e&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250425",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250425",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 25일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 25일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-25-1dfe6bc2212780a1b012e13a68c780f0",
+    "public_url": "https://smartinvest.notion.site/25-4-25-1dfe6bc2212780a1b012e13a68c780f0"
+  },
+  {
+    "object": "page",
+    "id": "1dee6bc2-2127-8051-8158-c77139ec419e",
+    "created_time": "2025-04-23T21:48:00.000Z",
+    "last_edited_time": "2025-04-27T10:38:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-24",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 39
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "ChatGPT Image 2025년 4월 24일 오전 09_39_02.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/ccbcf934-3f5d-44cc-aef6-a25a8aa322eb/ChatGPT_Image_2025%EB%85%84_4%EC%9B%94_24%EC%9D%BC_%EC%98%A4%EC%A0%84_09_39_02.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=56438a9f6c862f2c44736e512b96f0b7962bce179a69c56ccb63307ee50eb04e&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250424",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250424",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 24일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 24일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-24-1dee6bc2212780518158c77139ec419e",
+    "public_url": "https://smartinvest.notion.site/25-4-24-1dee6bc2212780518158c77139ec419e"
+  },
+  {
+    "object": "page",
+    "id": "1dee6bc2-2127-80a1-b8bd-ded99b4a99b8",
+    "created_time": "2025-04-23T08:04:00.000Z",
+    "last_edited_time": "2025-04-24T03:09:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-19",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 34
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "만트라.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/5fbf376d-83be-4360-ae98-73f64c7af7e5/%EB%A7%8C%ED%8A%B8%EB%9D%BC.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=cb1a52b8524db2e5e3703ff15b9988e09408157b6df566c4e69e86939d0d2a26&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "805c18e4-bfde-4aea-8034-e55cdee4b3b2",
+          "name": "invest-insight",
+          "color": "orange"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "ii250419",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "ii250419",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "만트라 코인(OM) 사태 분석: 붕괴와 회복 노력",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "만트라 코인(OM) 사태 분석: 붕괴와 회복 노력",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/OM-1dee6bc2212780a1b8bdded99b4a99b8",
+    "public_url": "https://smartinvest.notion.site/OM-1dee6bc2212780a1b8bdded99b4a99b8"
+  },
+  {
+    "object": "page",
+    "id": "1dee6bc2-2127-807a-a955-e7f2dca6260a",
+    "created_time": "2025-04-23T07:22:00.000Z",
+    "last_edited_time": "2025-04-29T11:45:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "3d0ea6bf-9ab4-46a3-bb93-a62aa62b1538"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-23",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 51
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "폴앳킨스.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/a5d17d94-81d5-4608-85bd-117d0c4e997e/%ED%8F%B4%EC%95%B3%ED%82%A8%EC%8A%A4.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=3c46f9f1e2e02d3a01b0748d9240d12ed3885ec232c5cd9cc029cd80a082746d&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "805c18e4-bfde-4aea-8034-e55cdee4b3b2",
+          "name": "invest-insight",
+          "color": "orange"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "ii250423",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "ii250423",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "SEC의장으로 새로 취임한 ‘폴 앳킨스’에 대해 알아보자.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "SEC의장으로 새로 취임한 ‘폴 앳킨스’에 대해 알아보자.",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/SEC-1dee6bc22127807aa955e7f2dca6260a",
+    "public_url": "https://smartinvest.notion.site/SEC-1dee6bc22127807aa955e7f2dca6260a"
+  },
+  {
+    "object": "page",
+    "id": "1dde6bc2-2127-8051-9416-df626ada48c8",
+    "created_time": "2025-04-22T21:24:00.000Z",
+    "last_edited_time": "2025-04-28T13:30:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-22",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 5
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "녹색 블로그  인스타그램게시물.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/007b2220-e631-40b6-840a-8acbf3eb0e8a/%EB%85%B9%EC%83%89_%EB%B8%94%EB%A1%9C%EA%B7%B8__%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8%EA%B2%8C%EC%8B%9C%EB%AC%BC.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=67cad640adde2ce90a4f07271be86c6066296dba68b9c0fb09907cb90ac2ffcf&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "A@Y}",
+          "name": "code-lab",
+          "color": "green"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cl250422-b",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cl250422-b",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "블로그 개발 - MCP 기능활용",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "블로그 개발 - MCP 기능활용",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/MCP-1dde6bc2212780519416df626ada48c8",
+    "public_url": "https://smartinvest.notion.site/MCP-1dde6bc2212780519416df626ada48c8"
+  },
+  {
+    "object": "page",
+    "id": "1dde6bc2-2127-804c-b705-ee630badc4ff",
+    "created_time": "2025-04-22T21:13:00.000Z",
+    "last_edited_time": "2025-04-24T03:08:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-23",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 33
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "ChatGPT Image 2025년 4월 23일 오전 08_46_08.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/d0977836-6185-4a96-8375-a0675b063125/ChatGPT_Image_2025%EB%85%84_4%EC%9B%94_23%EC%9D%BC_%EC%98%A4%EC%A0%84_08_46_08.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=f5617b1ddb275e2c50972fb8d61139b642f20cce6269bc864e10e8f976deba89&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250423",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250423",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 23일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 23일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-23-1dde6bc22127804cb705ee630badc4ff",
+    "public_url": "https://smartinvest.notion.site/25-4-23-1dde6bc22127804cb705ee630badc4ff"
+  },
+  {
+    "object": "page",
+    "id": "1dce6bc2-2127-80eb-976a-fff8521ff8b4",
+    "created_time": "2025-04-21T21:33:00.000Z",
+    "last_edited_time": "2025-04-24T03:08:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-22",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 12
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "2025년 4월 22일 오전 09_53_04.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/cf16e754-7081-4f86-bc33-1105694e3f41/2025%EB%85%84_4%EC%9B%94_22%EC%9D%BC_%EC%98%A4%EC%A0%84_09_53_04.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=fb86bf4b3bcd514d1fc9a35122ff023ad7885f3ce2df67a5aa3266e5976bceb2&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250422",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250422",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 22일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 22일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-22-1dce6bc2212780eb976afff8521ff8b4",
+    "public_url": "https://smartinvest.notion.site/25-4-22-1dce6bc2212780eb976afff8521ff8b4"
+  },
+  {
+    "object": "page",
+    "id": "1dce6bc2-2127-80a8-afd7-d5ffe803d05e",
+    "created_time": "2025-04-21T13:42:00.000Z",
+    "last_edited_time": "2025-04-28T13:30:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-21",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 6
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "녹색 블로그  인스타그램게시물.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/d2906e2b-2007-4264-8d39-b3fa5f3b4906/%EB%85%B9%EC%83%89_%EB%B8%94%EB%A1%9C%EA%B7%B8__%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8%EA%B2%8C%EC%8B%9C%EB%AC%BC.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=746725c8d82cdb4f9a97daa5ea8fe20728fe9b12b176708654d24eef1c2776fc&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "A@Y}",
+          "name": "code-lab",
+          "color": "green"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cl250421-b",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cl250421-b",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "블로그 개발 - cursor AI 초급",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "블로그 개발 - cursor AI 초급",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/cursor-AI-1dce6bc2212780a8afd7d5ffe803d05e",
+    "public_url": "https://smartinvest.notion.site/cursor-AI-1dce6bc2212780a8afd7d5ffe803d05e"
+  },
+  {
+    "object": "page",
+    "id": "1dce6bc2-2127-806f-ad8e-f46c1721c888",
+    "created_time": "2025-04-21T13:36:00.000Z",
+    "last_edited_time": "2025-04-28T13:31:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-21",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 4
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": []
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "A@Y}",
+          "name": "code-lab",
+          "color": "green"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cl250421-t",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cl250421-t",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "TickleLabs 개발 - Main Page 구현",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "TickleLabs 개발 - Main Page 구현",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/TickleLabs-Main-Page-1dce6bc22127806fad8ef46c1721c888",
+    "public_url": "https://smartinvest.notion.site/TickleLabs-Main-Page-1dce6bc22127806fad8ef46c1721c888"
+  },
+  {
+    "object": "page",
+    "id": "1dce6bc2-2127-80e7-aa9e-f69225debfc9",
+    "created_time": "2025-04-21T05:33:00.000Z",
+    "last_edited_time": "2025-04-24T03:11:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "3d0ea6bf-9ab4-46a3-bb93-a62aa62b1538"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-21",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 18
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "ChatGPT Image 2025년 4월 21일 오전 10_35_21.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/a555c1a9-e298-40c5-b231-88d20dac18c2/ChatGPT_Image_2025%EB%85%84_4%EC%9B%94_21%EC%9D%BC_%EC%98%A4%EC%A0%84_10_35_21.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=7e2ddd39e1fca6c8d70f5370624e3df23df5cef7490c210c93c284e2c71b069e&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250421",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250421",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 21일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 21일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-21-1dce6bc2212780e7aa9ef69225debfc9",
+    "public_url": "https://smartinvest.notion.site/25-4-21-1dce6bc2212780e7aa9ef69225debfc9"
+  },
+  {
+    "object": "page",
+    "id": "1dce6bc2-2127-803a-b89d-c144a64aadd9",
+    "created_time": "2025-04-21T05:33:00.000Z",
+    "last_edited_time": "2025-04-24T03:08:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-18",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 28
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "2025년 4월 18일 오전 10_10_41.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/5d78b87d-240f-4064-8acb-584d034ada5c/2025%EB%85%84_4%EC%9B%94_18%EC%9D%BC_%EC%98%A4%EC%A0%84_10_10_41.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=c1edf9a8ff400b4423a52cf5857b9f52d1a2140cf7ac52c5ceacbd17f080f0db&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250418",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250418",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 18일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 18일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-18-1dce6bc22127803ab89dc144a64aadd9",
+    "public_url": "https://smartinvest.notion.site/25-4-18-1dce6bc22127803ab89dc144a64aadd9"
+  },
+  {
+    "object": "page",
+    "id": "1dce6bc2-2127-8065-bab1-d3a860fbcb54",
+    "created_time": "2025-04-21T05:33:00.000Z",
+    "last_edited_time": "2025-04-24T03:08:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-17",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 11
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "ChatGPT Image 2025년 4월 17일 오전 09_28_56.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/86bef56b-8b26-4282-a048-97d77550763f/ChatGPT_Image_2025%EB%85%84_4%EC%9B%94_17%EC%9D%BC_%EC%98%A4%EC%A0%84_09_28_56.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=335198124ebe563e75fce24b55bd11f53c410058a6f9e2900b5c661d4851817b&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250417",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250417",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 17일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 17일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-17-1dce6bc221278065bab1d3a860fbcb54",
+    "public_url": "https://smartinvest.notion.site/25-4-17-1dce6bc221278065bab1d3a860fbcb54"
+  },
+  {
+    "object": "page",
+    "id": "1dce6bc2-2127-80bc-af02-fc45ca5d53b9",
+    "created_time": "2025-04-21T05:33:00.000Z",
+    "last_edited_time": "2025-04-24T03:12:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "3d0ea6bf-9ab4-46a3-bb93-a62aa62b1538"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-16",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 22
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "ChatGPT Image 2025년 4월 16일 오전 09_26_28.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/86a5af26-3232-41c4-a10b-1784eae393ff/ChatGPT_Image_2025%EB%85%84_4%EC%9B%94_16%EC%9D%BC_%EC%98%A4%EC%A0%84_09_26_28.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=ed130f987f3b62be44cdd73c2d8defba68e24cafd0e60454408f3c6737bf5ffd&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250416",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250416",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 16일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 16일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-16-1dce6bc2212780bcaf02fc45ca5d53b9",
+    "public_url": "https://smartinvest.notion.site/25-4-16-1dce6bc2212780bcaf02fc45ca5d53b9"
+  },
+  {
+    "object": "page",
+    "id": "1dce6bc2-2127-8002-9ab0-f275f41f1f3e",
+    "created_time": "2025-04-21T05:33:00.000Z",
+    "last_edited_time": "2025-04-24T03:08:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-15",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 31
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "ChatGPT Image 2025년 4월 15일 오전 07_48_29.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/fcddc7f1-dd7e-4e1e-b152-fa9a27640d8f/ChatGPT_Image_2025%EB%85%84_4%EC%9B%94_15%EC%9D%BC_%EC%98%A4%EC%A0%84_07_48_29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=6cef354d0ccfe22d13f15b27486b948028ebee60dc816b7400bcf9aab14647d1&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250415",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250415",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 15일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 15일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-15-1dce6bc2212780029ab0f275f41f1f3e",
+    "public_url": "https://smartinvest.notion.site/25-4-15-1dce6bc2212780029ab0f275f41f1f3e"
+  },
+  {
+    "object": "page",
+    "id": "1dce6bc2-2127-8097-bf52-d0fe282230a0",
+    "created_time": "2025-04-21T05:32:00.000Z",
+    "last_edited_time": "2025-04-24T03:08:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-14",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 8
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "ChatGPT Image 2025년 4월 14일 오전 11_21_30.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/f04512c0-2b7c-40cb-af63-33a4f6b0e3b7/ChatGPT_Image_2025%EB%85%84_4%EC%9B%94_14%EC%9D%BC_%EC%98%A4%EC%A0%84_11_21_30.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=f57beb97aab85c369fd97fd62b87007438738285fcde49f83936b9971d8d41a5&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250414",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250414",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 14일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 14일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-14-1dce6bc221278097bf52d0fe282230a0",
+    "public_url": "https://smartinvest.notion.site/25-4-14-1dce6bc221278097bf52d0fe282230a0"
+  },
+  {
+    "object": "page",
+    "id": "1dce6bc2-2127-80b4-a26b-e058555ab836",
+    "created_time": "2025-04-21T05:31:00.000Z",
+    "last_edited_time": "2025-04-24T03:08:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-11",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 18
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "ChatGPT Image 2025년 4월 11일 오전 10_11_26.png",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/e7a297b8-3e42-46d6-a674-3ead9ce3ea14/ChatGPT_Image_2025%EB%85%84_4%EC%9B%94_11%EC%9D%BC_%EC%98%A4%EC%A0%84_10_11_26.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=a7e6a55e5f2a2a215e40d9d6c9c6bcd31a4e578423a5966dc93fae3b4c253c6a&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250411",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250411",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 11일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 11일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-11-1dce6bc2212780b4a26be058555ab836",
+    "public_url": "https://smartinvest.notion.site/25-4-11-1dce6bc2212780b4a26be058555ab836"
+  },
+  {
+    "object": "page",
+    "id": "1dce6bc2-2127-808b-afc4-ee3c1d5d66f1",
+    "created_time": "2025-04-21T05:31:00.000Z",
+    "last_edited_time": "2025-04-24T03:08:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-10",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 22
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "image3.jpg",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/0029b47c-9663-4f07-bb8f-563ccad6bdd4/image3.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=64ab61f59571f8c3e53c1e5e1ec9d9f7857a7c0219cbb580f521e59eb9733e2b&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250410",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250410",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 10일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 10일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-10-1dce6bc22127808bafc4ee3c1d5d66f1",
+    "public_url": "https://smartinvest.notion.site/25-4-10-1dce6bc22127808bafc4ee3c1d5d66f1"
+  },
+  {
+    "object": "page",
+    "id": "1dce6bc2-2127-804d-b271-e28fde0d2bc4",
+    "created_time": "2025-04-21T05:30:00.000Z",
+    "last_edited_time": "2025-04-24T03:08:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-09",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 15
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "image1.jpg",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/2ed361a5-58bc-47fe-a830-fe79053f10d3/image1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=9f276271cd5775d83688d37955a03be69cddde4242dafca92ab30e2529bb56e7&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250409",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250409",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 9일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 9일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-9-1dce6bc22127804db271e28fde0d2bc4",
+    "public_url": "https://smartinvest.notion.site/25-4-9-1dce6bc22127804db271e28fde0d2bc4"
+  },
+  {
+    "object": "page",
+    "id": "1dce6bc2-2127-80ba-90ee-dd1cd81a547f",
+    "created_time": "2025-04-21T05:18:00.000Z",
+    "last_edited_time": "2025-04-24T03:08:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "dabbc7c4-7953-4fb4-8ffe-e49e9b8085ad"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "1dce6bc2-2127-8079-9918-dcc0ee2b8f84"
+    },
+    "archived": false,
+    "in_trash": false,
+    "properties": {
+      "Date": {
+        "id": "%3FPqu",
+        "type": "date",
+        "date": {
+          "start": "2025-04-08",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Views": {
+        "id": "ILnQ",
+        "type": "number",
+        "number": 12
+      },
+      "Thurmbnail": {
+        "id": "LLfW",
+        "type": "files",
+        "files": [
+          {
+            "name": "image2.jpg",
+            "type": "file",
+            "file": {
+              "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/b607a4e3-c127-45fa-ac75-a946e9a2fa06/73204c2c-298d-48fb-9bd7-5fb68dcec863/image2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UTRY53A4%2F20250429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250429T133419Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2l%2Fj2R96h1dGaqxQ%2FFB2MhXXhuM5H0WaQ8xIr3QQk%2BQIgWpNYHQNlm5w3aJIOp82kXdL59aQk0EkmUYHvdw82Fl0qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGwYI9TfCzhZLLWFiSrcA1ujw9eEKz2vDyE0wKEhwOmc3bYxHG1%2BYAx%2FQBo21ZLbdTE0H5J1aW09aTxpOPEU8MEreA45ZD08WwdsZHiWG0gcbJ%2BosBzSluzEHnAfvA4Qvg6PcITeAproUHJsKfbY%2FtxX2K%2BvhJyXSt2SZWYd4O64Nw17Sm9pnBdOLiMzFmpwamBtfNRyvZvk5vkPWq%2BUPH3K7lDAyXUZFjMMsd6xZuN7UezKjFNTSfB89bjRhyrUikwXVXmYUZ%2FMcckc7qcDwoVqecNbTWxNDenNaecl7DrmMzgaibKEdlUQMsLX%2BB2UGaTPfzqbjE4iaTt9dQMNspcR2xbvBMP7rrXOzWCP%2BmXs6j1G%2ByoNktCM2Mqz%2Fpxr%2BUcXeqUAtKTN%2BL6opJnAMLBsL8fRAQCfdNg5DUD6Mzb1QVffpzrmMpqKP2H%2Fr%2BY9qScwO0tvHoiU1%2BCYt38zNDmAyS1z1c6GIe%2Bnyhco0bDJqpYsfScbqRb5hitwKH%2BDOe3cBNkOkaeZQsrMn%2FzSf9Sq9EilzH9XjamZ9GFMwzqCOmx8Tn7VwTWBYLQMvo8txllLpLvn1GuUoxngPty5V34T03qEUr15bVB3%2Fuwu6iwc%2B84yRzD7lTAhw56jlGEWa5%2FmLbAi%2FHcelazHMKmkw8AGOqUBYmohnU8O4IIVhcm5vjOCL1UzvXZrk9OGjJ4aCOaAMYNGwsAHegenNYRjQH%2B1PDtq9O9PngZ5h3%2B%2FMQn35pHbY0ZpnVdvTnm8W5QENk7PTRxVG4w6nb9aWcewTtBlORKadF9koiUYxgcmc6uAIKjLbK7%2BgyhTxFdgUtz%2BNXlsFvDwdGNvy4uzkiD0j1zZvS2bZeD3KseY2MagpVKN0xHAalEeeQb%2B&X-Amz-Signature=2dd6db8e62612213646f12e5402f5c5af11820ff8d4c60afd1d8e471b5a32d02&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2025-04-29T14:34:19.033Z"
+            }
+          }
+        ]
+      },
+      "Published": {
+        "id": "Mnce",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Category": {
+        "id": "oJlo",
+        "type": "select",
+        "select": {
+          "id": "9ba6c8e7-8b12-4677-a9c7-f6729fb83da8",
+          "name": "crypto-morning",
+          "color": "red"
+        }
+      },
+      "Excerpt": {
+        "id": "sX%60G",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Slug": {
+        "id": "~x%5B%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "cm250408",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "cm250408",
+            "href": null
+          }
+        ]
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "25년 4월 8일 아침 시황",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "25년 4월 8일 아침 시황",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/25-4-8-1dce6bc2212780ba90eedd1cd81a547f",
+    "public_url": "https://smartinvest.notion.site/25-4-8-1dce6bc2212780ba90eedd1cd81a547f"
+  }
+]

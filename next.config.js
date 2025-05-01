@@ -1,11 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  experimental: {
-    // Next.js 15 및 React 19 호환성 확보를 위한 실험 기능 활성화
-    serverComponentsExternalPackages: ['@notionhq/client'],
-    reactRoot: true, // React 19 호환성 활성화
-  },
+  serverExternalPackages: ['@notionhq/client'],
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.

@@ -3,16 +3,10 @@ import { Card } from "@/components/ui/card";
 import { notFound } from "next/navigation";
 import { getPostBySlug, getAllPosts, BlogPost } from "@/utils/notion";
 import { getPageContentAndThumbnail } from '@/lib/notion/blocks';
-import dynamic from 'next/dynamic';
+import ViewCounterWrapper from '@/components/post/ViewCounterWrapper';
 import type { Metadata, ResolvingMetadata } from "next";
 import Image from 'next/image';
 import RelatedPosts from '@/components/post/RelatedPosts';
-
-// ViewCounterWrapper 클라이언트 컴포넌트 동적 임포트
-const ViewCounterWrapper = dynamic(
-  () => import('@/components/post/ViewCounterWrapper')
-);
-
 
 // 각 카테고리별 색상 정보 (src/config/categories.tsx와 일치)
 const categoryColors: Record<string, {main: string, light: string, dark: string}> = {
@@ -93,13 +87,21 @@ export async function generateMetadata(
   }
 }
 
-// 관련 게시물 가져오기 (같은 카테고리의 다른 게시물)
-const getRelatedPosts = async (currentSlug: string, category: string) => {
+// 관련 게시물 가져오기 함수
+async function getRelatedPosts(currentSlug: string, category: string): Promise<BlogPost[]> {
+  console.log('🔄 관련 게시물 가져오기 시작:', currentSlug, category);
+  
+  // 모든 게시물을 가져와서 필터링
   const allPosts = await getAllPosts();
-  return allPosts
+  
+  // 같은 카테고리이면서 현재 포스트가 아닌 게시물만 선택
+  const related = allPosts
     .filter(post => post.slug !== currentSlug && post.category === category)
-    .slice(0, 3); // 최대 3개까지만 표시
-};
+    .slice(0, 3);
+  
+  console.log(`🔄 관련 게시물 ${related.length}개 가져옴`);
+  return related;
+}
 
 // 블로그 포스트 페이지
 export default async function BlogPostPage(props: { params: { slug: string } }) {
@@ -118,8 +120,7 @@ export default async function BlogPostPage(props: { params: { slug: string } }) 
     // Notion 블록을 직접 HTML로 변환 (단일 함수 사용)
     const { content } = await getPageContentAndThumbnail(post.id);
     
-    const relatedPosts = await getRelatedPosts(slug, post.category);
-    const categoryStyle = getCategoryStyle(post.category);
+    let relatedPosts = await getRelatedPosts(slug, post.category);
     
     // 날짜 형식 변환
     const formattedDate = new Date(post.date).toLocaleDateString('ko-KR', {
@@ -139,14 +140,14 @@ export default async function BlogPostPage(props: { params: { slug: string } }) 
         <div 
           className="py-12 shadow-sm" 
           style={{
-            background: `linear-gradient(135deg, ${categoryStyle.dark}, ${categoryStyle.light})`
+            background: `linear-gradient(135deg, ${getCategoryStyle(post.category).dark}, ${getCategoryStyle(post.category).light})`
           }}
         >
           <div className="container max-w-4xl mx-auto">
             <div className="bg-white rounded-lg shadow-sm overflow-hidden relative">
               <div 
                 className="absolute top-0 left-0 w-full h-1" 
-                style={{ background: `linear-gradient(to right, ${categoryStyle.main}, transparent)` }}
+                style={{ background: `linear-gradient(to right, ${getCategoryStyle(post.category).main}, transparent)` }}
               ></div>
               <div className="p-6 sm:p-8 text-center">
                 <div className="flex items-center text-sm text-muted-foreground gap-4 mb-4 justify-center">
@@ -155,8 +156,8 @@ export default async function BlogPostPage(props: { params: { slug: string } }) 
                     <span 
                       className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold font-display category-badge"
                       style={{ 
-                        backgroundColor: `${categoryStyle.light}`, 
-                        color: categoryStyle.main
+                        backgroundColor: `${getCategoryStyle(post.category).light}`, 
+                        color: getCategoryStyle(post.category).main
                       }}
                     >
                       {getCategoryName(post.category)}
@@ -169,7 +170,7 @@ export default async function BlogPostPage(props: { params: { slug: string } }) 
                 </div>
                 <h1 
                   className="text-3xl md:text-4xl font-display font-bold tracking-tight mb-5"
-                  style={{ color: `${categoryStyle.main}` }}
+                  style={{ color: `${getCategoryStyle(post.category).main}` }}
                 >
                   {post.title}
                 </h1>
@@ -187,10 +188,10 @@ export default async function BlogPostPage(props: { params: { slug: string } }) 
             <div className="bg-white rounded-lg shadow-sm overflow-hidden relative">
               <div 
                 className="absolute top-0 left-0 w-full h-1" 
-                style={{ background: `linear-gradient(to right, ${categoryStyle.main}, transparent)` }}
+                style={{ background: `linear-gradient(to right, ${getCategoryStyle(post.category).main}, transparent)` }}
               ></div>
               <div className="p-6 sm:p-8"
-                  style={{ background: `linear-gradient(to bottom, white, ${categoryStyle.light}05)` }}>
+                  style={{ background: `linear-gradient(to bottom, white, ${getCategoryStyle(post.category).light}05)` }}>
                 {/* Notion 블록 렌더링 결과 */}
                 <div 
                   className="notion-content" 
@@ -204,11 +205,7 @@ export default async function BlogPostPage(props: { params: { slug: string } }) 
         
         {/* 관련 게시물 - 클라이언트 컴포넌트 사용 */}
         {relatedPosts.length > 0 && (
-          <RelatedPosts
-            relatedPosts={relatedPosts}
-            getCategoryStyle={getCategoryStyle}
-            getCategoryName={getCategoryName}
-          />
+          <RelatedPosts relatedPosts={relatedPosts} />
         )}
       </div>
     );

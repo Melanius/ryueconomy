@@ -1,14 +1,15 @@
 // 카테고리별 포스트 API (src/app/api/posts/category/[category]/route.ts)
 import { NextRequest, NextResponse } from 'next/server';
-import { getPostsByCategory } from '@/lib/cache/notion-cache';
+import { getAllPosts } from '@/lib/notion';
 import { CategoryId } from '@/types/notion';
+import { logger } from '@/lib/logger';
 
 export async function GET(
   request: NextRequest,
   { params }: { params: { category: string } }
 ) {
   try {
-    console.log(`📥 GET /api/posts/category/${params.category} 요청 받음`);
+    logger.info(`📥 GET /api/posts/category/${params.category} 요청 받음`);
     
     const { category } = params;
     
@@ -32,8 +33,11 @@ export async function GET(
     // 성능 로깅 시작
     const startTime = Date.now();
     
-    // 카테고리별 포스트 가져오기
-    const posts = await getPostsByCategory(category as CategoryId);
+    // 모든 포스트 가져오고 카테고리별로 필터링
+    const allPosts = await getAllPosts();
+    const posts = category === 'all' 
+      ? allPosts 
+      : allPosts.filter(post => post.category === category);
     
     // 정렬 적용
     const sortedPosts = [...posts].sort((a, b) => {
@@ -53,7 +57,7 @@ export async function GET(
     const endTime = Date.now();
     const responseTime = endTime - startTime;
     
-    console.log(`📤 GET /api/posts/category/${category} 응답 완료: ${sortedPosts.length}개 포스트, ${responseTime}ms 소요`);
+    logger.info(`📤 GET /api/posts/category/${category} 응답 완료: ${sortedPosts.length}개 포스트, ${responseTime}ms 소요`);
     
     // 응답 반환
     return NextResponse.json({
@@ -70,7 +74,7 @@ export async function GET(
       }
     });
   } catch (error) {
-    console.error(`🔴 /api/posts/category/${params.category} 오류:`, error);
+    logger.error(`🔴 /api/posts/category/${params.category} 오류:`, error);
     
     return NextResponse.json(
       { 

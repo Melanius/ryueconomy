@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from 'next/image';
 import { Card } from "@/components/ui/card";
 import { BlogPost } from "@/utils/notion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // 카테고리별 기본 이미지 URL
 const DEFAULT_IMAGES: Record<string, string> = {
@@ -18,32 +18,62 @@ const DEFAULT_IMAGES: Record<string, string> = {
 
 interface RelatedPostsProps {
   relatedPosts: BlogPost[];
-  getCategoryStyle: (category: string) => {
-    main: string;
-    light: string;
-    dark: string;
-  };
-  getCategoryName: (category: string) => string;
 }
+
+// 카테고리별 색상 매핑 (page.tsx와 동일)
+const categoryColors: Record<string, {main: string, light: string, dark: string}> = {
+  'crypto-morning': {main: '#E03E3E', light: 'rgba(224, 62, 62, 0.15)', dark: 'rgba(224, 62, 62, 0.4)'},
+  'invest-insight': {main: '#FF9F43', light: 'rgba(255, 159, 67, 0.15)', dark: 'rgba(255, 159, 67, 0.4)'},
+  'real-portfolio': {main: '#0B6BCB', light: 'rgba(11, 107, 203, 0.15)', dark: 'rgba(11, 107, 203, 0.4)'},
+  'code-lab': {main: '#0F9D58', light: 'rgba(15, 157, 88, 0.15)', dark: 'rgba(15, 157, 88, 0.4)'},
+  'daily-log': {main: '#F5C400', light: 'rgba(245, 196, 0, 0.15)', dark: 'rgba(245, 196, 0, 0.4)'},
+};
+
+// 클라이언트 컴포넌트 내부 스타일 함수
+const getCategoryStyle = (category: string) => {
+  return categoryColors[category] || {main: '#4361ee', light: 'rgba(67, 97, 238, 0.15)', dark: 'rgba(67, 97, 238, 0.4)'};
+};
+
+// 클라이언트 컴포넌트 내부 카테고리명 함수
+const categoryNameMap: Record<string, string> = {
+  'crypto-morning': '크립토 모닝',
+  'invest-insight': '투자 인사이트',
+  'real-portfolio': '실전 포트폴리오',
+  'code-lab': '코드 랩',
+  'daily-log': '일상 기록',
+};
+const getCategoryName = (category: string): string => {
+  return categoryNameMap[category] || category;
+};
 
 // 안전한 이미지 URL인지 확인하는 함수
 const isValidImageUrl = (url?: string): boolean => {
   if (!url) return false;
   
+  // 빈 문자열 체크
+  if (url.trim() === '') return false;
+  
+  // 유효한 URL 형식인지 확인
   try {
     new URL(url);
     return true;
   } catch (e) {
+    console.log(`이미지 URL 검증 실패: ${url}`, e);
     return false;
   }
 };
 
-export default function RelatedPosts({ 
-  relatedPosts, 
-  getCategoryStyle,
-  getCategoryName
-}: RelatedPostsProps) {
+export default function RelatedPosts({ relatedPosts }: RelatedPostsProps) {
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
+  
+  // 컴포넌트 마운트 시 이미지 URL을 콘솔에 출력 (디버깅용)
+  useEffect(() => {
+    console.log('관련 게시물 데이터:', relatedPosts.map(post => ({
+      id: post.id,
+      title: post.title,
+      imageUrl: post.image
+    })));
+  }, [relatedPosts]);
   
   if (relatedPosts.length === 0) {
     return null;
@@ -58,22 +88,28 @@ export default function RelatedPosts({
           const hasValidImage = isValidImageUrl(relatedPost.image) && !imageErrors[relatedPost.id];
           
           // 기본 이미지 URL 가져오기 (이미지가 없거나 오류가 있는 경우)
-          const imageUrl = hasValidImage && relatedPost.image ? 
+          const imageUrl = hasValidImage ? 
             relatedPost.image : 
             (DEFAULT_IMAGES[relatedPost.category] || DEFAULT_IMAGES['all']);
+          
+          // 이미지 로딩에 오류 발생 시 콘솔에 로그 남기기
+          const handleImageError = () => {
+            console.log(`이미지 로딩 실패: ${relatedPost.image} (게시물: ${relatedPost.title})`);
+            setImageErrors(prev => ({ ...prev, [relatedPost.id]: true }));
+          };
           
           return (
             <Link href={`/blog/${relatedPost.slug}`} key={relatedPost.id}>
               <Card className="h-full overflow-hidden transition-all border card-hover-effect">
                 <div className="h-32 relative">
                   <Image 
-                    src={imageUrl} 
+                    src={imageUrl as string} 
                     alt={relatedPost.title} 
                     fill 
                     sizes="(max-width: 768px) 100vw, 33vw" 
                     className="object-cover"
                     priority={false}
-                    onError={() => setImageErrors(prev => ({ ...prev, [relatedPost.id]: true }))}
+                    onError={handleImageError}
                     unoptimized={imageUrl?.includes('amazonaws.com')}
                   />
                   <div 

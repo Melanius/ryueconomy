@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { increment } from '@/lib/notion'; // notion.ts에서 직접 increment 함수 가져오기
+import { incrementViewCount as increment } from '@/lib/notion';
+// import { incrementViewCount } from '@/lib/notion/cache';
 import { logger } from '@/lib/logger';
 
 // 캐시를 활용한 API 요청 최적화를 위한 Map (메모리 캐시)
@@ -15,18 +16,15 @@ const CACHE_EXPIRY = 10 * 60 * 1000;
 export async function POST(request: NextRequest) {
   try {
     // 요청 본문에서 slug 추출
-    const body = await request.json();
-    const { slug } = body;
-
-    logger.info(`📈 조회수 API 요청 받음: slug="${slug}"`);
-
+    const { slug } = await request.json();
+    
+    // slug가 없으면 400 Bad Request 반환
     if (!slug) {
-      logger.error('📈 조회수 업데이트 실패: slug가 요청에 제공되지 않았습니다.');
-      return NextResponse.json(
-        { error: '게시물 slug가 필요합니다.' },
-        { status: 400 }
-      );
+      logger.warn('조회수 증가 API 호출 시 slug 누락');
+      return NextResponse.json({ error: 'Missing slug parameter' }, { status: 400 });
     }
+
+    logger.info(`조회수 증가 API 호출: ${slug}`);
     
     // 개발 환경 확인
     const isDev = process.env.NODE_ENV === 'development';
@@ -63,7 +61,7 @@ export async function POST(request: NextRequest) {
     
     logger.info(`📈 increment 함수 호출 시작: slug="${slug}"`);
     
-    // 직접 increment 함수 호출
+    // 조회수 증가 API 직접 호출 (원래 함수 사용)
     const newViews = await increment(slug);
     
     if (newViews === 0) {
@@ -88,10 +86,11 @@ export async function POST(request: NextRequest) {
       views: newViews
     });
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : String(error);
-    logger.error(`📈 조회수 업데이트 중 오류: ${errorMessage}`, error);
+    logger.error(`조회수 증가 API 오류:`, error);
+    
+    // 오류 발생 시 500 Internal Server Error 반환
     return NextResponse.json(
-      { error: '조회수 업데이트 중 서버 오류가 발생했습니다.' },
+      { error: 'Failed to increment view count' },
       { status: 500 }
     );
   }

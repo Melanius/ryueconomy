@@ -1,140 +1,38 @@
-# Project Plan
+# 완료된 개발 작업 기록
 
-## 프로젝트 중요 사항
-- docs 폴더에 필요한 내용만 최소화하여 관리
-- 각 파일 크기는 18KB를 초과하지 않도록 분할 기획
-- 작업 전 사용자 동의 필요 (진행 전 항상 확인)
-- 모든 대화 및 주석은 한국어로 작성
-- 완료된 작업은 날짜와 시간 기록 필수
-- 디렉토리 생성 전 구조 확인 및 경로 검증 필수 ✅ (2025-04-22 11:45 KST)
-- 파일별 용량 제한: 18kb를 초과하지 않도록 파일 분리
-- 작업 전 반드시 사용자 동의 필요
-- 주석은 가능한 한글로 작성
-- 로그 정보는 logs 폴더에 저장되도록 구현
-  - API Routes: logs/api.log (winston 로거 사용)
-  - 서버 사이드 렌더링 오류: logs/ssr.log
-  - 클라이언트 사이드 에러: logs/client.log
-  - 노션 블록 처리: logs/notion.log
+## Notion API 및 캐시 구조 개선
+- Notion API 순환 참조 제거 및 캐시·API 레이어 분리 (client.ts, transformer.ts, api.ts, cache.ts, index.ts)
+- transformer.ts로 데이터 변환(pageToPost) 분리 및 모듈화
+- 캐시 레이어 직접 API 호출 및 TTL(Time-To-Live) 최적화
 
-## 오늘 완료된 작업 (2025-05-31)
-- ✅ 관련 게시물(Related Posts) 섹션의 썸네일 이미지 문제 해결 (2025-05-31 10:15 KST)
-  - RelatedPosts 컴포넌트에 카테고리별 기본 이미지 상수 추가
-  - 이미지 로드 실패 또는 유효하지 않은 이미지 URL일 경우 카테고리별 기본 이미지 표시 기능 구현
-  - isValidImageUrl 유틸리티 함수 추가로 이미지 URL 유효성 검사 강화
-  - 이미지 오류 상태 관리를 위한 useState 훅 도입
-  - 이미지 로드 에러 핸들링 개선으로 사용자 경험 향상
-  - 카테고리별 기본 이미지 파일 경로 설정 (crypto-default.jpg, invest-default.jpg 등)
-- ✅ 카테고리별 기본 이미지 파일 생성 (2025-05-31 11:30 KST)
-  - public/images/categories 디렉토리에 각 카테고리별 기본 SVG 이미지 파일 추가
-  - 카테고리별 시각적 아이덴티티를 반영한 기본 이미지 디자인
-  - PostCard 및 RelatedPosts 컴포넌트의 DEFAULT_IMAGES 상수 경로 업데이트
-  - 관리자 가이드 문서(docs/admin-guide.md) 추가 및 이미지 관리 방법 안내
+## 로깅 시스템 구현
+- Winston 기반 로거 설정 및 logs/api.log, logs/ssr.log, logs/client.log 기록
+- API 로깅 미들웨어 및 클라이언트 오류 로깅 유틸리티 구현
+- 로그 수집 API 엔드포인트(/api/log) 구현
 
-## 오늘 완료된 작업 (2025-05-30)
-- ✅ notion.ts 파일의 로깅 시스템 개선 (2025-05-30 15:20 KST)
-  - console.log, console.error, console.warn을 winston 로거 기반 notionLog로 대체
-  - 모든 로그가 logs/notion.log 파일에 저장되도록 수정
-  - 로그 포맷 일관성 유지 및 구조화된 로깅 구현
-  - 타입 오류 수정 (BlogPost 인터페이스 정의 추가 및 Post 타입 호환성 개선)
-  - 에러 메시지 한글화 및 세부 정보 개선
-- ✅ 게시물 조회수 기능 근본적 원인 해결 (2025-05-30 19:25 KST)
-  - API 경로와 실제 구현의 불일치 문제 수정
-  - views/route.ts 파일에서 직접 increment 함수 호출하도록 수정
-  - ViewCounter 컴포넌트 오류 처리 및 로깅 개선
-  - 조회수 업데이트 프로세스의 전체 흐름 최적화
-  - 개발 환경에서 일관된 조회수 처리를 위한 로직 개선
-  - 로깅 포맷 개선: 조회수 관련 로그에 📈 이모지 사용으로 가시성 향상
-  - ViewCounter 컴포넌트에서 slug 유효성 검사 추가 및 오류 핸들링 강화
-  - 캐시 관리 로직 개선 및 중복 조회 방지 메커니즘 최적화
-  - 개발/프로덕션 환경 분기 처리를 위한 isDev 변수 도입으로 코드 가독성 향상
+## 블로그 기능 개발 및 버그 수정
+- PostCard, PostsList, PostDetail, PostHeader, PostFooter, PostSidebar, PostComments 컴포넌트 구현
+- RelatedPosts 컴포넌트: 썸네일 URL 유효성 검사 및 카테고리별 기본 이미지 지원
+- PostsList 및 ArchiveWidget 필터링·페이지네이션 로직 구현 및 오류 수정
 
-## 오늘 완료된 작업 (2025-04-29)
-- ✅ Next.js 15 및 React 19 호환성 개선 (2025-04-29 16:30 KST)
-  - next.config.js에 experimental 설정 추가
-  - serverComponentsExternalPackages에 @notionhq/client 추가
-  - reactRoot 활성화
-- ✅ Notion API 클라이언트 오류 처리 개선 (2025-04-29 17:00 KST)
-  - 클라이언트 초기화 안정성 향상
-  - 환경 변수 오류 조건부 경고로 변경
-  - layout.tsx에서 Notion 검증 함수 임시 비활성화
+## 조회수 기능 구현 및 개선
+- ViewCounterWrapper·ViewCounter 컴포넌트 및 /api/views POST 라우트 구현
+- 조회수 중복 방지 및 개발/프로덕션 분기 처리 로직 적용
+- 관리자 조회수 모니터링 페이지(/admin/views) 및 인기 게시물 통계 구현
 
-## 오늘 완료된 작업 (2025-05-01)
-- ✅ NOTION_METRICS_DATABASE_ID 및 NEXT_PUBLIC_SITE_URL 관련 코드 삭제 (2025-05-01 14:00 KST)
-- ✅ Contact 페이지 UI 개선 (2025-05-01 15:30 KST)
-  - 페이지 상단 Contact 헤더 및 설명 텍스트 제거
-  - 이메일, 전화번호, 위치 정보 박스 제거
-  - '연결하기' 섹션을 페이지 상단으로 재배치
-  - 소셜 미디어 링크를 Threads와 GitHub 두 개로 간소화
-  - Threads 링크(https://www.threads.com/@ryueconomy) 및 아이콘 추가
-  - GitHub 링크 업데이트(https://github.com/Melanius)
-- ✅ Contact 페이지 UI 추가 개선 (2025-05-01 16:15 KST)
-  - 운영 시간 블록 제거
-  - 메시지 보내기 섹션을 페이지 중앙으로 재배치
-  - 페이지 레이아웃 단순화 및 사용자 경험 개선
-- ✅ Contact 페이지 메시지 전송 기능 구현 (2025-05-01 17:30 KST)
-  - 노션 데이터베이스에 메시지 저장 기능 구현
-  - /api/contact API 라우트 추가
-  - 이메일 형식 검증 기능 추가
-  - 제출 후 상태 피드백 UI 구현
-  - localStorage를 사용한 제출 횟수 제한 (3회) 구현
-- ✅ Contact 페이지 사용자 피드백 개선 (2025-05-01 18:30 KST)
-  - 메시지 전송 성공 시 alert 창 표시 기능 추가
-  - 사용자가 즉시 전송 완료를 확인할 수 있도록 시각적 피드백 강화
+## 카테고리 시스템 개선
+- 카테고리 타입 통합 및 NavCategoryId 컨텍스트 구현
+- CategoryNav, CategoryTabsWithNavigation, CategoryTabs 컴포넌트 업데이트
 
-## 오늘 완료된 작업 (2025-05-26)
-- ✅ Next.js 개발 서버 자동 포트 할당 기능 구현 (2025-05-26 15:30 KST)
-  - 포트 3000, 3001, 3002 중 사용 가능한 포트 자동 선택 기능 구현
-  - scripts/dev.js 스크립트 추가로 Node.js 기본 모듈만 사용한 포트 체크 구현
-  - package.json의 dev 스크립트 수정으로 외부 패키지 의존성 제거
-  - 모든 지정 포트가 사용중일 경우 랜덤 포트 할당 기능 추가
-- ✅ 블로그 포스트 페이지 런타임 오류 수정 (2025-05-26 17:45 KST)
-  - ViewCounterWrapper 컴포넌트에 정의되지 않은 slug 변수 대신 id 변수 전달하도록 수정
-  - CategoryId 타입 import 경로 수정 (types/post -> types/notion)
-  - 기본 카테고리 값을 "all"에서 "daily-log"로 수정하여 타입 호환성 개선
-- ✅ 관련 게시물 썸네일 표시 기능 개선 (2025-05-26 18:30 KST)
-  - 이미지가 없는 게시물에 카테고리별 기본 이미지 표시 기능 추가
-  - PostCard 컴포넌트 수정으로 이미지 항상 표시되도록 개선
-  - 카테고리별 기본 이미지 설정 (crypto-default.jpg, invest-default.jpg 등)
-  - Post 타입 속성 오류 수정 (isPopular → featured)
+## UI/스타일 개선
+- Contact 페이지 UI 정리 및 메시지 전송 기능 구현
+- 메인 배너 및 뉴스레터 섹션 이벤트 로깅, 반응형 디자인 최적화
+- Notion 블록 렌더링 로직 개선 (이미지 처리, 들여쓰기, 커스텀 블록 지원)
 
-## 오늘 완료된 작업 (2025-05-29)
-- ✅ 게시물 조회수 기능 수정 (2025-05-29 14:45 KST)
-  - /post/[id] 경로에 ViewCounterWrapper 컴포넌트 추가
-  - 모든 게시물 조회 경로에서 노션 DB의 Views 컬럼이 증가하도록 수정
-  - 게시물 접근 경로 간 조회수 카운팅 일관성 확보
-
-## 다음 작업 우선순위 🛠️
-
-1. 남은 파일 로깅 시스템 개선
-   - API 라우트 파일들의 console.log 대체
-   - 서버 사이드 렌더링 부분의 로깅 개선
-   - 클라이언트 사이드 오류 로깅 개선
-   - 🆕 조회수 기능 관련 클라이언트 로그 통합: logs/client.log에 브라우저 로그 기록
-   - 🆕 ViewCounter 컴포넌트의 console.log를 클라이언트 로그 시스템으로 이전
-
-2. 조회수 시스템 모니터링 및 최적화
-   - 🆕 비정상적 조회수 증가 패턴 감지 및 제한 기능 추가
-   - 🆕 서버 사이드 캐싱 계층 도입으로 Notion API 호출 최소화
-   - 🆕 조회수 API 성능 모니터링 및 개선
-
-3. 배포 설정
-   - 서버 환경 구성
-   - 도메인 설정
-   - SSL/TLS 인증서 설치
-   - 지속적 통합/배포 (CI/CD) 파이프라인 구성
-
-**메모:** 
-- 프로젝트 구조 분석 완료 - 노션 API를 통해 블로그 포스트를 가져와 렌더링하는 Next.js 15.x 기반 웹사이트
-- Next.js 개발 서버가 http://localhost:3001 포트에서 실행 중
-- 로깅 시스템 구현되어 각 로그 파일(api.log, ssr.log, client.log, notion.log)을 통해 오류 추적 및 디버깅 가능
-- notion.log 파일에서 winston 로깅 관련 오류 패턴 발견 - 문자열 메시지 처리 문제 (2025-05-30에 수정 완료)
-- 완료된 작업들은 project_finish.md 파일로 이동 완료
-- 카테고리 색상 변경으로 UI 일관성 향상: 노션의 색상 체계 적용
-- Contact 페이지 메시지 전송 기능이 노션 데이터베이스와 연동하여 구현됨
-- 조회수 기능이 정상적으로 작동하여 게시물 접근 시 노션 데이터베이스의 Views 필드가 증가하는 것 확인됨
-- 개발 환경에서도 조회수 시스템 테스트 완료 (중복 카운팅 방지 로직 포함)
-- 대규모 접속자 환경을 고려한 조회수 시스템 최적화 필요 (캐싱 및 API 호출 최소화)
-- RelatedPosts 컴포넌트에 카테고리별 기본 이미지 기능 추가 완료 (2025-05-31)
-
-## 작업 히스토리
-- 자세한 작업 히스토리는 docs/project_finish.md 파일을 참조하세요.
+## 배포 및 최적화
+- Next.js 15 및 React 19 호환성 설정 (next.config.js experimental)
+- - Next.js experimental 옵션(serverComponentsExternalPackages → serverExternalPackages, reactRoot·webpackDevMiddleware 제거) 수정 – 완료 2024-06-17 16:00 KST
+- 개발 서버 자동 포트 할당 스크립트(dev.js) 및 배포 설정
+- 리소스별 캐시(TTL) 최적화 및 logs 폴더 HMR 감시 제외 설정
+- - RelatedPosts 컴포넌트 dynamic import(ssr: false) 적용 – 완료 2024-06-17 16:15 KST
+- RelatedPostsWrapper 컴포넌트 생성 및 page.tsx import 수정 – 완료 2024-06-17 16:20 KST

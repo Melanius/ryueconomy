@@ -1,0 +1,246 @@
+import { logger } from '../logger';
+
+// 캐시 키 접두사 상수
+export const CACHE_KEYS = {
+  POSTS: 'posts',
+  POST: 'post',
+  CATEGORIES: 'categories',
+  RECENT: 'recent',
+  POPULAR: 'popular',
+};
+
+// 캐시 TTL 상수 (밀리초)
+export const CACHE_TTL = {
+  SHORT: 5 * 60 * 1000,         // 5분
+  MEDIUM: 30 * 60 * 1000,       // 30분
+  LONG: 60 * 60 * 1000,         // 1시간
+  VERY_LONG: 24 * 60 * 60 * 1000 // 24시간
+};
+
+/**
+ * 캐시 아이템 인터페이스
+ */
+interface CacheItem<T> {
+  data: T;
+  expiry: number;
+}
+
+/**
+ * 캐시 관리자 클래스
+ * 싱글톤 패턴으로 구현
+ */
+class CacheManager {
+  private static instance: CacheManager;
+  private cache: Map<string, CacheItem<any>>;
+  private defaultTTL: number = CACHE_TTL.SHORT; // 기본 TTL: 5분
+
+  private constructor() {
+    this.cache = new Map();
+    logger.info('캐시 관리자 초기화됨');
+  }
+
+  /**
+   * 캐시 관리자 인스턴스 가져오기
+   */
+  public static getInstance(): CacheManager {
+    if (!CacheManager.instance) {
+      CacheManager.instance = new CacheManager();
+    }
+    return CacheManager.instance;
+  }
+
+  /**
+   * 캐시에서 데이터 가져오기
+   * @param key 캐시 키
+   * @returns 캐시된 데이터 또는 undefined
+   */
+  public get<T>(key: string): T | undefined {
+    const item = this.cache.get(key);
+    
+    // 캐시 아이템이 없는 경우
+    if (!item) {
+      logger.info(`캐시 미스: ${key}`);
+      return undefined;
+    }
+    
+    // 캐시 아이템이 만료된 경우
+    if (Date.now() > item.expiry) {
+      logger.info(`캐시 만료: ${key}`);
+      this.cache.delete(key);
+      return undefined;
+    }
+    
+    // 캐시 히트
+    logger.info(`캐시 히트: ${key}`);
+    return item.data as T;
+  }
+
+  /**
+   * 데이터를 캐시에 저장
+   * @param key 캐시 키
+   * @param data 저장할 데이터
+   * @param ttl 캐시 유효 기간 (밀리초)
+   */
+  public set<T>(key: string, data: T, ttl: number = this.defaultTTL): void {
+    const expiry = Date.now() + ttl;
+    this.cache.set(key, { data, expiry });
+    logger.info(`캐시 설정: ${key} (TTL: ${ttl / 1000}초)`);
+  }
+
+  /**
+   * 특정 키의 캐시 삭제
+   * @param key 삭제할 캐시 키
+   */
+  public delete(key: string): void {
+    this.cache.delete(key);
+    logger.info(`캐시 삭제: ${key}`);
+  }
+
+  /**
+   * 정규식 패턴에 일치하는 모든 캐시 키 삭제
+   * @param pattern 정규식 패턴 (문자열)
+   * @returns 삭제된 캐시 아이템 수
+   */
+  public deleteByPattern(pattern: string): number {
+    const regex = new RegExp(pattern.replace('*', '.*'));
+    let count = 0;
+    
+    for (const key of this.cache.keys()) {
+      if (regex.test(key)) {
+        this.cache.delete(key);
+        count++;
+      }
+    }
+    
+    logger.info(`패턴 '${pattern}'으로 ${count}개 캐시 삭제됨`);
+    return count;
+  }
+
+  /**
+   * 모든 캐시 아이템 삭제
+   */
+  public clear(): void {
+    const count = this.cache.size;
+    this.cache.clear();
+    logger.info(`모든 캐시 삭제됨 (${count}개 항목)`);
+  }
+
+  /**
+   * 만료된 모든 캐시 아이템 삭제
+   * @returns 삭제된 캐시 아이템 수
+   */
+  public cleanExpired(): number {
+    const now = Date.now();
+    let count = 0;
+    
+    for (const [key, item] of this.cache.entries()) {
+      if (now > item.expiry) {
+        this.cache.delete(key);
+        count++;
+      }
+    }
+    
+    if (count > 0) {
+      logger.info(`${count}개의 만료된 캐시 항목 삭제됨`);
+    }
+    
+    return count;
+  }
+
+  /**
+   * 현재 캐시 상태 로깅
+   */
+  public logCacheStatus(): void {
+    const now = Date.now();
+    let expiredCount = 0;
+    
+    for (const item of this.cache.values()) {
+      if (now > item.expiry) {
+        expiredCount++;
+      }
+    }
+    
+    logger.info(`캐시 상태: ${this.cache.size}개 항목 (${expiredCount}개 만료됨)`);
+  }
+
+  /**
+   * 현재 캐시 크기 반환
+   */
+  public size(): number {
+    return this.cache.size;
+  }
+}
+
+// 캐시 관리자 인스턴스
+export const cacheManager = CacheManager.getInstance();
+
+/**
+ * 비동기 함수의 결과를 캐시하는 메모이제이션 함수
+ * @param fn 캐시할 비동기 함수
+ * @param keyGenerator 캐시 키 생성 함수
+ * @param ttl 캐시 유효 기간 (밀리초)
+ */
+export function memoize<T, Args extends any[]>(
+  fn: (...args: Args) => Promise<T>, 
+  keyGenerator: (...args: Args) => string, 
+  ttl: number = CACHE_TTL.MEDIUM
+): (...args: Args) => Promise<T> {
+  return async (...args: Args): Promise<T> => {
+    const key = keyGenerator(...args);
+    const cached = cacheManager.get<T>(key);
+    
+    if (cached !== undefined) {
+      return cached;
+    }
+    
+    const result = await fn(...args);
+    cacheManager.set(key, result, ttl);
+    return result;
+  };
+}
+
+/**
+ * 캐시 무효화 함수
+ * @param pattern 패턴 (문자열, '*'는 와일드카드로 사용)
+ */
+export async function invalidateCache(pattern: string): Promise<number> {
+  try {
+    logger.info(`캐시 무효화 시작: ${pattern}`);
+    
+    // 패턴이 '*'인 경우 모든 캐시 삭제
+    if (pattern === '*') {
+      const count = cacheManager.size();
+      cacheManager.clear();
+      logger.info(`모든 캐시 무효화 완료 (${count}개 항목)`);
+      return count;
+    }
+    
+    // 패턴으로 캐시 삭제
+    const count = cacheManager.deleteByPattern(pattern);
+    logger.info(`캐시 무효화 완료: ${pattern} (${count}개 항목)`);
+    return count;
+  } catch (error) {
+    logger.error('캐시 무효화 중 오류 발생', { 
+      pattern, 
+      error: error instanceof Error ? error.message : String(error) 
+    });
+    throw error;
+  }
+}
+
+/**
+ * 현재 캐시 상태 정보 가져오기
+ */
+export function getCacheStatus(): { size: number, status: string } {
+  const size = cacheManager.size();
+  cacheManager.cleanExpired(); // 만료된 항목 정리
+  
+  let status = '정상';
+  if (size > 1000) {
+    status = '주의: 캐시 크기가 큼';
+  } else if (size > 5000) {
+    status = '경고: 캐시 크기가 매우 큼';
+  }
+  
+  return { size, status };
+} 

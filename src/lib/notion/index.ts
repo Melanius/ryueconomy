@@ -1,33 +1,53 @@
-// src/lib/notion/index.ts
-// This file re-exports the core functionalities from the refactored modules.
+/**
+ * Notion API 통합 인터페이스 (재설계)
+ * 
+ * 이 파일은 Notion API 관련 모든 함수를 외부에 노출합니다.
+ * 순환 참조 문제를 해결하기 위해 구조가 재설계되었습니다.
+ */
 
-// Export client instance and IDs (if needed externally)
-export { notion, databaseId } from './client';
+// Notion 클라이언트 및 설정 export
+import { notion, databaseId } from './client';
 
-// Export utility functions
-export { countBlockTypes, escapeHTML, isEmoji } from './utils';
+// 캐시 레이어의 모든 함수 export (외부에서 사용할 주요 API)
+import {
+  fetchAllPosts as getAllPosts,
+  fetchPostBySlug as getPostBySlug,
+  fetchPostsByCategory as getPostsByCategory,
+  fetchRelatedPosts as getRelatedPosts,
+  fetchBlocks as getBlocks,
+  fetchPopularPosts as getPopularPosts,
+  fetchRecentPosts as getRecentPosts,
+  incrementViewCount
+} from './api';
 
-// Export page fetching and processing functions
+// 데이터 변환 유틸리티 함수 export
+import { pageToPost } from './transformer';
+
+// 전체 기능 export
 export {
-  pageToPost,
-  validateNotionConfig,
-  // testNotionConnection is internal, not exported
-  getPostById,
+  // 클라이언트 및 설정
+  notion,
+  databaseId,
+  
+  // 캐시 지원 함수 (주요 API 호출)
+  getAllPosts,
   getPostBySlug,
-  getAllPosts
-} from './page';
+  getPostsByCategory,
+  getRelatedPosts,
+  getPopularPosts,
+  getRecentPosts,
+  getBlocks,
+  incrementViewCount,
+  
+  // 데이터 변환 유틸리티
+  pageToPost,
+};
 
-// Export block fetching and rendering functions
-export {
-  getBlocks, // Get direct children of a block
-  getPageBlocks, // Get all blocks for a page recursively
-  getPageContentAndThumbnail, // High-level function for page content
-  renderBlocksToHtml, // Render blocks to HTML
-  renderBlocksToHtmlWithListHandling, // Render blocks with list handling
-  findFirstImage, // Find first image in blocks
-  // Internal functions are not exported
-} from './blocks';
-
-// Optionally, re-export types if they are defined within these modules
-// and needed externally. Currently, types like BlogPost and CategoryId
-// are imported from '@/types/post'. Notion API types are imported directly. 
+// 환경 변수 설정을 통한 캐시 비활성화 방법 문서화
+/**
+ * 캐시 비활성화 방법:
+ * .env.local 파일에 DISABLE_NOTION_CACHE=true 추가
+ * 
+ * 재귀 호출 방지 설정:
+ * .env.local 파일에 MAX_RECURSION_DEPTH=3 추가 (기본값)
+ */
