@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  webpack: (config, { dev, isServer }) => {
+    // notion-webhook 경로 제외
+    config.module.rules.push({
+      test: /notion-webhook\/route\.ts$/,
+      loader: 'ignore-loader',
+    });
+    return config;
+  },
   serverExternalPackages: ['@notionhq/client'],
   eslint: {
     // Warning: This allows production builds to successfully complete even if
