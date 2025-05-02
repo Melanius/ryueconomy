@@ -4,9 +4,10 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { HiArrowRight } from "react-icons/hi2";
 import { getAllPosts } from "@/lib/notion";
-import { Post, CategoryId } from "@/types/post";
+import { Post } from "@/types/post";
+import { CategoryId } from "@/types/notion";
 import { getCategoryLabel, getCategoryColor, getCategoryIcon, getCategoryGradient } from "@/config/categories";
-import { CalendarIcon, EyeIcon } from "@heroicons/react/24/outline";
+import { CalendarIcon } from "@heroicons/react/24/outline";
 import { 
   HiChartBar, 
   HiCurrencyDollar, 
@@ -24,7 +25,7 @@ import React, { useState } from 'react';
 import { notFound } from 'next/navigation';
 import Loading from '@/components/layout/Loading';
 import CategoryTabsWithNavigation from '@/components/layout/CategoryTabsWithNavigation';
-import { FaFireAlt, FaCalendarAlt, FaEye, FaArrowRight, FaTag, FaChevronRight, FaChartLine, FaArchive } from "react-icons/fa";
+import { FaCalendarAlt, FaArrowRight, FaTag, FaChevronRight, FaChartLine, FaArchive } from "react-icons/fa";
 import PostCard from '@/components/cards/PostCard';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from '@/components/ui/badge';
@@ -125,10 +126,7 @@ export default async function Home({ searchParams }: HomeProps) {
   // '전체' 카테고리에서는 인기 글, 다른 카테고리에서는 최신 글 3개 선택
   // 인기 게시물에서 '코드 랩'과 '일상 기록' 카테고리 제외
   const topPosts = activeCategory === 'all'
-    ? [...filteredPosts]
-        .filter(post => post.category !== 'code-lab' && post.category !== 'daily-log')
-        .sort((a, b) => (b.views || 0) - (a.views || 0))
-        .slice(0, 3) // 인기 글 (조회수 기준)
+    ? filteredPosts.filter(post => post.featured).slice(0, 3)
     : [...filteredPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3); // 최신 글 (날짜 기준)
   
   // 페이지네이션 설정
@@ -256,12 +254,7 @@ export default async function Home({ searchParams }: HomeProps) {
                             {getCategoryLabel(post.category || 'all')}
                           </div>
                           
-                          {(post.views || 0) > 300 && (
-                            <div className="text-amber-600 text-xs font-medium flex items-center">
-                              <FaFireAlt className="mr-1 h-3 w-3" />
-                              인기
-                            </div>
-                          )}
+
                         </div>
                         
                         <h3 className="font-medium text-base line-clamp-2 mb-1 hover:text-blue-600 transition-colors">{post.title}</h3>
@@ -271,11 +264,7 @@ export default async function Home({ searchParams }: HomeProps) {
                             <FaCalendarAlt className="h-3 w-3" />
                             {format(new Date(post.date), "yyyy.MM.dd", { locale: ko })}
                           </div>
-                          
-                          <div className="flex items-center gap-1">
-                            <FaEye className="h-3 w-3" />
-                            {(post.views || 0).toLocaleString()}
-                          </div>
+
                         </div>
                       </div>
                       

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { format } from 'date-fns';
 import { ko } from 'date-fns/locale';
-import { FaCalendarAlt, FaEye, FaChartLine } from 'react-icons/fa';
+import { FaCalendarAlt } from 'react-icons/fa';
 import { getCategoryColor, getCategoryLabel, getCategoryGradient, getCategoryIcon } from '@/config/categories';
 import { Post } from '@/types/post';
 import { CategoryId } from '@/types/notion';
@@ -116,13 +116,7 @@ export default function PostCard({ post, hideCategory = false, isMobileCompact =
                   {CategoryIcon && <CategoryIcon className="h-3 w-3" />}
                   {categoryLabel}
                 </div>
-                
-                {featured && (
-                  <div className="bg-amber-100 text-amber-600 px-2 py-0.5 rounded-full text-xs font-medium flex items-center">
-                    <FaChartLine className="mr-1 h-2.5 w-2.5" />
-                    인기
-                  </div>
-                )}
+
               </div>
             )}
             
@@ -137,11 +131,7 @@ export default function PostCard({ post, hideCategory = false, isMobileCompact =
                 <FaCalendarAlt className="mr-1 h-2.5 w-2.5" />
                 {format(new Date(date), 'yyyy.MM.dd', { locale: ko })}
               </div>
-              
-              <div className="flex items-center">
-                <FaEye className="mr-1 h-2.5 w-2.5" />
-                {(views || 0).toLocaleString()}
-              </div>
+
             </div>
           </div>
         </div>
@@ -163,13 +153,7 @@ export default function PostCard({ post, hideCategory = false, isMobileCompact =
                 {CategoryIcon && <CategoryIcon className="h-3 w-3" />}
                 {categoryLabel}
               </div>
-              
-              {featured && (
-                <div className="bg-amber-100 text-amber-600 px-2 py-0.5 rounded-full text-xs font-medium flex items-center">
-                  <FaChartLine className="mr-1 h-2.5 w-2.5" />
-                  인기
-                </div>
-              )}
+
             </div>
           )}
           
@@ -178,11 +162,7 @@ export default function PostCard({ post, hideCategory = false, isMobileCompact =
               <FaCalendarAlt className="mr-1 h-3 w-3" />
               {format(new Date(date), 'yyyy.MM.dd', { locale: ko })}
             </div>
-            
-            <div className="flex items-center">
-              <FaEye className="mr-1 h-3 w-3" />
-              {(views || 0).toLocaleString()}
-            </div>
+
           </div>
         </div>
         
@@ -207,13 +187,7 @@ export default function PostCard({ post, hideCategory = false, isMobileCompact =
           {title}
         </h3>
         
-        {/* Popular badge - if not already shown at the top */}
-        {featured && hideCategory && (
-          <div className="mt-auto pt-2 flex items-center text-amber-600 text-xs font-medium">
-            <FaChartLine className="mr-1" />
-            인기 게시물
-          </div>
-        )}
+
       </div>
     </Link>
   );

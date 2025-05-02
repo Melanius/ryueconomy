@@ -15,9 +15,7 @@ import {
   fetchPostsByCategory as getPostsByCategory,
   fetchRelatedPosts as getRelatedPosts,
   fetchBlocks as getBlocks,
-  fetchPopularPosts as getPopularPosts,
-  fetchRecentPosts as getRecentPosts,
-  incrementViewCount
+  fetchRecentPosts as getRecentPosts
 } from './api';
 
 // 데이터 변환 유틸리티 함수 export
@@ -34,10 +32,8 @@ export {
   getPostBySlug,
   getPostsByCategory,
   getRelatedPosts,
-  getPopularPosts,
   getRecentPosts,
   getBlocks,
-  incrementViewCount,
   
   // 데이터 변환 유틸리티
   pageToPost,

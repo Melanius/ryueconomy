@@ -22,7 +22,7 @@ const PostHeader: React.FC<PostHeaderProps> = ({ post, className = '' }) => {
       title: post.title,
       category: post.category,
       date: post.date,
-      views: post.views,
+
       tags: post.tags,
       hasCoverImage: !!post.coverImage,
       hasAuthor: !!post.author
@@ -95,7 +95,7 @@ const PostHeader: React.FC<PostHeaderProps> = ({ post, className = '' }) => {
         </div>
         
         <div className="flex items-center space-x-4">
-          <span>조회수 {post.views}</span>
+
           {post.tags && post.tags.length > 0 && (
             <div className="flex items-center space-x-2">
               {post.tags.map(tag => (

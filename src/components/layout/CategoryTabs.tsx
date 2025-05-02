@@ -79,7 +79,7 @@ export default function CategoryTabs({
               'flex items-center justify-center px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors',
               isActive ? 'text-white shadow-sm' : 'bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700'
               )}
-              style={isActive ? { background: getBgClass(category.id as NavCategoryId), backgroundSize: '100% 100%' } : {}}
+              style={isActive ? { backgroundImage: getBgClass(category.id as NavCategoryId), backgroundSize: '100% 100%' } : {}}
                 aria-current={isActive ? 'page' : undefined}
                 data-category={category.id}
               >
@@ -117,10 +117,10 @@ export default function CategoryTabs({
                           isHovered && !isActive ? 'text-white' : '',
                           !isActive && !isHovered ? 'hover:bg-zinc-200 dark:hover:bg-zinc-700' : ''
                         )}
-                        style={{
-                          background: (isActive || isHovered) ? getBgClass(item.id as NavCategoryId) : '',
+                        style={(isActive || isHovered) ? {
+                          backgroundImage: getBgClass(item.id as NavCategoryId),
                           backgroundSize: '100% 100%'
-                        }}
+                        } : {}}
                         aria-current={isActive ? 'page' : undefined}
                         data-category={item.id}
                       >

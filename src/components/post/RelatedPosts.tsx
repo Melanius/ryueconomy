@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Card } from "@/components/ui/card";
 import { BlogPost } from "@/utils/notion";
 import { useState, useEffect } from "react";
+import { CategoryStyle } from './RelatedPostsWrapper';
 
 // 카테고리별 기본 이미지 URL
 const DEFAULT_IMAGES: Record<string, string> = {
@@ -18,33 +19,20 @@ const DEFAULT_IMAGES: Record<string, string> = {
 
 interface RelatedPostsProps {
   relatedPosts: BlogPost[];
+  categoryStyles: Record<string, CategoryStyle>;
+  categoryNames: Record<string, string>;
 }
 
-// 카테고리별 색상 매핑 (page.tsx와 동일)
-const categoryColors: Record<string, {main: string, light: string, dark: string}> = {
-  'crypto-morning': {main: '#E03E3E', light: 'rgba(224, 62, 62, 0.15)', dark: 'rgba(224, 62, 62, 0.4)'},
-  'invest-insight': {main: '#FF9F43', light: 'rgba(255, 159, 67, 0.15)', dark: 'rgba(255, 159, 67, 0.4)'},
-  'real-portfolio': {main: '#0B6BCB', light: 'rgba(11, 107, 203, 0.15)', dark: 'rgba(11, 107, 203, 0.4)'},
-  'code-lab': {main: '#0F9D58', light: 'rgba(15, 157, 88, 0.15)', dark: 'rgba(15, 157, 88, 0.4)'},
-  'daily-log': {main: '#F5C400', light: 'rgba(245, 196, 0, 0.15)', dark: 'rgba(245, 196, 0, 0.4)'},
-};
+// 카테고리별 스타일 가져오기 (지역 함수)
+function getCategoryStyle(category: string, styles: Record<string, CategoryStyle>) {
+  return styles[category] || 
+    {main: "#4361ee", light: "rgba(67, 97, 238, 0.15)", dark: "rgba(67, 97, 238, 0.4)"};
+}
 
-// 클라이언트 컴포넌트 내부 스타일 함수
-const getCategoryStyle = (category: string) => {
-  return categoryColors[category] || {main: '#4361ee', light: 'rgba(67, 97, 238, 0.15)', dark: 'rgba(67, 97, 238, 0.4)'};
-};
-
-// 클라이언트 컴포넌트 내부 카테고리명 함수
-const categoryNameMap: Record<string, string> = {
-  'crypto-morning': '크립토 모닝',
-  'invest-insight': '투자 인사이트',
-  'real-portfolio': '실전 포트폴리오',
-  'code-lab': '코드 랩',
-  'daily-log': '일상 기록',
-};
-const getCategoryName = (category: string): string => {
-  return categoryNameMap[category] || category;
-};
+// 카테고리명 가져오기 (지역 함수)
+function getCategoryName(category: string, names: Record<string, string>): string {
+  return names[category] || category;
+}
 
 // 안전한 이미지 URL인지 확인하는 함수
 const isValidImageUrl = (url?: string): boolean => {
@@ -63,7 +51,7 @@ const isValidImageUrl = (url?: string): boolean => {
   }
 };
 
-export default function RelatedPosts({ relatedPosts }: RelatedPostsProps) {
+export default function RelatedPosts({ relatedPosts, categoryStyles, categoryNames }: RelatedPostsProps) {
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
   
   // 컴포넌트 마운트 시 이미지 URL을 콘솔에 출력 (디버깅용)
@@ -115,7 +103,7 @@ export default function RelatedPosts({ relatedPosts }: RelatedPostsProps) {
                   <div 
                     className="absolute inset-0 opacity-0 hover:opacity-20 transition-opacity duration-300"
                     style={{
-                      background: `linear-gradient(135deg, ${getCategoryStyle(relatedPost.category).dark}, ${getCategoryStyle(relatedPost.category).light})`
+                      background: `linear-gradient(135deg, ${getCategoryStyle(relatedPost.category, categoryStyles).dark}, ${getCategoryStyle(relatedPost.category, categoryStyles).light})`
                     }}
                   ></div>
                 </div>
@@ -123,7 +111,7 @@ export default function RelatedPosts({ relatedPosts }: RelatedPostsProps) {
                   <div 
                     className="p-4 border-b"
                     style={{
-                      background: `linear-gradient(to right, ${getCategoryStyle(relatedPost.category).light}, white)`
+                      background: `linear-gradient(to right, ${getCategoryStyle(relatedPost.category, categoryStyles).light}, white)`
                     }}
                   >
                     <div className="flex items-center text-sm text-muted-foreground gap-4 mb-2">
@@ -134,14 +122,11 @@ export default function RelatedPosts({ relatedPosts }: RelatedPostsProps) {
                           day: '2-digit',
                         })}
                       </span>
-                      {/* 관련 게시물 조회수 표시 (선택적) */}
-                      <span className="text-xs">
-                        조회수: {relatedPost.views || 0}
-                      </span>
+
                     </div>
                     <h3 
                       className="font-display font-bold text-lg line-clamp-2"
-                      style={{ color: getCategoryStyle(relatedPost.category).main }}
+                      style={{ color: getCategoryStyle(relatedPost.category, categoryStyles).main }}
                     >
                       {relatedPost.title}
                     </h3>

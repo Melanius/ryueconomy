@@ -3,13 +3,12 @@ import { Card } from "@/components/ui/card";
 import { notFound } from "next/navigation";
 import { getPostBySlug, getAllPosts, BlogPost } from "@/utils/notion";
 import { getPageContentAndThumbnail } from '@/lib/notion/blocks';
-import ViewCounterWrapper from '@/components/post/ViewCounterWrapper';
 import type { Metadata, ResolvingMetadata } from "next";
 import Image from 'next/image';
-import RelatedPosts from '@/components/post/RelatedPosts';
+import RelatedPostsWrapper, { CategoryStyle } from '@/components/post/RelatedPostsWrapper';
 
-// 각 카테고리별 색상 정보 (src/config/categories.tsx와 일치)
-const categoryColors: Record<string, {main: string, light: string, dark: string}> = {
+// 카테고리별 색상 정보 (직접 정의)
+const categoryColors: Record<string, CategoryStyle> = {
   "crypto-morning": {main: "#E03E3E", light: "rgba(224, 62, 62, 0.15)", dark: "rgba(224, 62, 62, 0.4)"},
   "invest-insight": {main: "#FF9F43", light: "rgba(255, 159, 67, 0.15)", dark: "rgba(255, 159, 67, 0.4)"},
   "real-portfolio": {main: "#0B6BCB", light: "rgba(11, 107, 203, 0.15)", dark: "rgba(11, 107, 203, 0.4)"},
@@ -17,24 +16,25 @@ const categoryColors: Record<string, {main: string, light: string, dark: string}
   "daily-log": {main: "#F5C400", light: "rgba(245, 196, 0, 0.15)", dark: "rgba(245, 196, 0, 0.4)"}
 };
 
-// 카테고리별 스타일 가져오기
-const getCategoryStyle = (category: string) => {
-  return categoryColors[category] || 
-    {main: "#4361ee", light: "rgba(67, 97, 238, 0.15)", dark: "rgba(67, 97, 238, 0.4)"};
+// 카테고리별 이름 매핑 (직접 정의)
+const categoryNameMap: Record<string, string> = {
+  "crypto-morning": "크립토 모닝",
+  "invest-insight": "투자 인사이트",
+  "real-portfolio": "실전 포트폴리오",
+  "code-lab": "코드 랩",
+  "daily-log": "일상 기록"
 };
 
-// 카테고리명 가져오기
-const getCategoryName = (category: string): string => {
-  const categoryMap: Record<string, string> = {
-    "crypto-morning": "크립토 모닝",
-    "invest-insight": "투자 인사이트",
-    "real-portfolio": "실전 포트폴리오",
-    "code-lab": "코드 랩",
-    "daily-log": "일상 기록"
-  };
-  
-  return categoryMap[category] || category;
-};
+// 카테고리별 스타일 가져오기 (지역 함수)
+function getCategoryStyle(category: string) {
+  return categoryColors[category] || 
+    {main: "#4361ee", light: "rgba(67, 97, 238, 0.15)", dark: "rgba(67, 97, 238, 0.4)"};
+}
+
+// 카테고리명 가져오기 (지역 함수)
+function getCategoryName(category: string): string {
+  return categoryNameMap[category] || category;
+}
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -87,9 +87,11 @@ export async function generateMetadata(
   }
 }
 
-// 관련 게시물 가져오기 함수
+// 관련 게시물 가져오기 함수 - 개발 환경에서만 로깅하도록 최적화
 async function getRelatedPosts(currentSlug: string, category: string): Promise<BlogPost[]> {
-  console.log('🔄 관련 게시물 가져오기 시작:', currentSlug, category);
+  if (process.env.NODE_ENV === 'development') {
+    console.log('🔄 관련 게시물 가져오기 시작:', currentSlug, category);
+  }
   
   // 모든 게시물을 가져와서 필터링
   const allPosts = await getAllPosts();
@@ -99,7 +101,9 @@ async function getRelatedPosts(currentSlug: string, category: string): Promise<B
     .filter(post => post.slug !== currentSlug && post.category === category)
     .slice(0, 3);
   
-  console.log(`🔄 관련 게시물 ${related.length}개 가져옴`);
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`🔄 관련 게시물 ${related.length}개 가져옴`);
+  }
   return related;
 }
 
@@ -131,11 +135,6 @@ export default async function BlogPostPage(props: { params: { slug: string } }) 
     
     return (
       <div className="pb-16">
-        {/* ViewCounterWrapper 클라이언트 컴포넌트 추가 - 방문 시 조회수 증가 (수정됨) */}
-        {process.env.NODE_ENV === 'production' ? (
-          <ViewCounterWrapper slug={slug} />
-        ) : null}
-        
         {/* 포스트 헤더 */}
         <div 
           className="py-12 shadow-sm" 
@@ -163,10 +162,6 @@ export default async function BlogPostPage(props: { params: { slug: string } }) 
                       {getCategoryName(post.category)}
                     </span>
                   </Link>
-                  {/* 조회수 표시 (선택적) */}
-                  <span className="text-sm text-muted-foreground">
-                    조회수: {post.views || 0}
-                  </span>
                 </div>
                 <h1 
                   className="text-3xl md:text-4xl font-display font-bold tracking-tight mb-5"
@@ -203,9 +198,13 @@ export default async function BlogPostPage(props: { params: { slug: string } }) 
           </div>
         </article>
         
-        {/* 관련 게시물 - 클라이언트 컴포넌트 사용 */}
+        {/* 관련 게시물 - 클라이언트 컴포넌트에 스타일 정보 직접 전달 */}
         {relatedPosts.length > 0 && (
-          <RelatedPosts relatedPosts={relatedPosts} />
+          <RelatedPostsWrapper 
+            relatedPosts={relatedPosts} 
+            categoryStyles={categoryColors}
+            categoryNames={categoryNameMap}
+          />
         )}
       </div>
     );

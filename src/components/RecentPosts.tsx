@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { FaCalendarAlt, FaEye, FaArrowRight, FaChevronRight } from "react-icons/fa";
+import { FaCalendarAlt, FaArrowRight, FaChevronRight } from "react-icons/fa";
 import { useGlobalState } from "@/contexts/GlobalStateContext";
 import { Post, CategoryId } from "@/types/post";
 import { useState } from "react";
@@ -117,12 +117,7 @@ export default function RecentPosts({ posts }: RecentPostsProps) {
                     {getCategoryLabel(post.category)}
                   </div>
                   
-                  {(post.views || 0) > 300 && (
-                    <div className="text-amber-600 text-xs font-medium flex items-center">
-                      <FaEye className="mr-1 h-3 w-3" />
-                      인기
-                    </div>
-                  )}
+
                 </div>
                 
                 <h3 className="font-medium text-base line-clamp-2 mb-1 hover:text-blue-600 transition-colors">{post.title}</h3>
@@ -132,11 +127,7 @@ export default function RecentPosts({ posts }: RecentPostsProps) {
                     <FaCalendarAlt className="h-3 w-3" />
                     {format(new Date(post.date), "yyyy.MM.dd", { locale: ko })}
                   </div>
-                  
-                  <div className="flex items-center gap-1">
-                    <FaEye className="h-3 w-3" />
-                    {(post.views || 0).toLocaleString()}
-                  </div>
+
                 </div>
               </div>
               

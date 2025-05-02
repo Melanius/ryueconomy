@@ -24,7 +24,7 @@ export interface Post {
   category: CategoryId;
   content: string;
   tags: string[];
-  views?: number;
+
   slug?: string;
   excerpt?: string;
   featured?: boolean;

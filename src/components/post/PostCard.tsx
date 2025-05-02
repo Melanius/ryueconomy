@@ -79,11 +79,7 @@ const PostCard: React.FC<PostCardProps> = ({ post, className = '' }) => {
               {formatDate(post.date)}
             </div>
             
-            {post.views !== undefined && (
-              <div className="text-sm text-gray-500">
-                조회수 {post.views}
-              </div>
-            )}
+
           </div>
         </div>
       </article>

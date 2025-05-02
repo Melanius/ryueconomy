@@ -87,23 +87,15 @@ export function pageToPost(page: PageObjectResponse): Post {
     
     // Views 속성 처리
     const viewsProperty = page.properties.views || page.properties.Views;
-    notionLog.info(`📄 조회수 속성 처리:`, viewsProperty ? JSON.stringify(viewsProperty) : 'undefined');
-    
     let views = 0;
-    if (viewsProperty) {
-      if (viewsProperty.type === 'number') {
-        views = viewsProperty.number !== null ? viewsProperty.number : 0;
-        notionLog.info(`📄 조회수 추출 성공: ${views}`);
-      } else {
-        notionLog.info(`📄 조회수 속성이 number 타입이 아님: ${viewsProperty.type}`);
-      }
-    } else {
-      notionLog.info(`📄 조회수 속성을 찾을 수 없음`);
+    if (viewsProperty?.type === 'number') {
+      views = viewsProperty.number ?? 0;
     }
     
-    const featuredProperty = page.properties.featured || page.properties.Featured;
-    const featured = featuredProperty?.type === 'checkbox' 
-      ? featuredProperty.checkbox || false 
+    // PP(Property 'PP') 체크박스 기반 인기 여부 처리
+    const ppProperty = page.properties.PP;
+    const featured = ppProperty?.type === 'checkbox' 
+      ? ppProperty.checkbox
       : false;
     
     // 썸네일 이미지 URL 체크 (노션 페이지 커버 이미지가 있는 경우)
