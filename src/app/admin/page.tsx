@@ -40,54 +40,8 @@ function DashboardCard({ title, value, description, icon, color }: DashboardCard
 
 // 관리자 대시보드 페이지
 export default function AdminDashboard() {
-  const [cacheStatus, setCacheStatus] = useState<{
-    size: number;
-    status: string;
-  } | null>(null);
-  
-  const [loading, setLoading] = useState(true);
-  
-  // 캐시 상태 가져오기
-  const fetchCacheStatus = async () => {
-    try {
-      setLoading(true);
-      
-      const response = await fetch('/api/cache');
-      
-      if (!response.ok) {
-        throw new Error(`API 응답 오류: ${response.status}`);
-      }
-      
-      const data = await response.json();
-      setCacheStatus({
-        size: data.size,
-        status: data.status
-      });
-    } catch (err) {
-      console.error('캐시 상태 가져오기 오류:', err);
-    } finally {
-      setLoading(false);
-    }
-  };
-  
-  // 페이지 로드 시 데이터 가져오기
-  useEffect(() => {
-    fetchCacheStatus();
-  }, []);
-  
   // 리소스 카드 목록
   const resourceCards = [
-    {
-      title: '캐시 관리',
-      description: '캐시 상태를 확인하고 관리합니다.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2H5z" />
-        </svg>
-      ),
-      color: 'bg-blue-500',
-      link: '/admin/cache'
-    },
     {
       title: '조회수 모니터링',
       description: '게시물의 조회수 통계를 모니터링합니다.',
@@ -99,17 +53,6 @@ export default function AdminDashboard() {
       ),
       color: 'bg-green-500',
       link: '/admin/views'
-    },
-    {
-      title: '웹훅 관리',
-      description: 'Notion 웹훅을 설정하고 관리합니다.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      ),
-      color: 'bg-purple-500',
-      link: '/admin/webhooks'
     },
     {
       title: '블로그 홈',
@@ -132,19 +75,6 @@ export default function AdminDashboard() {
           <h2 className="text-xl font-semibold mb-4">시스템 상태</h2>
           
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {/* 캐시 상태 카드 */}
-            <DashboardCard
-              title="캐시 상태"
-              value={loading ? '로딩 중...' : (cacheStatus ? cacheStatus.status : '알 수 없음')}
-              description={`현재 ${loading ? '-' : (cacheStatus ? cacheStatus.size : 0)}개 항목이 캐시되어 있습니다.`}
-              icon={
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2H5z" />
-                </svg>
-              }
-              color="bg-blue-500"
-            />
-            
             {/* 서버 상태 카드 */}
             <DashboardCard
               title="서버 상태"
@@ -209,8 +139,7 @@ export default function AdminDashboard() {
                 이 관리자 패널에서는 블로그의 다양한 기능들을 관리할 수 있습니다.
               </p>
               <ul className="list-disc pl-5 space-y-1">
-                <li><strong>캐시 관리</strong>: Notion API 호출 결과를 저장하는 캐시 시스템을 모니터링하고 관리합니다.</li>
-                <li><strong>웹훅 관리</strong>: Notion 웹훅 설정을 확인하고 관리합니다.</li>
+                <li><strong>조회수 모니터링</strong>: 블로그 게시물의 조회수를 확인하고 분석합니다.</li>
               </ul>
             </div>
           </div>

@@ -12,13 +12,13 @@ interface AdminLayoutProps {
 // 네비게이션 링크 컴포넌트
 interface NavLinkProps {
   href: string;
-  currentPath: string;
+  currentPath: string | null;
   children: ReactNode;
 }
 
 function NavLink({ href, currentPath, children }: NavLinkProps) {
   const isActive = currentPath === href || 
-                  (href !== '/' && currentPath.startsWith(href));
+                  (href !== '/' && currentPath?.startsWith(href));
   
   return (
     <Link
@@ -37,14 +37,14 @@ function NavLink({ href, currentPath, children }: NavLinkProps) {
 // 모바일 네비게이션 링크 컴포넌트
 interface MobileNavLinkProps {
   href: string;
-  currentPath: string;
+  currentPath: string | null;
   children: ReactNode;
   onClick: () => void;
 }
 
 function MobileNavLink({ href, currentPath, children, onClick }: MobileNavLinkProps) {
   const isActive = currentPath === href || 
-                  (href !== '/' && currentPath.startsWith(href));
+                  (href !== '/' && currentPath?.startsWith(href));
   
   return (
     <Link
@@ -114,14 +114,8 @@ export default function AdminLayout({ children, title }: AdminLayoutProps) {
                 <NavLink href="/admin" currentPath={pathname}>
                   대시보드
                 </NavLink>
-                <NavLink href="/admin/cache" currentPath={pathname}>
-                  캐시 관리
-                </NavLink>
                 <NavLink href="/admin/views" currentPath={pathname}>
                   조회수 모니터링
-                </NavLink>
-                <NavLink href="/admin/webhooks" currentPath={pathname}>
-                  웹훅 관리
                 </NavLink>
                 <NavLink href="/" currentPath={pathname}>
                   블로그 홈
@@ -186,25 +180,11 @@ export default function AdminLayout({ children, title }: AdminLayoutProps) {
                   대시보드
                 </MobileNavLink>
                 <MobileNavLink
-                  href="/admin/cache"
-                  currentPath={pathname}
-                  onClick={closeSidebar}
-                >
-                  캐시 관리
-                </MobileNavLink>
-                <MobileNavLink
                   href="/admin/views"
                   currentPath={pathname}
                   onClick={closeSidebar}
                 >
                   조회수 모니터링
-                </MobileNavLink>
-                <MobileNavLink
-                  href="/admin/webhooks"
-                  currentPath={pathname}
-                  onClick={closeSidebar}
-                >
-                  웹훅 관리
                 </MobileNavLink>
                 <MobileNavLink
                   href="/"
