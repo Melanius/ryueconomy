@@ -16,6 +16,9 @@ import {
 import { notion } from './client';
 import { notionLogger, notionLog } from '@/lib/logger';
 
+// 환경 설정
+const isProd = process.env.NODE_ENV === 'production';
+
 // HTML 블록을 위한 확장 타입 정의
 interface HtmlBlockObjectResponse {
   id: string;
@@ -37,7 +40,10 @@ export type ExtendedBlockObjectResponse = BlockObjectResponse | HtmlBlockObjectR
  */
 export async function getBlocks(blockId: string): Promise<BlockObjectResponse[]> {
   try {
-    notionLog.info(`🔍 블록 ${blockId}의 하위 블록 가져오기 시작`);
+    // 프로덕션 환경 또는 개발 환경의 디버그 레벨 로깅 최소화
+    if (!isProd) {
+      notionLog.debug(`🔍 블록 ${blockId}의 하위 블록 가져오기 시작`);
+    }
     
     const blocks: BlockObjectResponse[] = [];
     let startCursor: string | undefined = undefined;
@@ -62,7 +68,9 @@ export async function getBlocks(blockId: string): Promise<BlockObjectResponse[]>
       startCursor = response.next_cursor ?? undefined;
     }
     
-    notionLog.info(`✅ 블록 ${blockId}의 하위 블록 ${blocks.length}개 가져오기 완료`);
+    if (!isProd) {
+      notionLog.debug(`✅ 블록 ${blockId}의 하위 블록 ${blocks.length}개 가져오기 완료`);
+    }
     return blocks;
   } catch (error) {
     notionLog.error(`❌ 블록 ${blockId} 하위 블록 가져오기 오류:`, error);
@@ -74,7 +82,9 @@ export async function getBlocks(blockId: string): Promise<BlockObjectResponse[]>
  * 페이지의 모든 블록을 재귀적으로 가져오는 함수
  */
 export async function getPageBlocks(pageId: string, maxDepth = 3): Promise<BlockObjectResponse[]> {
-  notionLog.info(`📄 페이지 ${pageId}의 블록 가져오기 시작 (최대 깊이: ${maxDepth})`);
+  if (!isProd) {
+    notionLog.debug(`📄 페이지 ${pageId}의 블록 가져오기 시작 (최대 깊이: ${maxDepth})`);
+  }
   
   try {
     // 최상위 블록 가져오기
@@ -83,7 +93,9 @@ export async function getPageBlocks(pageId: string, maxDepth = 3): Promise<Block
     // 각 블록에 대해 재귀적으로 하위 블록 가져오기
     const populatedBlocks = await populateChildBlocks(blocks, 1, maxDepth);
     
-    notionLog.info(`📄 페이지 ${pageId}의 블록 가져오기 완료: 총 ${countBlocks(populatedBlocks)}개`);
+    if (!isProd) {
+      notionLog.debug(`📄 페이지 ${pageId}의 블록 가져오기 완료: 총 ${countBlocks(populatedBlocks)}개`);
+    }
     return populatedBlocks;
   } catch (error) {
     notionLog.error(`❌ 페이지 ${pageId}의 블록 가져오기 오류:`, error);
@@ -226,17 +238,24 @@ export async function getPageContentAndThumbnail(pageId: string): Promise<{ cont
     // 3. 추가 처리: 텍스트로 된 HTML 태그를 실제 HTML로 변환
     // HTML 문법이 추정되는 패턴 감지 및 처리
     if (content.includes('&lt;figure') || content.includes('&lt;img')) {
-      notionLogger.info('📌 HTML 태그가 텍스트로 감지됨, 실제 HTML로 변환 시도');
+      // 개발 환경에서만 디버그 레벨 로깅
+      if (!isProd) {
+        notionLogger.debug('📌 HTML 태그가 텍스트로 감지됨, 실제 HTML로 변환 시도');
+      }
       
       // HTML 엔티티 디코딩
       content = content
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
-        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
         .replace(/&quot;/g, '"')
+        .replace(/&#x27;/g, "'")
+        .replace(/&#x2F;/g, "/")
         .replace(/&#39;/g, "'");
         
-      notionLogger.info('✅ HTML 엔티티 디코딩 완료');
+      // 개발 환경에서만 디버그 레벨 로깅
+      if (!isProd) {
+        notionLogger.debug('✅ HTML 엔티티 디코딩 완료');
+      }
     }
 
     const endTime = Date.now();

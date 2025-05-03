@@ -1,8 +1,14 @@
 // 클라이언트 사이드 에러 로깅을 위한 API 엔드포인트
 const LOG_ENDPOINT = '/api/log';
 
+// 프로덕션 환경 여부
+const isProd = process.env.NODE_ENV === 'production';
+
 // 에러 로그 전송 함수
 async function sendErrorLog(error: any) {
+  // 개발 환경에서는 서버로 에러를 전송하지 않음 (콘솔에만 표시)
+  if (!isProd) return;
+  
   try {
     const errorData = {
       message: error.message || 'Unknown error',
@@ -21,7 +27,10 @@ async function sendErrorLog(error: any) {
       body: JSON.stringify(errorData),
     });
   } catch (e) {
-    console.error('Error sending error log:', e);
+    // 서버로 에러 전송 실패 시 콘솔에만 로깅 (중복 로깅 방지)
+    if (!isProd) {
+      console.error('Error sending error log:', e);
+    }
   }
 }
 
@@ -31,7 +40,11 @@ export function setupClientErrorLogging() {
 
   // 일반적인 에러 처리
   window.onerror = function(message, source, lineno, colno, error) {
-    console.error('Client Error:', { message, source, lineno, colno });
+    // 개발 환경에서만 콘솔에 로깅
+    if (!isProd) {
+      console.error('Client Error:', { message, source, lineno, colno });
+    }
+    
     sendErrorLog({
       message: message,
       stack: error?.stack,
@@ -45,7 +58,11 @@ export function setupClientErrorLogging() {
 
   // Promise 에러 처리
   window.addEventListener('unhandledrejection', function(event) {
-    console.error('Unhandled Promise Rejection:', event.reason);
+    // 개발 환경에서만 콘솔에 로깅
+    if (!isProd) {
+      console.error('Unhandled Promise Rejection:', event.reason);
+    }
+    
     sendErrorLog({
       message: event.reason?.message || 'Unhandled Promise Rejection',
       stack: event.reason?.stack,
@@ -53,5 +70,8 @@ export function setupClientErrorLogging() {
     });
   });
 
-  console.log('Client-side error logging has been set up');
+  // 콘솔 출력은 개발 환경에서만 수행
+  if (!isProd) {
+    console.log('Client-side error logging has been set up');
+  }
 } 

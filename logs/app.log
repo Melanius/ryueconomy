@@ -1,17 +1,4 @@
-{"level":"info","message":"📈 조회수 API 요청 받음: slug=\"ii250423\"","timestamp":"2025-04-29T11:43:59.073Z"}
-{"level":"info","message":"📈 개발 환경 감지: 캐시 무시","timestamp":"2025-04-29T11:43:59.074Z"}
-{"level":"info","message":"📈 increment 함수 호출 시작: slug=\"ii250423\"","timestamp":"2025-04-29T11:43:59.075Z"}
-{"level":"info","message":"📈 조회수 업데이트 성공: slug=\"ii250423\", 새 조회수=50","timestamp":"2025-04-29T11:44:00.739Z"}
-{"level":"info","message":"📈 조회수 API 요청 받음: slug=\"ii250423\"","timestamp":"2025-04-29T11:45:43.030Z"}
-{"level":"info","message":"📈 개발 환경 감지: 캐시 무시","timestamp":"2025-04-29T11:45:43.034Z"}
-{"level":"info","message":"📈 increment 함수 호출 시작: slug=\"ii250423\"","timestamp":"2025-04-29T11:45:43.035Z"}
-{"level":"info","message":"📈 조회수 업데이트 성공: slug=\"ii250423\", 새 조회수=51","timestamp":"2025-04-29T11:45:44.389Z"}
-[2025-04-30 23:42:56] [info]: 캐시 관리자 초기화됨 
-[2025-04-30 23:42:56] [info]: 캐시 관리자 초기화됨 
-[2025-04-30 23:42:56] [info]: 캐시 관리자 초기화됨 
-[2025-04-30 23:42:56] [info]: 캐시 관리자 초기화됨 
-[2025-04-30 23:42:56] [info]: 캐시 관리자 초기화됨 
-[2025-05-02 10:45:45] [info]: 🚶 방문자 카운터 API 요청 받음 
-[2025-05-02 10:45:45] [info]: 🚶 [개발환경] 방문자 수 증가 요청 처리됨 
-[2025-05-02 10:45:45] [info]: 🚶 방문자 카운터 API 요청 받음 
-[2025-05-02 10:45:45] [info]: 🚶 [개발환경] 방문자 수 증가 요청 처리됨 
+{"level":"debug","message":"﻿앱 디버그 로그 - 한글 테스트","timestamp":"2025-05-02T11:50:46.778Z"}
+{"level":"info","message":"﻿앱 정보 로그 - 한글 테스트","timestamp":"2025-05-02T11:50:46.791Z"}
+{"level":"warn","message":"﻿앱 경고 로그 - 한글 테스트","timestamp":"2025-05-02T11:50:46.792Z"}
+{"details":{"boolean":true,"emoji":"😀 😃 😄 😁 😆","englishData":"English data","koreanData":"한글 데이터","mixedData":"한글과 English 혼합 데이터","numbers":12345,"specialChars":"!@#$%^&*()_+{}[]|;:'\",.<>/?"},"error":{"message":"테스트 에러 객체","stack":"Error: 테스트 에러 객체\n    at Object.<anonymous> (C:\\xampp\\htdocs\\mysite\\scripts\\test-app-logger.js:61:12)\n    at Module._compile (node:internal/modules/cjs/loader:1554:14)\n    at Object..js (node:internal/modules/cjs/loader:1706:10)\n    at Module.load (node:internal/modules/cjs/loader:1289:32)\n    at Function._load (node:internal/modules/cjs/loader:1108:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)\n    at node:internal/main/run_main_module:36:49"},"level":"error","message":"﻿앱 오류 로그 - 한글 테스트","timestamp":"2025-05-02T11:50:46.795Z"}

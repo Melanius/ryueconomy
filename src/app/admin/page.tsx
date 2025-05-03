@@ -43,18 +43,6 @@ export default function AdminDashboard() {
   // 리소스 카드 목록
   const resourceCards = [
     {
-      title: '조회수 모니터링',
-      description: '게시물의 조회수 통계를 모니터링합니다.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-        </svg>
-      ),
-      color: 'bg-green-500',
-      link: '/admin/views'
-    },
-    {
       title: '블로그 홈',
       description: '블로그 메인 페이지로 이동합니다.',
       icon: (
@@ -139,7 +127,7 @@ export default function AdminDashboard() {
                 이 관리자 패널에서는 블로그의 다양한 기능들을 관리할 수 있습니다.
               </p>
               <ul className="list-disc pl-5 space-y-1">
-                <li><strong>조회수 모니터링</strong>: 블로그 게시물의 조회수를 확인하고 분석합니다.</li>
+                <li><strong>블로그 홈</strong>: 블로그 메인 페이지로 빠르게 이동할 수 있습니다.</li>
               </ul>
             </div>
           </div>

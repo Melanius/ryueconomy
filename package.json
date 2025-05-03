@@ -16,7 +16,10 @@
     "test:api": "vitest run __tests__/api",
     "test:integration": "vitest run __tests__/integration",
     "test:e2e": "playwright test",
-    "performance": "node scripts/performance-test.js"
+    "performance": "node scripts/performance-test.js",
+    "logs:reset": "node scripts/reset-logs.js",
+    "logs:test": "node src/utils/logger-test.js",
+    "logs:app-test": "node scripts/test-app-logger.js"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

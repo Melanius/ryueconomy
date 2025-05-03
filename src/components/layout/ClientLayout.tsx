@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { setupClientErrorLogging } from '@/utils/clientLogger';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import VisitorCounter from "@/components/VisitorCounter";
 import { GlobalStateProvider } from "@/contexts/GlobalStateContext";
 
 interface ClientLayoutProps {
@@ -66,7 +65,6 @@ export default function ClientLayout({ children, geistSansVariable, geistMonoVar
           {children}
         </main>
         <Footer />
-        <VisitorCounter />
       </GlobalStateProvider>
     </body>
   );

@@ -114,9 +114,6 @@ export default function AdminLayout({ children, title }: AdminLayoutProps) {
                 <NavLink href="/admin" currentPath={pathname}>
                   대시보드
                 </NavLink>
-                <NavLink href="/admin/views" currentPath={pathname}>
-                  조회수 모니터링
-                </NavLink>
                 <NavLink href="/" currentPath={pathname}>
                   블로그 홈
                 </NavLink>
@@ -178,13 +175,6 @@ export default function AdminLayout({ children, title }: AdminLayoutProps) {
                   onClick={closeSidebar}
                 >
                   대시보드
-                </MobileNavLink>
-                <MobileNavLink
-                  href="/admin/views"
-                  currentPath={pathname}
-                  onClick={closeSidebar}
-                >
-                  조회수 모니터링
                 </MobileNavLink>
                 <MobileNavLink
                   href="/"

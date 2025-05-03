@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { notion } from '@/lib/notion/client';
-import logger from '@/lib/logger';
+import { logger } from '@/lib/logger';
 
 // 노션 메시지 데이터베이스 ID 가져오기
 const messageDbId = process.env.NOTION_MESSAGE_DATABASE_ID;
